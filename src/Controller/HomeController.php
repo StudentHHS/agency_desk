@@ -30,10 +30,16 @@ class HomeController extends AbstractController
     public function show($slug)
     {
 
-            return $this->render('article/show.html.twig', [
-                'title' => ucwords(str_replace('-', ' ', $slug)),
+        $comments = [
+            'This is the first sentence',
+            'This is the second sentence',
+            'This is the last sentence',
+        ];
 
-                ]);
+        return $this->render('article/show.html.twig', [
+                'title' => ucwords(str_replace('-', ' ', $slug)),
+                'comments' => $comments,
+        ]);
 
     }
 }
