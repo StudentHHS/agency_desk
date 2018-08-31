@@ -16,12 +16,17 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 class AdminController extends AbstractController
 {
 
+
     /**
      * @Route("/admin")
      */
     public function index()
     {
-        return $this->render('admin/admin.html.twig');
+        $klanten= ['Klant 1', 'Klant 2', 'Klant 3', 'Klant 4'];
+
+        return $this->render('admin/admin.html.twig', array
+        ('klanten'=>$klanten));
+
     }
 
 
