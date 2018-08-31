@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Admin page{% endblock %}
+
+{% block stylesheets %}
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
+
+    <!-- Bootstrap core CSS -->
+    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
+
+    <!-- Owl Carousel CSS -->
+    <link href="{{ asset('css/owl.carousel.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/owl.theme.default.min.css') }}" rel="stylesheet">
+
+    <!-- Icon CSS -->
+    <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+    <h1>Welcome Admin</h1>
+{% endblock %}
