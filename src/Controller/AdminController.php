@@ -8,6 +8,8 @@
 
 namespace App\Controller;
 
+use App\Entity\Admin;
+
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -22,12 +24,28 @@ class AdminController extends AbstractController
      */
     public function index()
     {
-        $klanten= ['Klant 1', 'Klant 2', 'Klant 3', 'Klant 4'];
+        $klanten= $this->getDoctrine()->getRepository(Admin::class)->findAll();
 
         return $this->render('admin/admin.html.twig', array
         ('klanten'=>$klanten));
 
     }
 
+
+//    /**
+//     * @Route("/admin/save")
+//     */
+//    public function save(){
+//        $entityManager = $this->getDoctrine()->getManager();
+//
+//        $admin = new Admin();
+//        $admin->setTitle('This is user nr. ' .$admin->getId());
+//        $admin->setBody('Body for admin');
+//
+//        $entityManager->persist($admin);
+//        $entityManager->flush();
+//
+//        return new Response('Saved the admin with an id of '.$admin->getId());
+//    }
 
 }

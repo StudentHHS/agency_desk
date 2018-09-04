@@ -4,14 +4,14 @@
 
 {% block stylesheets %}
     <!--Morris Chart CSS -->
-    <link rel="stylesheet" href="../plugins/morris/morris.css">
+    <link rel="stylesheet" href="{{ asset('plugins/morris/morris.css') }}">
 
     <!-- App css -->
-    <link href="{{ asset('assets/css/bootstrap.min.css') }}t" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/css/icons.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet" type="text/css" />
 
-    <script src="{{ asset('assets/js/modernizr.min.js') }}"></script>
+
 {% endblock %}
 
 {% block body %}
@@ -29,8 +29,8 @@
                     <!--</a>-->
                     <!-- Image Logo -->
                     <a href="index.html" class="logo">
-                        <img src="assets/images/logo_dark.png" alt="" height="20" class="logo-lg">
-                        <img src="assets/images/logo_sm.png" alt="" height="24" class="logo-sm">
+                        <img src="{{ asset('assets/images/logo_dark.png') }}" alt="" height="20" class="logo-lg">
+                        <img src="{{ asset('assets/images/logo_sm.png') }}" alt="" height="24" class="logo-sm">
                     </a>
 
                 </div>
@@ -93,7 +93,7 @@
                         <li class="list-inline-item dropdown notification-list">
                             <a class="nav-link dropdown-toggle waves-effect waves-light nav-user" data-toggle="dropdown" href="#" role="button"
                                aria-haspopup="false" aria-expanded="false">
-                                <img src="assets/images/users/avatar-1.jpg" alt="user" class="rounded-circle">
+                                <img src="{{ asset('assets/images/users/avatar-1.jpg') }}" alt="user" class="rounded-circle">
                             </a>
                             <div class="dropdown-menu dropdown-menu-right profile-dropdown " aria-labelledby="Preview">
                                 <!-- item-->
@@ -625,28 +625,30 @@
 {% block javascripts %}
 
     <!-- jQuery  -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/popper.min.js"></script><!-- Popper for Bootstrap -->
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/waves.js"></script>
-    <script src="assets/js/jquery.slimscroll.js"></script>
-    <script src="assets/js/jquery.scrollTo.min.js"></script>
+    <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
+    <script src="{{ asset('assets/js/popper.min.js') }}"></script><!-- Popper for Bootstrap -->
+    <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('assets/js/waves.js') }}"></script>
+    <script src="{{ asset('assets/js/jquery.slimscroll.js') }}"></script>
+    <script src="{{ asset('assets/js/jquery.scrollTo.min.js') }}"></script>
 
-    <script src="../plugins/peity/jquery.peity.min.js"></script>
+    <script src="{{ asset('plugins/peity/jquery.peity.min.js') }}"></script>
 
     <!-- jQuery  -->
-    <script src="../plugins/waypoints/lib/jquery.waypoints.min.js"></script>
-    <script src="../plugins/counterup/jquery.counterup.min.js"></script>
+    <script src="{{ asset('plugins/waypoints/lib/jquery.waypoints.min.js') }}"></script>
+    <script src="{{ asset('plugins/counterup/jquery.counterup.min.js') }}"></script>
 
-    <script src="../plugins/morris/morris.min.js"></script>
-    <script src="../plugins/raphael/raphael-min.js"></script>
+    <script src="{{ asset('plugins/morris/morris.min.js') }}"></script>
+    <script src="{{ asset('plugins/raphael/raphael-min.js') }}"></script>
 
-    <script src="../plugins/jquery-knob/jquery.knob.js"></script>
+    <script src="{{ asset('plugins/jquery-knob/jquery.knob.js') }}"></script>
 
-    <script src="assets/pages/jquery.dashboard.js"></script>
+    <script src="{{ asset('assets/pages/jquery.dashboard.js') }}"></script>
 
-    <script src="assets/js/jquery.core.js"></script>
-    <script src="assets/js/jquery.app.js"></script>
+    <script src="{{ asset('assets/js/jquery.core.js') }}"></script>
+    <script src="{{ asset('assets/js/jquery.app.js') }}"></script>
+
+    <script src="{{ asset('assets/js/modernizr.min.js') }}"></script>
 
     <script type="text/javascript">
         jQuery(document).ready(function($) {
