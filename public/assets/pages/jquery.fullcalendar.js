@@ -1,5 +1,5 @@
 /**
-* Theme: Ubold Admin Template
+* Theme: Ubold Client Template
 * Author: Coderthemes
 * Component: Full-Calendar
 * 

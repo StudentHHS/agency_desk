@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * @ORM\Entity(repositoryClass="App\Repository\AdminRepository")
  */
-class Admin
+class Client
 {
     /**
      * @ORM\Id()
@@ -16,6 +16,18 @@ class Admin
      */
     private $id;
 
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $name;
+
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $function;
+
+
+    //GETTERS AND SETTERS//
     /**
      * @return mixed
      */
@@ -32,50 +44,36 @@ class Admin
         $this->id = $id;
     }
 
-
+    /**
+     * @return mixed
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
 
     /**
-     * @ORM\Column(type="text", length=100)
+     * @param mixed $name
      */
-    private $title;
+    public function setName($name): void
+    {
+        $this->name = $name;
+    }
 
     /**
      * @return mixed
      */
-    public function getTitle()
+    public function getFunction()
     {
-        return $this->title;
+        return $this->function;
     }
 
     /**
-     * @param mixed $title
+     * @param mixed $function
      */
-    public function setTitle($title): void
+    public function setFunction($function): void
     {
-        $this->title = $title;
-    }
-
-
-
-    /**
-     * @ORM\Column(type="text")
-     */
-    private $body;
-
-    /**
-     * @return mixed
-     */
-    public function getBody()
-    {
-        return $this->body;
-    }
-
-    /**
-     * @param mixed $body
-     */
-    public function setBody($body): void
-    {
-        $this->body = $body;
+        $this->function = $function;
     }
 
 

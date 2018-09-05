@@ -1,5 +1,5 @@
 /**
-* Theme: Velonic Admin Template
+* Theme: Velonic Client Template
 * Author: Coderthemes
 * Module/App: RickshawChart Application
 */

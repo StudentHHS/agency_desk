@@ -2,25 +2,25 @@
 
 namespace App\Repository;
 
-use App\Entity\Admin;
+use App\Entity\Client;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 
 /**
- * @method Admin|null find($id, $lockMode = null, $lockVersion = null)
- * @method Admin|null findOneBy(array $criteria, array $orderBy = null)
- * @method Admin[]    findAll()
- * @method Admin[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Client|null find($id, $lockMode = null, $lockVersion = null)
+ * @method Client|null findOneBy(array $criteria, array $orderBy = null)
+ * @method Client[]    findAll()
+ * @method Client[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
 class AdminRepository extends ServiceEntityRepository
 {
     public function __construct(RegistryInterface $registry)
     {
-        parent::__construct($registry, Admin::class);
+        parent::__construct($registry, Client::class);
     }
 
 //    /**
-//     * @return Admin[] Returns an array of Admin objects
+//     * @return Client[] Returns an array of Client objects
 //     */
     /*
     public function findByExampleField($value)
@@ -37,7 +37,7 @@ class AdminRepository extends ServiceEntityRepository
     */
 
     /*
-    public function findOneBySomeField($value): ?Admin
+    public function findOneBySomeField($value): ?Client
     {
         return $this->createQueryBuilder('a')
             ->andWhere('a.exampleField = :val')
