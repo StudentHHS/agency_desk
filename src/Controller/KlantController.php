@@ -34,9 +34,83 @@ class KlantController extends AbstractController
      */
     public function index()
     {
-        $klanten= $this->getDoctrine()->getRepository(Client::class)->findAll();
+        $klanten = $this->getDoctrine()->getRepository(Client::class)->findAll();
 
-        return ['klanten'=>$klanten];
+        return ['klanten' => $klanten];
+    }
+
+
+    /**
+     * @Route("/admin/klant/create", name="create_klant")
+     * @Method({"GET", "POST"})
+     * @Template()
+     */
+    public function create(Request $request)
+    {
+        $klant = new Client();
+
+        $form = $this->createFormBuilder($klant)
+            ->add('name', TextareaType::class,
+                array('required' => false, 'attr' => array('class' => 'form-control')))
+            ->add('function', TextareaType::class,
+                array('required' => false, 'attr' => array('class' => 'form-control')
+                ))
+            ->add('save', SubmitType::class, array(
+                'label' => 'Create',
+                'attr' => array('class' => 'btn btn-primary mt-3')
+            ))
+            ->getForm();
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $klant = $form->getData();
+
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($klant);
+            $entityManager->flush();
+
+            return $this->redirectToRoute('index_klant');
+        }
+
+
+        return ['form' => $form->createView()];
+    }
+
+
+    /**
+     * @Route("/admin/klant/edit/{id}", name="edit_klant")
+     * @Method({"GET", "POST"})
+     * @Template()
+     */
+    public function edit(Request $request, $id)
+    {
+        $klant = new Client();
+        $klant = $this->getDoctrine()->getRepository(Client::class)->find($id);
+
+        $form = $this->createFormBuilder($klant)
+            ->add('name', TextareaType::class,
+                array('required' => false, 'attr' => array('class' => 'form-control')))
+            ->add('function', TextareaType::class,
+                array('required' => false, 'attr' => array('class' => 'form-control')
+            ))
+            ->add('save', SubmitType::class, array(
+                'label' => 'Create',
+                'attr' => array('class' => 'btn btn-primary mt-3')
+            ))
+            ->getForm();
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->flush();
+
+            return $this->redirectToRoute('index_klant');
+        }
+
+        return ['form' => $form->createView()];
     }
 
     /**
@@ -50,35 +124,21 @@ class KlantController extends AbstractController
         return ['klant' => $klant];
     }
 
-
     /**
-     * @Route("/admin/klant/nieuweklant", name="create_klant")
-     * @Method({"GET", "POST"})
-     * @Template()
+     * @Route("/admin/klant/delete/{id}")
+     * @Method({"DELETE"})
      */
-
-    public function create(Request $reguest)
+    public function delete(Request $request, $id)
     {
-        $klant = new Client();
+        $klant = $this->getDoctrine()->getRepository(Client::class)->find($id);
 
-        $form = $this->createFormBuilder($klant)
-            ->add('name', TextType::class,
-                array('attr' => array('class', 'form-control')))
-            ->add('function', TextareaType::class, array(
-                'required' => false,
-                'attr' => array('class' => 'form-control')
-            ))
-            ->add('save', SubmitType::class, array(
-                'label' => 'Create',
-                'attr' => array('class' => 'btn btn-primary mt-3')
-            ))
-            ->getForm();
+        $entityManager = $this->getDoctrine()->getManager();
+        $entityManager->remove($klant);
+        $entityManager->flush();
 
-        return ['form' => $form->createView()];
+        $response = new Response();
+        $response->send();
     }
-
-
-
 
 
 }

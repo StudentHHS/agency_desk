@@ -12,6 +12,8 @@
     <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet" type="text/css"/>
     <link href="{{ asset('assets/scss/_buttons.scss') }}" rel="stylesheet" type="text/css"/>
     <link href="{{ asset('assets/scss/_menu.scss') }}" rel="stylesheet" type="text/css"/>
+    <link href="{{ asset('assets/scss/_tables.scss') }}" rel="stylesheet" type="text/css"/>
+    <link href="{{ asset('assets/scss/_common.scss') }}" rel="stylesheet" type="text/css"/>
 
 
 {% endblock %}
@@ -385,14 +387,14 @@
         <div class="container-fluid">
 
 
-                <!--SPECIFIEKE KLANT-->
+                <!-- specified client -->
 <div class="wrapper">
         <div class="container-fluid">
                 <h1>{{ klant.name }}</h1>
                 <p>{{ klant.function }}</p>
                 <hr>
                 <a href="{{ path('admin_page') }}/klant">Back</a>
-                <!--END-->
+                <!-- end specified client -->
         </div>
         <!-- end container -->
 </div>
