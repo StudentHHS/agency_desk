@@ -23,40 +23,40 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
-use App\Entity\Client;
+use App\Entity\Developer;
 
-class KlantController extends AbstractController
+class DeveloperController extends AbstractController
 {
 
     /**
-     * @Route("/admin/klant", name="index_klant")
+     * @Route("/admin/developer", name="index_developer")
      * @Template
      */
     public function index()
     {
-        $klanten = $this->getDoctrine()->getRepository(Client::class)->findAll();
+        $developers = $this->getDoctrine()->getRepository(Developer::class)->findAll();
 
-        return ['klanten' => $klanten];
+        return ['developers' => $developers];
     }
 
 
     /**
-     * @Route("/admin/klant/create", name="create_klant")
+     * @Route("/admin/developer/create", name="create_developer")
      * @Method({"GET", "POST"})
      * @Template()
      */
     public function create(Request $request)
     {
-        $klant = new Client();
+        $developer = new Developer();
 
-        $form = $this->createFormBuilder($klant)
+        $form = $this->createFormBuilder($developer)
             ->add('name', TextareaType::class,
                 array('required' => false, 'attr' => array('class' => 'form-control')))
             ->add('function', TextareaType::class,
                 array('required' => false, 'attr' => array('class' => 'form-control')
                 ))
             ->add('save', SubmitType::class, array(
-                'label' => 'Confirm',
+                'label' => 'Create',
                 'attr' => array('class' => 'btn btn-primary mt-3')
             ))
             ->getForm();
@@ -64,13 +64,13 @@ class KlantController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $klant = $form->getData();
+            $developer = $form->getData();
 
             $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($klant);
+            $entityManager->persist($developer);
             $entityManager->flush();
 
-            return $this->redirectToRoute('index_klant');
+            return $this->redirectToRoute('index_developer');
         }
 
 
@@ -79,23 +79,23 @@ class KlantController extends AbstractController
 
 
     /**
-     * @Route("/admin/klant/edit/{id}", name="edit_klant")
+     * @Route("/admin/developer/edit/{id}", name="edit_developer")
      * @Method({"GET", "POST"})
      * @Template()
      */
     public function edit(Request $request, $id)
     {
-        $klant = new Client();
-        $klant = $this->getDoctrine()->getRepository(Client::class)->find($id);
+        $developer = new Developer();
+        $developer = $this->getDoctrine()->getRepository(Developer::class)->find($id);
 
-        $form = $this->createFormBuilder($klant)
+        $form = $this->createFormBuilder($developer)
             ->add('name', TextareaType::class,
                 array('required' => false, 'attr' => array('class' => 'form-control')))
             ->add('function', TextareaType::class,
                 array('required' => false, 'attr' => array('class' => 'form-control')
-            ))
+                ))
             ->add('save', SubmitType::class, array(
-                'label' => 'Confirm',
+                'label' => 'Create',
                 'attr' => array('class' => 'btn btn-primary mt-3')
             ))
             ->getForm();
@@ -107,34 +107,34 @@ class KlantController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->flush();
 
-            return $this->redirectToRoute('index_klant');
+            return $this->redirectToRoute('index_developer');
         }
 
         return ['form' => $form->createView()];
     }
 
     /**
-     * @Route("/admin/klant/{id}", name="show_klant")
+     * @Route("/admin/developer/{id}", name="show_developer")
      * @Template()
      */
     public function show($id)
     {
-        $klant = $this->getDoctrine()->getRepository(Client::class)->find($id);
+        $developer = $this->getDoctrine()->getRepository(Developer::class)->find($id);
 
-        return ['klant' => $klant];
+        return ['developer' => $developer];
     }
 
     /**
-     * @Route("/admin/klant/delete/{id}")
+     * @Route("/admin/developer/delete/{id}")
      * @Method({"DELETE"})
      * @Template()
      */
     public function delete(Request $request, $id)
     {
-        $klant = $this->getDoctrine()->getRepository(Client::class)->find($id);
+        $developer = $this->getDoctrine()->getRepository(Developer::class)->find($id);
 
         $entityManager = $this->getDoctrine()->getManager();
-        $entityManager->remove($klant);
+        $entityManager->remove($developer);
         $entityManager->flush();
 
         $response = new Response();
