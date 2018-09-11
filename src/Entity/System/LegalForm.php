@@ -1,12 +1,13 @@
 <?php
 
-namespace AgencyDesk\DBBundle\Entity\System;
+namespace App\Entity\System;
 
+use DateTime;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
- * AgencyDesk\DBBundle\Entity\System\LegalForm
+ * App\Entity\System\LegalForm
  *
  * @ORM\Table(name = "legal_form")
  * @ORM\Entity()
@@ -52,8 +53,6 @@ class LegalForm
      * @Gedmo\Timestampable(on="update")
      */
     protected $updated;
-
-
 
     /**
      * Get id

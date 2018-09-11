@@ -1,14 +1,15 @@
 <?php
 
-namespace AgencyDesk\DBBundle\Entity\User;
+namespace App\Entity\User;
 
-use AgencyDesk\DBBundle\Entity\System\Country;
+use App\Entity\System\Country;
+use DateTime;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
- * AgencyDesk\DBBundle\Entity\User\Address
+ * App\Entity\User\Address
  *
  * @ORM\Table(name = "address")
  * @ORM\Entity
@@ -75,7 +76,7 @@ class Address {
     /**
      * @var Country $country
      *
-     * @ORM\ManyToOne(targetEntity="AgencyDesk\DBBundle\Entity\System\Country", fetch="EAGER")
+     * @ORM\ManyToOne(targetEntity="App\Entity\System\Country", fetch="EAGER")
      * @ORM\JoinColumn(name="country_id", referencedColumnName="id", onDelete="cascade")
      */
     protected $country;
@@ -102,7 +103,7 @@ class Address {
     protected $active = false;
 
     /**
-     * @ORM\OneToMany(targetEntity="AgencyDesk\DBBundle\Entity\Project\Project", mappedBy="customer", cascade={"persist", "remove"}, orphanRemoval=true)
+     * @ORM\OneToMany(targetEntity="App\Entity\Project\Project", mappedBy="customer", cascade={"persist", "remove"}, orphanRemoval=true)
      * @ORM\OrderBy({"sequence" = "ASC"})
      * @var \Doctrine\Common\Collections\Collection $blocks
      */
@@ -298,7 +299,7 @@ class Address {
     /**
      * Set owner
      *
-     * @param \AgencyDesk\DBBundle\Entity\User\Customer $owner
+     * @param \App\Entity\User\Customer $owner
      * @return Customer
      */
     public function setOwner(Customer $owner = null)
@@ -311,7 +312,7 @@ class Address {
     /**
      * Get owner
      *
-     * @return \AgencyDesk\DBBundle\Entity\User\Customer
+     * @return \App\Entity\User\Customer
      */
     public function getOwner()
     {
@@ -351,10 +352,10 @@ class Address {
     /**
      * Add projects
      *
-     * @param \AgencyDesk\DBBundle\Entity\Project\Project $projects
+     * @param \App\Entity\Project\Project $projects
      * @return Customer
      */
-    public function addProject(\AgencyDesk\DBBundle\Entity\Project\Project $projects)
+    public function addProject(\App\Entity\Project\Project $projects)
     {
         $this->projects[] = $projects;
 
@@ -364,9 +365,9 @@ class Address {
     /**
      * Remove projects
      *
-     * @param \AgencyDesk\DBBundle\Entity\Project\Project $projects
+     * @param \App\Entity\Project\Project $projects
      */
-    public function removeProject(\AgencyDesk\DBBundle\Entity\Project\Project $projects)
+    public function removeProject(\App\Entity\Project\Project $projects)
     {
         $this->projects->removeElement($projects);
     }

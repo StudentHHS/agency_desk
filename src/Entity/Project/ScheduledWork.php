@@ -1,8 +1,9 @@
 <?php
-namespace AgencyDesk\DBBundle\Entity\Project;
+namespace App\Entity\Project;
 
-use AgencyDesk\DBBundle\Entity\Project\Task;
+use App\Entity\Project\Task;
 
+use DateTime;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 
@@ -25,7 +26,7 @@ class ScheduledWork {
     /**
      * @var Task $task
      *
-     * @ORM\ManyToOne(targetEntity="AgencyDesk\DBBundle\Entity\Project\Task", fetch="EAGER")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Project\Task", fetch="EAGER")
      * @ORM\JoinColumn(name="task_id", referencedColumnName="id")
      */
     protected $task;
@@ -105,10 +106,10 @@ class ScheduledWork {
     /**
      * Set Task
      *
-     * @param \AgencyDesk\DBBundle\Entity\Project\Task $task
+     * @param \App\Entity\Project\Task $task
      * @return ScheduledWork
      */
-    public function setTask(\AgencyDesk\DBBundle\Entity\Project\Task $task = null)
+    public function setTask(\App\Entity\Project\Task $task = null)
     {
         $this->task = $task;
 
@@ -118,7 +119,7 @@ class ScheduledWork {
     /**
      * Get Task
      *
-     * @return \AgencyDesk\DBBundle\Entity\Project\Task
+     * @return \App\Entity\Project\Task
      */
     public function getTask()
     {

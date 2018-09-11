@@ -1,12 +1,13 @@
 <?php
 
-namespace AgencyDesk\DBBundle\Entity\System;
+namespace App\Entity\System;
 
+use DateTime;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
- * AgencyDesk\DBBundle\Entity\System\Country
+ * App\Entity\System\Country
  *
  * @ORM\Table(name = "country")
  * @ORM\Entity()

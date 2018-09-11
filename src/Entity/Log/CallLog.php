@@ -1,12 +1,13 @@
 <?php
 
-namespace AgencyDesk\DBBundle\Entity\Log;
+namespace App\Entity\Log;
 
+use DateTime;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
- * AgencyDesk\DBBundle\Entity\Log\CallLog
+ * App\Entity\Log\CallLog
  *
  * @ORM\Table(name = "log__call")
  * @ORM\Entity

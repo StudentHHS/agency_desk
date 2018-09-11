@@ -1,12 +1,13 @@
 <?php
 
-namespace AgencyDesk\DBBundle\Entity\Project;
+namespace App\Entity\Project;
 
+use DateTime;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
- * AgencyDesk\DBBundle\Entity\Project\ReleaseCandidate
+ * App\Entity\Project\ReleaseCandidate
  *
  * @ORM\Table(name = "release_candidate")
  * @ORM\Entity
@@ -24,7 +25,7 @@ class ReleaseCandidate {
     /**
      * @var Project $project
      *
-     * @ORM\ManyToOne(targetEntity="AgencyDesk\DBBundle\Entity\Project\Project", fetch="EAGER", inversedBy="releaseCandidates")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Project\Project", fetch="EAGER", inversedBy="releaseCandidates")
      * @ORM\JoinColumn(name="project_id", referencedColumnName="id")
      */
     protected $project;
@@ -60,7 +61,7 @@ class ReleaseCandidate {
     protected $actual_release_date;
 
     /**
-     * @ORM\OneToMany(targetEntity="\AgencyDesk\DBBundle\Entity\Project\Task", mappedBy="releaseCandidate", cascade={"persist"})
+     * @ORM\OneToMany(targetEntity="\App\Entity\Project\Task", mappedBy="releaseCandidate", cascade={"persist"})
      * @var \Doctrine\Common\Collections\Collection $tasks
      */
     protected $tasks;
@@ -177,10 +178,10 @@ class ReleaseCandidate {
     /**
      * Set project
      *
-     * @param \AgencyDesk\DBBundle\Entity\Project\Project $project
+     * @param \App\Entity\Project\Project $project
      * @return ReleaseCandidate
      */
-    public function setProject(\AgencyDesk\DBBundle\Entity\Project\Project $project = null)
+    public function setProject(\App\Entity\Project\Project $project = null)
     {
         $this->project = $project;
 
@@ -190,7 +191,7 @@ class ReleaseCandidate {
     /**
      * Get project
      *
-     * @return \AgencyDesk\DBBundle\Entity\Project\Project
+     * @return \App\Entity\Project\Project
      */
     public function getProject()
     {
@@ -200,10 +201,10 @@ class ReleaseCandidate {
     /**
      * Add tasks
      *
-     * @param \AgencyDesk\DBBundle\Entity\Project\Task $tasks
+     * @param \App\Entity\Project\Task $tasks
      * @return ReleaseCandidate
      */
-    public function addTask(\AgencyDesk\DBBundle\Entity\Project\Task $tasks)
+    public function addTask(\App\Entity\Project\Task $taskss)
     {
         $this->taskss[] = $taskss;
 
@@ -213,9 +214,9 @@ class ReleaseCandidate {
     /**
      * Remove tasks
      *
-     * @param \AgencyDesk\DBBundle\Entity\Project\Task $tasks
+     * @param \App\Entity\Project\Task $tasks
      */
-    public function removeTask(\AgencyDesk\DBBundle\Entity\Project\Task $tasks)
+    public function removeTask(\App\Entity\Project\Task $tasks)
     {
         $this->taskss->removeElement($tasks);
     }

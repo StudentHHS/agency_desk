@@ -1,16 +1,17 @@
 <?php
 
-namespace AgencyDesk\DBBundle\Entity\Token;
+namespace App\Entity\Token;
 
+use DateTime;
 use Doctrine\ORM\Mapping as ORM;
-use AgencyDesk\DBBundle\Entity\Project;
-use AgencyDesk\DBBundle\Entity\User;
+use App\Entity\Project;
+use App\Entity\User;
 use Gedmo\Mapping\Annotation as Gedmo;
 
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * AgencyDesk\DBBundle\Entity\Token\Token
+ * App\Entity\Token\Token
  *
  * @ORM\Table(name="token")
  * @ORM\Entity()

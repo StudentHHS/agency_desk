@@ -1,16 +1,19 @@
 <?php
 
-namespace AgencyDesk\DBBundle\Entity\Relation;
+namespace App\Entity\Relation;
 
+use App\Entity\Project\Task;
+use App\Entity\User\Developer;
+use DateTime;
 use Doctrine\ORM\Mapping as ORM;
-use AgencyDesk\DBBundle\Entity\Project;
-use AgencyDesk\DBBundle\Entity\User;
+use App\Entity\Project;
+use App\Entity\User;
 use Gedmo\Mapping\Annotation as Gedmo;
 
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * AgencyDesk\DBBundle\Entity\Relation\TaskDeveloper
+ * App\Entity\Relation\TaskDeveloper
  *
  * @ORM\Table(name="link__task__developer")
  * @ORM\Entity()
@@ -29,7 +32,7 @@ class TaskDeveloper
     /**
      * @var Task $task
      *
-     * @ORM\ManyToOne(targetEntity="AgencyDesk\DBBundle\Entity\Project\Task", inversedBy="developers", cascade={"persist"})
+     * @ORM\ManyToOne(targetEntity="App\Entity\Project\Task", inversedBy="developers", cascade={"persist"})
      * @ORM\JoinColumn(name="task_id", referencedColumnName="id", onDelete="NO ACTION")
      */
     protected $task;
@@ -37,7 +40,7 @@ class TaskDeveloper
     /**
      * @var Developer $developer
      *
-     * @ORM\ManyToOne(targetEntity="AgencyDesk\DBBundle\Entity\User\Developer", cascade={"persist"})
+     * @ORM\ManyToOne(targetEntity="App\Entity\User\Developer", cascade={"persist"})
      * @ORM\JoinColumn(name="developer_id", referencedColumnName="id", onDelete="NO ACTION")
      */
     protected $developer;
@@ -118,10 +121,10 @@ class TaskDeveloper
     /**
      * Set task
      *
-     * @param \AgencyDesk\DBBundle\Entity\Project\Task $task
+     * @param \App\Entity\Project\Task $task
      * @return TaskDeveloper
      */
-    public function setTask(\AgencyDesk\DBBundle\Entity\Project\Task $task = null)
+    public function setTask(\App\Entity\Project\Task $task = null)
     {
         $this->task = $task;
 
@@ -131,7 +134,7 @@ class TaskDeveloper
     /**
      * Get task
      *
-     * @return \AgencyDesk\DBBundle\Entity\Project\Task
+     * @return \App\Entity\Project\Task
      */
     public function getTask()
     {
@@ -141,10 +144,10 @@ class TaskDeveloper
     /**
      * Set developer
      *
-     * @param \AgencyDesk\DBBundle\Entity\User\Developer $developer
+     * @param \App\Entity\User\Developer $developer
      * @return TaskDeveloper
      */
-    public function setDeveloper(\AgencyDesk\DBBundle\Entity\User\Developer $developer = null)
+    public function setDeveloper(\App\Entity\User\Developer $developer = null)
     {
         $this->developer = $developer;
 
@@ -154,10 +157,10 @@ class TaskDeveloper
     /**
      * Add developer
      *
-     * @param \AgencyDesk\DBBundle\Entity\User\Developer $developer
+     * @param \App\Entity\User\Developer $developer
      * @return TaskDeveloper
      */
-    public function addDeveloper(\AgencyDesk\DBBundle\Entity\User\Developer $developer = null)
+    public function addDeveloper(\App\Entity\User\Developer $developer = null)
     {
         $this->developer = $developer;
 
@@ -167,7 +170,7 @@ class TaskDeveloper
     /**
      * Remove developers
      *
-     * @param \AgencyDesk\DBBundle\Entity\Relation\TaskDeveloper $developers
+     * @param \App\Entity\Relation\TaskDeveloper $developers
      */
     public function removeDeveloper($developer)
     {
@@ -177,7 +180,7 @@ class TaskDeveloper
     /**
      * Get developer
      *
-     * @return \AgencyDesk\DBBundle\Entity\User\Developer
+     * @return \App\Entity\User\Developer
      */
     public function getDeveloper()
     {

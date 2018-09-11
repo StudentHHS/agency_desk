@@ -1,9 +1,10 @@
 <?php
 
-namespace AgencyDesk\DBBundle\Entity\Financial;
+namespace App\Entity\Financial;
 
-use AgencyDesk\DBBundle\Entity\Project\ActualWork;
-use AgencyDesk\DBBundle\Entity\User\Customer;
+use App\Entity\Project\ActualWork;
+use App\Entity\User\Customer;
+use DateTime;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 
@@ -27,7 +28,7 @@ class Transaction
     /**
      * @var CreditCard $creditCard
      *
-     * @ORM\ManyToOne(targetEntity="AgencyDesk\DBBundle\Entity\Financial\CreditCard", inversedBy="transactions", cascade={"persist"})
+     * @ORM\ManyToOne(targetEntity="App\Entity\Financial\CreditCard", inversedBy="transactions", cascade={"persist"})
      * @ORM\JoinColumn(name="credit_card", referencedColumnName="id", onDelete="NO ACTION")
      */
     protected $creditCard;
@@ -35,7 +36,7 @@ class Transaction
     /**
      * @var Invoice $invoice
      *
-     * @ORM\ManyToOne(targetEntity="AgencyDesk\DBBundle\Entity\Financial\Invoice")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Financial\Invoice")
      * @ORM\JoinColumn(name="invoice_id", referencedColumnName="id", onDelete="cascade")
      */
     protected $invoice;
@@ -43,7 +44,7 @@ class Transaction
     /**
      * @var ActualWork $worklog
      *
-     * @ORM\ManyToOne(targetEntity="AgencyDesk\DBBundle\Entity\Project\ActualWork", inversedBy="transactions", cascade={"persist"})
+     * @ORM\ManyToOne(targetEntity="App\Entity\Project\ActualWork", inversedBy="transactions", cascade={"persist"})
      * @ORM\JoinColumn(name="worklog_id", referencedColumnName="id", onDelete="NO ACTION")
      */
     protected $workLog;
@@ -290,11 +291,11 @@ class Transaction
     /**
      * Set customer
      *
-     * @param \AgencyDesk\DBBundle\Entity\User\Customer $customer
+     * @param \App\Entity\User\Customer $customer
      *
      * @return Transaction
      */
-    public function setCustomer(\AgencyDesk\DBBundle\Entity\User\Customer $customer = null)
+    public function setCustomer(\App\Entity\User\Customer $customer = null)
     {
         $this->customer = $customer;
 
@@ -304,7 +305,7 @@ class Transaction
     /**
      * Get customer
      *
-     * @return \AgencyDesk\DBBundle\Entity\User\Customer
+     * @return \App\Entity\User\Customer
      */
     public function getCustomer()
     {
@@ -314,11 +315,11 @@ class Transaction
     /**
      * Set invoice
      *
-     * @param \AgencyDesk\DBBundle\Entity\Financial\Invoice $invoice
+     * @param \App\Entity\Financial\Invoice $invoice
      *
      * @return Transaction
      */
-    public function setInvoice(\AgencyDesk\DBBundle\Entity\Financial\Invoice $invoice = null)
+    public function setInvoice(\App\Entity\Financial\Invoice $invoice = null)
     {
         $this->invoice = $invoice;
 
@@ -328,7 +329,7 @@ class Transaction
     /**
      * Get invoice
      *
-     * @return \AgencyDesk\DBBundle\Entity\Financial\Invoice
+     * @return \App\Entity\Financial\Invoice
      */
     public function getInvoice()
     {
@@ -338,11 +339,11 @@ class Transaction
     /**
      * Set workLog
      *
-     * @param \AgencyDesk\DBBundle\Entity\Project\ActualWork $workLog
+     * @param \App\Entity\Project\ActualWork $workLog
      *
      * @return Transaction
      */
-    public function setWorkLog(\AgencyDesk\DBBundle\Entity\Project\ActualWork $workLog = null)
+    public function setWorkLog(\App\Entity\Project\ActualWork $workLog = null)
     {
         $this->workLog = $workLog;
 
@@ -352,7 +353,7 @@ class Transaction
     /**
      * Get workLog
      *
-     * @return \AgencyDesk\DBBundle\Entity\Project\ActualWork
+     * @return \App\Entity\Project\ActualWork
      */
     public function getWorkLog()
     {
@@ -362,11 +363,11 @@ class Transaction
     /**
      * Set creditCard
      *
-     * @param \AgencyDesk\DBBundle\Entity\Financial\CreditCard $creditCard
+     * @param \App\Entity\Financial\CreditCard $creditCard
      *
      * @return Transaction
      */
-    public function setCreditCard(\AgencyDesk\DBBundle\Entity\Financial\CreditCard $creditCard = null)
+    public function setCreditCard(\App\Entity\Financial\CreditCard $creditCard = null)
     {
         $this->creditCard = $creditCard;
 
@@ -376,7 +377,7 @@ class Transaction
     /**
      * Get creditCard
      *
-     * @return \AgencyDesk\DBBundle\Entity\Financial\CreditCard
+     * @return \App\Entity\Financial\CreditCard
      */
     public function getCreditCard()
     {

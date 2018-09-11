@@ -1,8 +1,9 @@
 <?php
 
-namespace AgencyDesk\DBBundle\Entity\Financial;
+namespace App\Entity\Financial;
 
-use AgencyDesk\DBBundle\Entity\User\Customer;
+use App\Entity\User\Customer;
+use DateTime;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 
@@ -33,7 +34,7 @@ class Invoice
     /**
      * @var InvoiceState $state
      *
-     * @ORM\ManyToOne(targetEntity="AgencyDesk\DBBundle\Entity\Financial\InvoiceState")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Financial\InvoiceState")
      * @ORM\JoinColumn(name="state_id", referencedColumnName="id", onDelete="cascade")
      */
     protected $state;
@@ -41,7 +42,7 @@ class Invoice
     /**
      * @var Customer $customer
      *
-     * @ORM\ManyToOne(targetEntity="AgencyDesk\DBBundle\Entity\User\Customer")
+     * @ORM\ManyToOne(targetEntity="App\Entity\User\Customer")
      * @ORM\JoinColumn(name="customer_id", referencedColumnName="id", onDelete="cascade")
      */
     protected $customer;
@@ -82,12 +83,12 @@ class Invoice
     private $paymentDate;
 
     /**
-     * @ORM\OneToMany(targetEntity="AgencyDesk\DBBundle\Entity\Financial\InvoiceLine", mappedBy="invoice")
+     * @ORM\OneToMany(targetEntity="App\Entity\Financial\InvoiceLine", mappedBy="invoice")
      */
     private $lines;
 
     /**
-     * @ORM\OneToMany(targetEntity="AgencyDesk\DBBundle\Entity\Project\ActualWork", mappedBy="invoice")
+     * @ORM\OneToMany(targetEntity="App\Entity\Project\ActualWork", mappedBy="invoice")
      */
     private $actualWork;
 
@@ -187,7 +188,7 @@ class Invoice
     /**
      * Get date
      *
-     * @return \DateTime
+     * @return date
      */
     public function getDate()
     {
@@ -210,7 +211,7 @@ class Invoice
     /**
      * Get paymentDate
      *
-     * @return \DateTime
+     * @return date
      */
     public function getPaymentDate()
     {
@@ -233,7 +234,7 @@ class Invoice
     /**
      * Get created
      *
-     * @return \DateTime
+     * @return datetime
      */
     public function getCreated()
     {
@@ -256,7 +257,7 @@ class Invoice
     /**
      * Get updated
      *
-     * @return \DateTime
+     * @return datetime
      */
     public function getUpdated()
     {
@@ -266,10 +267,10 @@ class Invoice
     /**
      * Set state
      *
-     * @param \AgencyDesk\DBBundle\Entity\Financial\InvoiceState $state
+     * @param \App\Entity\Financial\InvoiceState $state
      * @return Invoice
      */
-    public function setState(\AgencyDesk\DBBundle\Entity\Financial\InvoiceState $state = null)
+    public function setState(\App\Entity\Financial\InvoiceState $state = null)
     {
         $this->state = $state;
 
@@ -279,7 +280,7 @@ class Invoice
     /**
      * Get state
      *
-     * @return \AgencyDesk\DBBundle\Entity\Financial\InvoiceState
+     * @return \App\Entity\Financial\InvoiceState
      */
     public function getState()
     {
@@ -289,10 +290,10 @@ class Invoice
     /**
      * Set customer
      *
-     * @param \AgencyDesk\DBBundle\Entity\User\Customer $customer
+     * @param \App\Entity\User\Customer $customer
      * @return Invoice
      */
-    public function setCustomer(\AgencyDesk\DBBundle\Entity\User\Customer $customer = null)
+    public function setCustomer(\App\Entity\User\Customer $customer = null)
     {
         $this->customer = $customer;
 
@@ -302,7 +303,7 @@ class Invoice
     /**
      * Get customer
      *
-     * @return \AgencyDesk\DBBundle\Entity\User\Customer
+     * @return \App\Entity\User\Customer
      */
     public function getCustomer()
     {
@@ -312,10 +313,10 @@ class Invoice
     /**
      * Add lines
      *
-     * @param \AgencyDesk\DBBundle\Entity\Financial\InvoiceLine $lines
+     * @param \App\Entity\Financial\InvoiceLine $lines
      * @return Invoice
      */
-    public function addLine(\AgencyDesk\DBBundle\Entity\Financial\InvoiceLine $lines)
+    public function addLine(\App\Entity\Financial\InvoiceLine $lines)
     {
         $this->lines[] = $lines;
 
@@ -325,9 +326,9 @@ class Invoice
     /**
      * Remove lines
      *
-     * @param \AgencyDesk\DBBundle\Entity\Financial\InvoiceLine $lines
+     * @param \App\Entity\Financial\InvoiceLine $lines
      */
-    public function removeLine(\AgencyDesk\DBBundle\Entity\Financial\InvoiceLine $lines)
+    public function removeLine(\App\Entity\Financial\InvoiceLine $lines)
     {
         $this->lines->removeElement($lines);
     }
@@ -405,11 +406,11 @@ class Invoice
     /**
      * Add actualWork
      *
-     * @param \AgencyDesk\DBBundle\Entity\Project\ActualWork $actualWork
+     * @param \App\Entity\Project\ActualWork $actualWork
      *
      * @return Invoice
      */
-    public function addActualWork(\AgencyDesk\DBBundle\Entity\Project\ActualWork $actualWork)
+    public function addActualWork(\App\Entity\Project\ActualWork $actualWork)
     {
         $this->actualWork[] = $actualWork;
 
@@ -419,9 +420,9 @@ class Invoice
     /**
      * Remove actualWork
      *
-     * @param \AgencyDesk\DBBundle\Entity\Project\ActualWork $actualWork
+     * @param \App\Entity\Project\ActualWork $actualWork
      */
-    public function removeActualWork(\AgencyDesk\DBBundle\Entity\Project\ActualWork $actualWork)
+    public function removeActualWork(\App\Entity\Project\ActualWork $actualWork)
     {
         $this->actualWork->removeElement($actualWork);
     }

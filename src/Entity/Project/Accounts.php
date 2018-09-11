@@ -1,12 +1,12 @@
 <?php
 
-namespace AgencyDesk\DBBundle\Entity\Project;
+namespace App\Entity\Project;
 
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
- * AgencyDesk\DBBundle\Entity\Project\Accounts
+ * App\Entity\Project\Accounts
  *
  * @ORM\Table(name = "accounts")
  * @ORM\Entity

@@ -1,10 +1,11 @@
 <?php
 
-namespace AgencyDesk\DBBundle\Entity\Project;
+namespace App\Entity\Project;
 
-use AgencyDesk\DBBundle\Entity\User\Developer;
-use AgencyDesk\DBBundle\Entity\Project\Project;
-use AgencyDesk\DBBundle\Entity\Project\Task;
+use App\Entity\User\Developer;
+use App\Entity\Project\Project;
+use App\Entity\Project\Task;
+use DateTime;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 use Doctrine\Common\Collections\ArrayCollection;
@@ -57,7 +58,7 @@ class Commit
     /**
      * @var Developer $project
      *
-     * @ORM\ManyToOne(targetEntity="AgencyDesk\DBBundle\Entity\User\Developer", fetch="EAGER")
+     * @ORM\ManyToOne(targetEntity="App\Entity\User\Developer", fetch="EAGER")
      * @ORM\JoinColumn(name="developer", referencedColumnName="id", nullable=true)
      */
     protected $developer;
@@ -72,7 +73,7 @@ class Commit
     /**
      * @var Task $task
      *
-     * @ORM\ManyToOne(targetEntity="AgencyDesk\DBBundle\Entity\Project\Task", fetch="EAGER")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Project\Task", fetch="EAGER")
      * @ORM\JoinColumn(name="task", referencedColumnName="id", nullable=true)
      */
     protected $task;
@@ -80,7 +81,7 @@ class Commit
     /**
      * @var Project $project
      *
-     * @ORM\ManyToOne(targetEntity="AgencyDesk\DBBundle\Entity\Project\Project", fetch="EAGER")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Project\Project", fetch="EAGER")
      * @ORM\JoinColumn(name="project", referencedColumnName="id", nullable=true)
      */
     protected $project;
@@ -241,11 +242,11 @@ class Commit
     /**
      * Add developer
      *
-     * @param \AgencyDesk\DBBundle\Entity\User\Developer $developer
+     * @param \App\Entity\User\Developer $developer
      *
      * @return Commit
      */
-    public function addDeveloper(\AgencyDesk\DBBundle\Entity\User\Developer $developer)
+    public function addDeveloper(\App\Entity\User\Developer $developer)
     {
         $this->developer[] = $developer;
 
@@ -255,9 +256,9 @@ class Commit
     /**
      * Remove developer
      *
-     * @param \AgencyDesk\DBBundle\Entity\User\Developer $developer
+     * @param \App\Entity\User\Developer $developer
      */
-    public function removeDeveloper(\AgencyDesk\DBBundle\Entity\User\Developer $developer)
+    public function removeDeveloper(\App\Entity\User\Developer $developer)
     {
         $this->developer->removeElement($developer);
     }
@@ -275,11 +276,11 @@ class Commit
     /**
      * Set project
      *
-     * @param \AgencyDesk\DBBundle\Entity\Project\Project $project
+     * @param \App\Entity\Project\Project $project
      *
      * @return Commit
      */
-    public function setProject(\AgencyDesk\DBBundle\Entity\Project\Project $project = null)
+    public function setProject(\App\Entity\Project\Project $project = null)
     {
         $this->project = $project;
 
@@ -289,7 +290,7 @@ class Commit
     /**
      * Get project
      *
-     * @return \AgencyDesk\DBBundle\Entity\Project\Project
+     * @return \App\Entity\Project\Project
      */
     public function getProject()
     {
@@ -299,11 +300,11 @@ class Commit
     /**
      * Set developer
      *
-     * @param \AgencyDesk\DBBundle\Entity\User\Developer $developer
+     * @param \App\Entity\User\Developer $developer
      *
      * @return Commit
      */
-    public function setDeveloper(\AgencyDesk\DBBundle\Entity\User\Developer $developer = null)
+    public function setDeveloper(\App\Entity\User\Developer $developer = null)
     {
         $this->developer = $developer;
 
@@ -313,11 +314,11 @@ class Commit
     /**
      * Set task
      *
-     * @param \AgencyDesk\DBBundle\Entity\Project\Task $task
+     * @param \App\Entity\Project\Task $task
      *
      * @return Commit
      */
-    public function setTask(\AgencyDesk\DBBundle\Entity\Project\Task $task = null)
+    public function setTask(\App\Entity\Project\Task $task = null)
     {
         $this->task = $task;
 
@@ -327,7 +328,7 @@ class Commit
     /**
      * Get task
      *
-     * @return \AgencyDesk\DBBundle\Entity\Project\Task
+     * @return \App\Entity\Project\Task
      */
     public function getTask()
     {

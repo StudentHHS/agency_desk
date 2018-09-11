@@ -1,15 +1,16 @@
 <?php
 
-namespace AgencyDesk\DBBundle\Entity\Product;
+namespace App\Entity\Product;
 
-use AgencyDesk\DBBundle\Entity\System\Country;
-use AgencyDesk\DBBundle\Entity\User\Customer;
+use App\Entity\System\Country;
+use App\Entity\User\Customer;
+use DateTime;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
- * AgencyDesk\DBBundle\Entity\User\Address
+ * App\Entity\User\Address
  *
  * @ORM\Table(name="domain")
  * @ORM\Entity
@@ -27,7 +28,7 @@ class Domain {
     /**
      * @var Customer $customer
      *
-     * @ORM\ManyToOne(targetEntity="AgencyDesk\DBBundle\Entity\User\Customer")
+     * @ORM\ManyToOne(targetEntity="App\Entity\User\Customer")
      * @ORM\JoinColumn(name="customer_id", referencedColumnName="id", onDelete="cascade")
      */
     protected $customer;
@@ -42,7 +43,7 @@ class Domain {
     /**
      * @var Customer $tld
      *
-     * @ORM\ManyToOne(targetEntity="AgencyDesk\DBBundle\Entity\Product\Product")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Product\Product")
      * @ORM\JoinColumn(name="product_id", referencedColumnName="id", onDelete="cascade")
      */
     protected $product;
@@ -50,7 +51,7 @@ class Domain {
     /**
      * @var DomainState $state
      *
-     * @ORM\ManyToOne(targetEntity="AgencyDesk\DBBundle\Entity\Product\DomainState")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Product\DomainState")
      * @ORM\JoinColumn(name="state_id", referencedColumnName="id", onDelete="cascade")
      */
     protected $state;
@@ -100,7 +101,7 @@ class Domain {
     /**
      * @var Country $country
      *
-     * @ORM\ManyToOne(targetEntity="AgencyDesk\DBBundle\Entity\System\Country")
+     * @ORM\ManyToOne(targetEntity="App\Entity\System\Country")
      * @ORM\JoinColumn(name="country_id", referencedColumnName="id", onDelete="cascade")
      */
     protected $country;
@@ -127,7 +128,7 @@ class Domain {
 	protected $active = false;
 
     /**
-     * @ORM\OneToMany(targetEntity="AgencyDesk\DBBundle\Entity\Project\Project", mappedBy="customer", cascade={"persist", "remove"}, orphanRemoval=true)
+     * @ORM\OneToMany(targetEntity="App\Entity\Project\Project", mappedBy="customer", cascade={"persist", "remove"}, orphanRemoval=true)
      * @ORM\OrderBy({"sequence" = "ASC"})
      * @var \Doctrine\Common\Collections\Collection $blocks
      */
@@ -446,10 +447,10 @@ class Domain {
     /**
      * Set customer
      *
-     * @param \AgencyDesk\DBBundle\Entity\User\Customer $customer
+     * @param \App\Entity\User\Customer $customer
      * @return Domain
      */
-    public function setCustomer(\AgencyDesk\DBBundle\Entity\User\Customer $customer = null)
+    public function setCustomer(\App\Entity\User\Customer $customer = null)
     {
         $this->customer = $customer;
     
@@ -459,7 +460,7 @@ class Domain {
     /**
      * Get customer
      *
-     * @return \AgencyDesk\DBBundle\Entity\User\Customer 
+     * @return \App\Entity\User\Customer
      */
     public function getCustomer()
     {
@@ -469,10 +470,10 @@ class Domain {
     /**
      * Set product
      *
-     * @param \AgencyDesk\DBBundle\Entity\Product\Product $product
+     * @param \App\Entity\Product\Product $product
      * @return Domain
      */
-    public function setProduct(\AgencyDesk\DBBundle\Entity\Product\Product $product = null)
+    public function setProduct(\App\Entity\Product\Product $product = null)
     {
         $this->product = $product;
     
@@ -482,7 +483,7 @@ class Domain {
     /**
      * Get product
      *
-     * @return \AgencyDesk\DBBundle\Entity\Product\Product 
+     * @return \App\Entity\Product\Product
      */
     public function getProduct()
     {
@@ -492,10 +493,10 @@ class Domain {
     /**
      * Set state
      *
-     * @param \AgencyDesk\DBBundle\Entity\Product\DomainState $state
+     * @param \App\Entity\Product\DomainState $state
      * @return Domain
      */
-    public function setState(\AgencyDesk\DBBundle\Entity\Product\DomainState $state = null)
+    public function setState(\App\Entity\Product\DomainState $state = null)
     {
         $this->state = $state;
     
@@ -505,7 +506,7 @@ class Domain {
     /**
      * Get state
      *
-     * @return \AgencyDesk\DBBundle\Entity\Product\DomainState 
+     * @return \App\Entity\Product\DomainState
      */
     public function getState()
     {
@@ -515,10 +516,10 @@ class Domain {
     /**
      * Set country
      *
-     * @param \AgencyDesk\DBBundle\Entity\System\Country $country
+     * @param \App\Entity\System\Country $country
      * @return Domain
      */
-    public function setCountry(\AgencyDesk\DBBundle\Entity\System\Country $country = null)
+    public function setCountry(\App\Entity\System\Country $country = null)
     {
         $this->country = $country;
     
@@ -528,7 +529,7 @@ class Domain {
     /**
      * Get country
      *
-     * @return \AgencyDesk\DBBundle\Entity\System\Country 
+     * @return \App\Entity\System\Country
      */
     public function getCountry()
     {
@@ -538,10 +539,10 @@ class Domain {
     /**
      * Add projects
      *
-     * @param \AgencyDesk\DBBundle\Entity\Project\Project $projects
+     * @param \App\Entity\Project\Project $projects
      * @return Domain
      */
-    public function addProject(\AgencyDesk\DBBundle\Entity\Project\Project $projects)
+    public function addProject(\App\Entity\Project\Project $projects)
     {
         $this->projects[] = $projects;
     
@@ -551,9 +552,9 @@ class Domain {
     /**
      * Remove projects
      *
-     * @param \AgencyDesk\DBBundle\Entity\Project\Project $projects
+     * @param \App\Entity\Project\Project $projects
      */
-    public function removeProject(\AgencyDesk\DBBundle\Entity\Project\Project $projects)
+    public function removeProject(\App\Entity\Project\Project $projects)
     {
         $this->projects->removeElement($projects);
     }

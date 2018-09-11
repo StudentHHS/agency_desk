@@ -1,7 +1,9 @@
 <?php
 
-namespace AgencyDesk\DBBundle\Entity\Documentation;
+namespace App\Entity\Documentation;
 
+use App\Entity\User\Developer;
+use DateTime;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 
@@ -50,7 +52,7 @@ class Documentation
     /**
      * @var Developer $developer
      *
-     * @ORM\ManyToOne(targetEntity="AgencyDesk\DBBundle\Entity\User\Developer", inversedBy="Documentation")
+     * @ORM\ManyToOne(targetEntity="App\Entity\User\Developer", inversedBy="Documentation")
      * @ORM\JoinColumn(name="developer_id", referencedColumnName="id", nullable=false)
      */
     protected $developer;
@@ -58,7 +60,7 @@ class Documentation
     /**
      * @var Developer $subject
      *
-     * @ORM\ManyToOne(targetEntity="AgencyDesk\DBBundle\Entity\Documentation\Subject", inversedBy="Documentation")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Documentation\Subject", inversedBy="Documentation")
      * @ORM\JoinColumn(name="subject_id", referencedColumnName="id", nullable=false)
      */
     protected $subject;
@@ -187,11 +189,11 @@ class Documentation
     /**
      * Set createdBy
      *
-     * @param \AgencyDesk\DBBundle\Entity\User\Developer $createdBy
+     * @param \App\Entity\User\Developer $createdBy
      *
      * @return Documentation
      */
-    public function setCreatedBy(\AgencyDesk\DBBundle\Entity\User\Developer $createdBy = null)
+    public function setCreatedBy(\App\Entity\User\Developer $createdBy = null)
     {
         $this->created_by = $createdBy;
 
@@ -201,7 +203,7 @@ class Documentation
     /**
      * Get createdBy
      *
-     * @return \AgencyDesk\DBBundle\Entity\User\Developer
+     * @return \App\Entity\User\Developer
      */
     public function getCreatedBy()
     {
@@ -259,11 +261,11 @@ class Documentation
     /**
      * Set developer
      *
-     * @param \AgencyDesk\DBBundle\Entity\User\Developer $developer
+     * @param \App\Entity\User\Developer $developer
      *
      * @return Documentation
      */
-    public function setDeveloper(\AgencyDesk\DBBundle\Entity\User\Developer $developer = null)
+    public function setDeveloper(\App\Entity\User\Developer $developer = null)
     {
         $this->developer = $developer;
 
@@ -273,7 +275,7 @@ class Documentation
     /**
      * Get developer
      *
-     * @return \AgencyDesk\DBBundle\Entity\User\Developer
+     * @return \App\Entity\User\Developer
      */
     public function getDeveloper()
     {
@@ -283,11 +285,11 @@ class Documentation
     /**
      * Set subject
      *
-     * @param \AgencyDesk\DBBundle\Entity\Documentation\Subject $subject
+     * @param \App\Entity\Documentation\Subject $subject
      *
      * @return Documentation
      */
-    public function setSubject(\AgencyDesk\DBBundle\Entity\Documentation\Subject $subject = null)
+    public function setSubject(\App\Entity\Documentation\Subject $subject = null)
     {
         $this->subject = $subject;
 
@@ -297,7 +299,7 @@ class Documentation
     /**
      * Get subject
      *
-     * @return \AgencyDesk\DBBundle\Entity\Documentation\Subject
+     * @return \App\Entity\Documentation\Subject
      */
     public function getSubject()
     {

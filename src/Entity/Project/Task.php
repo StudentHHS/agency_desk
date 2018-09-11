@@ -1,15 +1,16 @@
 <?php
 
-namespace AgencyDesk\DBBundle\Entity\Project;
+namespace App\Entity\Project;
 
-use AgencyDesk\DBBundle\Entity\Relation\TaskDeveloper;
-use AgencyDesk\DBBundle\Entity\Project\Tag;
+use App\Entity\Relation\TaskDeveloper;
+use App\Entity\Project\Tag;
+use DateTime;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 use Doctrine\Common\Collections\ArrayCollection;
 
 /**
- * AgencyDesk\DBBundle\Entity\Project\Task
+ * App\Entity\Project\Task
  *
  * @ORM\Table(name = "task")
  * @ORM\Entity(repositoryClass="Gedmo\Sortable\Entity\Repository\SortableRepository")
@@ -81,7 +82,7 @@ class Task
      * @var Tag $tag
      *
      * @Gedmo\SortableGroup
-     * @ORM\ManyToOne(targetEntity="AgencyDesk\DBBundle\Entity\Project\Tag", fetch="EAGER")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Project\Tag", fetch="EAGER")
      * @ORM\JoinColumn(name="tag_id", referencedColumnName="id", nullable=true)
      */
     protected $tag;
@@ -102,13 +103,13 @@ class Task
     protected $vivifyId;
 
     /**
-     * @ORM\OneToMany(targetEntity="AgencyDesk\DBBundle\Entity\Relation\TaskDeveloper", mappedBy="task", cascade={"persist","remove"})
+     * @ORM\OneToMany(targetEntity="App\Entity\Relation\TaskDeveloper", mappedBy="task", cascade={"persist","remove"})
      */
     protected $td;
     private $developers;
 
     /**
-     * @ORM\OneToMany(targetEntity="AgencyDesk\DBBundle\Entity\Relation\TaskDeveloper", mappedBy="task", cascade={"persist","remove"})
+     * @ORM\OneToMany(targetEntity="App\Entity\Relation\TaskDeveloper", mappedBy="task", cascade={"persist","remove"})
      */
     protected $tr;
     private $reviewers;
@@ -116,7 +117,7 @@ class Task
     /**
      * @var Project $project
      *
-     * @ORM\ManyToOne(targetEntity="AgencyDesk\DBBundle\Entity\Project\Project", fetch="EAGER")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Project\Project", fetch="EAGER")
      * @ORM\JoinColumn(name="project", referencedColumnName="id")
      */
     protected $project;
@@ -219,9 +220,9 @@ class Task
     /**
      * Remove reviewers
      *
-     * @param \AgencyDesk\DBBundle\Entity\Relation\TaskDeveloper $developers
+     * @param \App\Entity\Relation\TaskDeveloper $developers
      */
-    public function removeReviewer(\AgencyDesk\DBBundle\Entity\Relation\TaskDeveloper $developers)
+    public function removeReviewer(\App\Entity\Relation\TaskDeveloper $developers)
     {
         $this->developers->removeElement($developers);
     }
@@ -263,9 +264,9 @@ class Task
     /**
      * Remove developers
      *
-     * @param \AgencyDesk\DBBundle\Entity\Relation\TaskDeveloper $developers
+     * @param \App\Entity\Relation\TaskDeveloper $developers
      */
-    public function removeDeveloper(\AgencyDesk\DBBundle\Entity\Relation\TaskDeveloper $developers)
+    public function removeDeveloper(\App\Entity\Relation\TaskDeveloper $developers)
     {
         $this->developers->removeElement($developers);
     }
@@ -547,11 +548,11 @@ class Task
     /**
      * Set tag
      *
-     * @param \AgencyDesk\DBBundle\Entity\Project\Tag $tag
+     * @param \App\Entity\Project\Tag $tag
      *
      * @return Task
      */
-    public function setTag(\AgencyDesk\DBBundle\Entity\Project\Tag $tag = null)
+    public function setTag(\App\Entity\Project\Tag $tag = null)
     {
         $this->tag = $tag;
 
@@ -561,7 +562,7 @@ class Task
     /**
      * Get tag
      *
-     * @return \AgencyDesk\DBBundle\Entity\Project\Tag
+     * @return \App\Entity\Project\Tag
      */
     public function getTag()
     {
@@ -571,9 +572,9 @@ class Task
     /**
      * Remove td
      *
-     * @param \AgencyDesk\DBBundle\Entity\Relation\TaskDeveloper $td
+     * @param \App\Entity\Relation\TaskDeveloper $td
      */
-    public function removeTd(\AgencyDesk\DBBundle\Entity\Relation\TaskDeveloper $td)
+    public function removeTd(\App\Entity\Relation\TaskDeveloper $td)
     {
         $this->td->removeElement($td);
     }
@@ -581,11 +582,11 @@ class Task
     /**
      * Set project
      *
-     * @param \AgencyDesk\DBBundle\Entity\Project\Project $project
+     * @param \App\Entity\Project\Project $project
      *
      * @return Task
      */
-    public function setProject(\AgencyDesk\DBBundle\Entity\Project\Project $project = null)
+    public function setProject(\App\Entity\Project\Project $project = null)
     {
         $this->project = $project;
 
@@ -595,7 +596,7 @@ class Task
     /**
      * Get project
      *
-     * @return \AgencyDesk\DBBundle\Entity\Project\Project
+     * @return \App\Entity\Project\Project
      */
     public function getProject()
     {
@@ -605,9 +606,9 @@ class Task
     /**
      * Remove tr
      *
-     * @param \AgencyDesk\DBBundle\Entity\Relation\TaskDeveloper $tr
+     * @param \App\Entity\Relation\TaskDeveloper $tr
      */
-    public function removeTr(\AgencyDesk\DBBundle\Entity\Relation\TaskDeveloper $tr)
+    public function removeTr(\App\Entity\Relation\TaskDeveloper $tr)
     {
         $this->tr->removeElement($tr);
     }

@@ -1,15 +1,16 @@
 <?php
 
-namespace AgencyDesk\DBBundle\Entity\Vault;
+namespace App\Entity\Vault;
 
-use AgencyDesk\DBBundle\Entity\System\LegalForm;
+use App\Entity\System\LegalForm;
+use App\Entity\User\Customer;
+use DateTime;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 use Gedmo\Mapping\Annotation as Gedmo;
-use Ambta\DoctrineEncryptBundle\Configuration\Encrypted;
 
 /**
- * AgencyDesk\DBBundle\Entity\Vault\Server
+ * App\Entity\Vault\Server
  *
  * @ORM\Table(name = "vault_servers")
  * @ORM\Entity
@@ -27,7 +28,7 @@ class Server
 
     /**
      * @var string $title
-     * @Encrypted
+     *
      *
      * @ORM\Column(name="title", type="string", length=255)
      */
@@ -36,14 +37,14 @@ class Server
     /**
      * @var Customer $customer
      *
-     * @ORM\ManyToOne(targetEntity="AgencyDesk\DBBundle\Entity\User\Customer", inversedBy="servers")
+     * @ORM\ManyToOne(targetEntity="App\Entity\User\Customer", inversedBy="servers")
      * @ORM\JoinColumn(name="customer_id", referencedColumnName="id", nullable=true)
      */
     protected $customer;
 
     /**
      * @var string $server
-     * @Encrypted
+     *
      *
      * @ORM\Column(name="server", type="string", length=255)
      */
@@ -51,7 +52,7 @@ class Server
 
     /**
      * @var string $user
-     * @Encrypted
+     *
      *
      * @ORM\Column(name="user", type="string", length=255)
      */
@@ -61,13 +62,13 @@ class Server
      * @var string $password
      *
      * @ORM\Column(name="password", type="string", length=255)
-     * @Encrypted
+     *
      */
     protected $password;
 
     /**
      * @var string $userDa
-     * @Encrypted
+     *
      *
      * @ORM\Column(name="user_da", type="string", length=255)
      */
@@ -77,13 +78,13 @@ class Server
      * @var string $passwordDa
      *
      * @ORM\Column(name="password_da", type="string", length=255)
-     * @Encrypted
+     *
      */
     protected $passwordDa;
 
     /**
      * @var string $userSql
-     * @Encrypted
+     *
      *
      * @ORM\Column(name="user_sql", type="string", length=255)
      */
@@ -93,7 +94,7 @@ class Server
      * @var string $passwordSql
      *
      * @ORM\Column(name="password_sql", type="string", length=255)
-     * @Encrypted
+     *
      */
     protected $passwordSql;
 
@@ -227,11 +228,11 @@ class Server
     /**
      * Set customer
      *
-     * @param \AgencyDesk\DBBundle\Entity\User\Customer $customer
+     * @param \App\Entity\User\Customer $customer
      *
      * @return Servers
      */
-    public function setCustomer(\AgencyDesk\DBBundle\Entity\User\Customer $customer = null)
+    public function setCustomer(\App\Entity\User\Customer $customer = null)
     {
         $this->customer = $customer;
 
@@ -241,7 +242,7 @@ class Server
     /**
      * Get customer
      *
-     * @return \AgencyDesk\DBBundle\Entity\User\Customer
+     * @return \App\Entity\User\Customer
      */
     public function getCustomer()
     {

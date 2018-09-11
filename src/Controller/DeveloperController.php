@@ -8,7 +8,6 @@
 
 namespace App\Controller;
 
-
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -18,16 +17,13 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 
 #<!-- wanneer je een normale controller extend -->
 #use Symfony\Bundle\FrameworkExtraBundle\Controller\Controller;
-
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
-
 use App\Entity\Developer;
 
 class DeveloperController extends AbstractController
 {
-
     /**
      * @Route("/admin/developer", name="index_developer")
      * @Template
@@ -35,10 +31,8 @@ class DeveloperController extends AbstractController
     public function index()
     {
         $developers = $this->getDoctrine()->getRepository(Developer::class)->findAll();
-
         return ['developers' => $developers];
     }
-
 
     /**
      * @Route("/admin/developer/create", name="create_developer")
@@ -48,7 +42,6 @@ class DeveloperController extends AbstractController
     public function create(Request $request)
     {
         $developer = new Developer();
-
         $form = $this->createFormBuilder($developer)
             ->add('name', TextareaType::class,
                 array('required' => false, 'attr' => array('class' => 'form-control')))
@@ -60,23 +53,16 @@ class DeveloperController extends AbstractController
                 'attr' => array('class' => 'btn btn-primary mt-3')
             ))
             ->getForm();
-
         $form->handleRequest($request);
-
         if ($form->isSubmitted() && $form->isValid()) {
             $developer = $form->getData();
-
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($developer);
             $entityManager->flush();
-
             return $this->redirectToRoute('index_developer');
         }
-
-
         return ['form' => $form->createView()];
     }
-
 
     /**
      * @Route("/admin/developer/edit/{id}", name="edit_developer")
@@ -87,7 +73,6 @@ class DeveloperController extends AbstractController
     {
         $developer = new Developer();
         $developer = $this->getDoctrine()->getRepository(Developer::class)->find($id);
-
         $form = $this->createFormBuilder($developer)
             ->add('name', TextareaType::class,
                 array('required' => false, 'attr' => array('class' => 'form-control')))
@@ -99,17 +84,12 @@ class DeveloperController extends AbstractController
                 'attr' => array('class' => 'btn btn-primary mt-3')
             ))
             ->getForm();
-
         $form->handleRequest($request);
-
         if ($form->isSubmitted() && $form->isValid()) {
-
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->flush();
-
             return $this->redirectToRoute('index_developer');
         }
-
         return ['form' => $form->createView()];
     }
 
@@ -120,7 +100,6 @@ class DeveloperController extends AbstractController
     public function show($id)
     {
         $developer = $this->getDoctrine()->getRepository(Developer::class)->find($id);
-
         return ['developer' => $developer];
     }
 
@@ -132,14 +111,10 @@ class DeveloperController extends AbstractController
     public function delete(Request $request, $id)
     {
         $developer = $this->getDoctrine()->getRepository(Developer::class)->find($id);
-
         $entityManager = $this->getDoctrine()->getManager();
         $entityManager->remove($developer);
         $entityManager->flush();
-
         $response = new Response();
         $response->send();
     }
-
-
 }

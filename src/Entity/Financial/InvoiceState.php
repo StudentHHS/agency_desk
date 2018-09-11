@@ -1,15 +1,16 @@
 <?php
 
-namespace AgencyDesk\DBBundle\Entity\Financial;
+namespace App\Entity\Financial;
 
-use AgencyDesk\DBBundle\Entity\System\Country;
-use AgencyDesk\DBBundle\Entity\User\Customer;
+use App\Entity\System\Country;
+use App\Entity\User\Customer;
+use DateTime;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
- * AgencyDesk\DBBundle\Entity\Financial\InvoiceState
+ * App\Entity\Financial\InvoiceState
  *
  * @ORM\Table(name="invoice_state")
  * @ORM\Entity

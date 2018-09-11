@@ -1,7 +1,8 @@
 <?php
 
-namespace AgencyDesk\DBBundle\Entity\Phonebook;
+namespace App\Entity\Phonebook;
 
+use DateTime;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 
@@ -36,7 +37,7 @@ class PhoneBook
     protected $slug;
 
     /**
-     * @ORM\OneToMany(targetEntity="\AgencyDesk\DBBundle\Entity\Phonebook\PhoneRecord", mappedBy="phonebook", cascade={"persist"})
+     * @ORM\OneToMany(targetEntity="\App\Entity\Phonebook\PhoneRecord", mappedBy="phonebook", cascade={"persist"})
      * @ORM\OrderBy({"id" = "DESC"})
      * @var \Doctrine\Common\Collections\Collection $records
      */
@@ -150,11 +151,11 @@ class PhoneBook
     /**
      * Add record
      *
-     * @param \AgencyDesk\DBBundle\Entity\Phonebook\PhoneRecord $record
+     * @param \App\Entity\Phonebook\PhoneRecord $record
      *
      * @return PhoneBook
      */
-    public function addRecord(\AgencyDesk\DBBundle\Entity\Phonebook\PhoneRecord $record)
+    public function addRecord(\App\Entity\Phonebook\PhoneRecord $record)
     {
         $this->records[] = $record;
 
@@ -164,9 +165,9 @@ class PhoneBook
     /**
      * Remove record
      *
-     * @param \AgencyDesk\DBBundle\Entity\Phonebook\PhoneRecord $record
+     * @param \App\Entity\Phonebook\PhoneRecord $record
      */
-    public function removeRecord(\AgencyDesk\DBBundle\Entity\Phonebook\PhoneRecord $record)
+    public function removeRecord(\App\Entity\Phonebook\PhoneRecord $record)
     {
         $this->records->removeElement($record);
     }

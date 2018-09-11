@@ -1,14 +1,15 @@
 <?php
 
-namespace AgencyDesk\DBBundle\Entity\User;
+namespace App\Entity\User;
 
-use AgencyDesk\DBBundle\Entity\System\Country;
+use App\Entity\System\Country;
+use DateTime;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
- * AgencyDesk\DBBundle\Entity\User\AddressType
+ * App\Entity\User\AddressType
  *
  * @ORM\Table(name = "address_type")
  * @ORM\Entity

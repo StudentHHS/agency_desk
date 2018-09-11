@@ -1,8 +1,9 @@
 <?php
 
-namespace AgencyDesk\DBBundle\Entity\Financial;
+namespace App\Entity\Financial;
 
-use AgencyDesk\DBBundle\Entity\User\Customer;
+use App\Entity\User\Customer;
+use DateTime;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 
@@ -26,7 +27,7 @@ class CreditCard
     /**
      * @var Customer $customer
      *
-     * @ORM\ManyToOne(targetEntity="AgencyDesk\DBBundle\Entity\User\Customer", inversedBy="creditcards")
+     * @ORM\ManyToOne(targetEntity="App\Entity\User\Customer", inversedBy="creditcards")
      * @ORM\JoinColumn(name="customer_id", referencedColumnName="id", onDelete="cascade")
      */
     protected $customer;
@@ -46,7 +47,7 @@ class CreditCard
     private $startCredit = 0;
 
     /**
-     * @ORM\OneToMany(targetEntity="AgencyDesk\DBBundle\Entity\Financial\Transaction", mappedBy="creditCard")
+     * @ORM\OneToMany(targetEntity="App\Entity\Financial\Transaction", mappedBy="creditCard")
      */
     protected $transactions;
 
@@ -151,11 +152,11 @@ class CreditCard
     /**
      * Set customer
      *
-     * @param \AgencyDesk\DBBundle\Entity\User\Customer $customer
+     * @param \App\Entity\User\Customer $customer
      *
      * @return CreditCard
      */
-    public function setCustomer(\AgencyDesk\DBBundle\Entity\User\Customer $customer = null)
+    public function setCustomer(\App\Entity\User\Customer $customer = null)
     {
         $this->customer = $customer;
 
@@ -165,7 +166,7 @@ class CreditCard
     /**
      * Get customer
      *
-     * @return \AgencyDesk\DBBundle\Entity\User\Customer
+     * @return \App\Entity\User\Customer
      */
     public function getCustomer()
     {
@@ -182,11 +183,11 @@ class CreditCard
     /**
      * Add transaction
      *
-     * @param \AgencyDesk\DBBundle\Entity\Financial\Transaction $transaction
+     * @param \App\Entity\Financial\Transaction $transaction
      *
      * @return CreditCard
      */
-    public function addTransaction(\AgencyDesk\DBBundle\Entity\Financial\Transaction $transaction)
+    public function addTransaction(\App\Entity\Financial\Transaction $transaction)
     {
         $this->transactions[] = $transaction;
 
@@ -196,9 +197,9 @@ class CreditCard
     /**
      * Remove transaction
      *
-     * @param \AgencyDesk\DBBundle\Entity\Financial\Transaction $transaction
+     * @param \App\Entity\Financial\Transaction $transaction
      */
-    public function removeTransaction(\AgencyDesk\DBBundle\Entity\Financial\Transaction $transaction)
+    public function removeTransaction(\App\Entity\Financial\Transaction $transaction)
     {
         $this->transactions->removeElement($transaction);
     }

@@ -1,7 +1,8 @@
 <?php
 
-namespace AgencyDesk\DBBundle\Entity\Financial;
+namespace App\Entity\Financial;
 
+use DateTime;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 

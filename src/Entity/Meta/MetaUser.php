@@ -1,15 +1,16 @@
 <?php
-namespace AgencyDesk\DBBundle\Entity\Meta;
+namespace App\Entity\Meta;
 
-use AgencyDesk\DBBundle\Entity\System\ExternalSystem;
-use AgencyDesk\DBBundle\Entity\User\User;
+use App\Entity\System\ExternalSystem;
+use App\Entity\User\User;
+use DateTime;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\Role;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
- * AgencyDesk\DBBundle\Entity\Meta\MetaUser
+ * App\Entity\Meta\MetaUser
  *
  * @ORM\Table(name = "meta__user")
  * @ORM\Entity
@@ -27,7 +28,7 @@ class MetaUser{
     /**
      * @var User $user
      *
-     * @ORM\ManyToOne(targetEntity="AgencyDesk\DBBundle\Entity\User\User")
+     * @ORM\ManyToOne(targetEntity="App\Entity\User\User")
      * @ORM\JoinColumn(name="user_id", referencedColumnName="id", onDelete="cascade")
      */
     protected $user;
@@ -35,7 +36,7 @@ class MetaUser{
     /**
      * @var ExternalSystem $system
      *
-     * @ORM\ManyToOne(targetEntity="AgencyDesk\DBBundle\Entity\System\ExternalSystem")
+     * @ORM\ManyToOne(targetEntity="App\Entity\System\ExternalSystem")
      * @ORM\JoinColumn(name="system_id", referencedColumnName="id", onDelete="cascade")
      */
     protected $system;
@@ -144,7 +145,7 @@ class MetaUser{
     /**
      * Get created
      *
-     * @return \DateTime
+     * @return datetime
      */
     public function getCreated()
     {
@@ -167,7 +168,7 @@ class MetaUser{
     /**
      * Get updated
      *
-     * @return \DateTime
+     * @return datetime
      */
     public function getUpdated()
     {
@@ -177,10 +178,10 @@ class MetaUser{
     /**
      * Set user
      *
-     * @param \AgencyDesk\DBBundle\Entity\User\User $user
+     * @param \App\Entity\User\User $user
      * @return MetaUser
      */
-    public function setUser(\AgencyDesk\DBBundle\Entity\User\User $user = null)
+    public function setUser(\App\Entity\User\User $user = null)
     {
         $this->user = $user;
 
@@ -190,7 +191,7 @@ class MetaUser{
     /**
      * Get user
      *
-     * @return \AgencyDesk\DBBundle\Entity\User\User
+     * @return \App\Entity\User\User
      */
     public function getUser()
     {
@@ -200,10 +201,10 @@ class MetaUser{
     /**
      * Set system
      *
-     * @param \AgencyDesk\DBBundle\Entity\System\ExternalSystem $system
+     * @param \App\Entity\System\ExternalSystem $system
      * @return MetaUser
      */
-    public function setSystem(\AgencyDesk\DBBundle\Entity\System\ExternalSystem $system = null)
+    public function setSystem(\App\Entity\System\ExternalSystem $system = null)
     {
         $this->system = $system;
 
@@ -213,7 +214,7 @@ class MetaUser{
     /**
      * Get system
      *
-     * @return \AgencyDesk\DBBundle\Entity\System\ExternalSystem
+     * @return \App\Entity\System\ExternalSystem
      */
     public function getSystem()
     {

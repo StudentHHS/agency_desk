@@ -1,13 +1,14 @@
 <?php
 
-namespace AgencyDesk\DBBundle\Entity\User;
+namespace App\Entity\User;
 
+use DateTime;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
-use AgencyDesk\DBBundle\Entity\User\Customer;
+use agency_desk\src\Entity\User\Customer;
 
 /**
- * AgencyDesk\DBBundle\Entity\User\Employee
+ * @ORM\Entity(repositoryClass="App\Repository\AdminRepository")
  *
  * @ORM\Table(name = "link__customer_user")
  * @ORM\Entity
@@ -25,7 +26,7 @@ class Employee {
     /**
      * @var Customer $customer
      *
-     * @ORM\ManyToOne(targetEntity="AgencyDesk\DBBundle\Entity\User\Customer")
+     * @ORM\ManyToOne(targetEntity="\App\Entity\User\Customer")
      * @ORM\JoinColumn(name="customer_id", referencedColumnName="id")
      */
     protected $customer;
@@ -33,7 +34,7 @@ class Employee {
     /**
      * @var User $user
      *
-     * @ORM\ManyToOne(targetEntity="AgencyDesk\DBBundle\Entity\User\User", inversedBy="employees" )
+     * @ORM\ManyToOne(targetEntity="\App\Entity\User\User", inversedBy="employees" )
      * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
      */
     protected $user;
@@ -67,7 +68,7 @@ class Employee {
     /**
      * Set Customer
      *
-     * @param \AgencyDesk\DBBundle\Entity\User\Customer $customer
+     * @param \App\Entity\User\Customer $customer
      * @return Employee
      */
     public function setCustomer(Customer $customer = null)
@@ -80,7 +81,7 @@ class Employee {
     /**
      * Get Customer
      *
-     * @return \AgencyDesk\DBBundle\Entity\User\Customer
+     * @return \App\Entity\User\Customer
      */
     public function getCustomer()
     {
@@ -90,7 +91,7 @@ class Employee {
     /**
      * Set User
      *
-     * @param \AgencyDesk\DBBundle\Entity\User\User $user
+     * @param \App\Entity\User\User $user
      * @return Employee
      */
     public function setUser(User $user = null)
@@ -103,7 +104,7 @@ class Employee {
     /**
      * Get User
      *
-     * @return \AgencyDesk\DBBundle\Entity\User\User
+     * @return \App\Entity\User\User
      */
     public function getUser()
     {

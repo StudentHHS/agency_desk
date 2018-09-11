@@ -1,14 +1,15 @@
 <?php
 
-namespace AgencyDesk\DBBundle\Entity\User;
+namespace App\Entity\User;
 
-use AgencyDesk\DBBundle\Entity\Project\Project;
+use App\Entity\Project\Project;
+use DateTime;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
-use AgencyDesk\DBBundle\Entity\User\Customer;
+use App\Entity\User\Customer;
 
 /**
- * AgencyDesk\DBBundle\Entity\User\CustomerAddress
+ * App\Entity\User\CustomerAddress
  *
  * @ORM\Table(name = "customer_address")
  * @ORM\Entity
@@ -26,7 +27,7 @@ class CustomerAddress {
     /**
      * @var AddressType $type
      *
-     * @ORM\ManyToOne(targetEntity="AgencyDesk\DBBundle\Entity\User\AddressType")
+     * @ORM\ManyToOne(targetEntity="App\Entity\User\AddressType")
      * @ORM\JoinColumn(name="address_type_id", referencedColumnName="id")
      */
     protected $type;
@@ -34,7 +35,7 @@ class CustomerAddress {
     /**
      * @var Customer $customer
      *
-     * @ORM\ManyToOne(targetEntity="AgencyDesk\DBBundle\Entity\User\Customer")
+     * @ORM\ManyToOne(targetEntity="App\Entity\User\Customer")
      * @ORM\JoinColumn(name="customer_id", referencedColumnName="id")
      */
     protected $customer;
@@ -42,7 +43,7 @@ class CustomerAddress {
     /**
      * @var Address $address
      *
-     * @ORM\ManyToOne(targetEntity="AgencyDesk\DBBundle\Entity\User\Address")
+     * @ORM\ManyToOne(targetEntity="App\Entity\User\Address")
      * @ORM\JoinColumn(name="address_id", referencedColumnName="id")
      */
     protected $address;
@@ -123,10 +124,10 @@ class CustomerAddress {
     /**
      * Set type
      *
-     * @param \AgencyDesk\DBBundle\Entity\User\AddressType $type
+     * @param \App\Entity\User\AddressType $type
      * @return CustomerAddress
      */
-    public function setType(\AgencyDesk\DBBundle\Entity\User\AddressType $type = null)
+    public function setType(\App\Entity\User\AddressType $type = null)
     {
         $this->type = $type;
 
@@ -136,7 +137,7 @@ class CustomerAddress {
     /**
      * Get type
      *
-     * @return \AgencyDesk\DBBundle\Entity\User\AddressType
+     * @return \App\Entity\User\AddressType
      */
     public function getType()
     {
@@ -146,10 +147,10 @@ class CustomerAddress {
     /**
      * Set customer
      *
-     * @param \AgencyDesk\DBBundle\Entity\User\Customer $customer
+     * @param \App\Entity\User\Customer $customer
      * @return CustomerAddress
      */
-    public function setCustomer(\AgencyDesk\DBBundle\Entity\User\Customer $customer = null)
+    public function setCustomer(\App\Entity\User\Customer $customer = null)
     {
         $this->customer = $customer;
 
@@ -159,7 +160,7 @@ class CustomerAddress {
     /**
      * Get customer
      *
-     * @return \AgencyDesk\DBBundle\Entity\User\Customer
+     * @return \App\Entity\User\Customer
      */
     public function getCustomer()
     {
@@ -169,10 +170,10 @@ class CustomerAddress {
     /**
      * Set address
      *
-     * @param \AgencyDesk\DBBundle\Entity\User\Address $address
+     * @param \App\Entity\User\Address $address
      * @return CustomerAddress
      */
-    public function setAddress(\AgencyDesk\DBBundle\Entity\User\Address $address = null)
+    public function setAddress(\App\Entity\User\Address $address = null)
     {
         $this->address = $address;
 
@@ -182,7 +183,7 @@ class CustomerAddress {
     /**
      * Get address
      *
-     * @return \AgencyDesk\DBBundle\Entity\User\Address
+     * @return \App\Entity\User\Address
      */
     public function getAddress()
     {

@@ -1,5 +1,5 @@
 <?php
-namespace AgencyDesk\DBBundle\Entity\Project;
+namespace App\Entity\Project;
 
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
@@ -7,7 +7,7 @@ use \DateTime;
 
 
 /**
- * AgencyDesk\DBBundle\Entity\Project\ChecklistItem
+ * App\Entity\Project\ChecklistItem
  *
  * @ORM\Table(name = "checklist_item")
  * @ORM\Entity()
@@ -26,7 +26,7 @@ class ChecklistItem
     /**
      * @var Checklist $checklist
      *
-     * @ORM\ManyToOne(targetEntity="AgencyDesk\DBBundle\Entity\Project\Checklist", fetch="EAGER")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Project\Checklist", fetch="EAGER")
      * @ORM\JoinColumn(name="checklist", referencedColumnName="id")
      */
     protected $checklist;
@@ -51,11 +51,11 @@ class ChecklistItem
     /**
      * Set checklist
      *
-     * @param \AgencyDesk\DBBundle\Entity\Project\Checklist $checklist
+     * @param \App\Entity\Project\Checklist $checklist
      *
      * @return ChecklistItem
      */
-    public function setChecklist(\AgencyDesk\DBBundle\Entity\Project\Checklist $checklist = null)
+    public function setChecklist(\App\Entity\Project\Checklist $checklist = null)
     {
         $this->checklist = $checklist;
 
@@ -65,7 +65,7 @@ class ChecklistItem
     /**
      * Get checklist
      *
-     * @return \AgencyDesk\DBBundle\Entity\Project\Checklist
+     * @return \App\Entity\Project\Checklist
      */
     public function getChecklist()
     {

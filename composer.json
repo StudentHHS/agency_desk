@@ -14,10 +14,10 @@
         "symfony/flex": "^1.1",
         "symfony/form": "*",
         "symfony/framework-bundle": "*",
-        "symfony/maker-bundle": "^1.7",
         "symfony/orm-pack": "^1.0",
         "symfony/security": "*",
         "symfony/twig-bundle": "*",
+        "symfony/validator": "*",
         "symfony/web-server-bundle": "*",
         "symfony/yaml": "*"
     },
@@ -25,6 +25,7 @@
         "easycorp/easy-log-handler": "^1.0.7",
         "symfony/debug-bundle": "^3.3|^4.0",
         "symfony/dotenv": "*",
+        "symfony/maker-bundle": "^1.7",
         "symfony/monolog-bundle": "^3.0",
         "symfony/profiler-pack": "^1.0",
         "symfony/var-dumper": "^3.3|^4.0"

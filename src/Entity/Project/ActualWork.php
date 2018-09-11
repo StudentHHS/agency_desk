@@ -1,19 +1,19 @@
 <?php
-namespace AgencyDesk\DBBundle\Entity\Project;
+namespace App\Entity\Project;
 
-use AgencyDesk\DBBundle\Entity\Financial\CreditCard;
-use AgencyDesk\DBBundle\Entity\Financial\Invoice;
-use AgencyDesk\DBBundle\Entity\User\User;
+use App\Entity\Financial\CreditCard;
+use App\Entity\Financial\Invoice;
+use App\Entity\User\User;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 use \DateTime;
 
 
 /**
- * AgencyDesk\DBBundle\Entity\Project\ActualWork
+ * App\Entity\Project\ActualWork
  *
  * @ORM\Table(name = "actual_work")
- * @ORM\Entity(repositoryClass="AgencyDesk\DBBundle\Repository\Project\ActualWorkRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\Project\ActualWorkRepository")
  */
 class ActualWork {
     /**
@@ -28,7 +28,7 @@ class ActualWork {
     /**
      * @var User $developer
      *
-     * @ORM\ManyToOne(targetEntity="AgencyDesk\DBBundle\Entity\User\Developer", fetch="EAGER")
+     * @ORM\ManyToOne(targetEntity="App\Entity\User\Developer", fetch="EAGER")
      * @ORM\JoinColumn(name="developer", referencedColumnName="id")
      */
     protected $developer;
@@ -36,7 +36,7 @@ class ActualWork {
     /**
      * @var CreditCard $creditCard
      *
-     * @ORM\ManyToOne(targetEntity="AgencyDesk\DBBundle\Entity\Financial\CreditCard", cascade={"persist"})
+     * @ORM\ManyToOne(targetEntity="App\Entity\Financial\CreditCard", cascade={"persist"})
      * @ORM\JoinColumn(name="credit_card_id", referencedColumnName="id", onDelete="NO ACTION", nullable=true)
      */
     protected $creditCard;
@@ -44,7 +44,7 @@ class ActualWork {
     /**
      * @var Invoice $invoice
      *
-     * @ORM\ManyToOne(targetEntity="AgencyDesk\DBBundle\Entity\Financial\Invoice", inversedBy="actualWork", cascade={"persist"})
+     * @ORM\ManyToOne(targetEntity="App\Entity\Financial\Invoice", inversedBy="actualWork", cascade={"persist"})
      * @ORM\JoinColumn(name="invoice_id", referencedColumnName="id", onDelete="NO ACTION", nullable=true)
      */
     protected $invoice;
@@ -52,7 +52,7 @@ class ActualWork {
     /**
      * @var Task $task
      *
-     * @ORM\ManyToOne(targetEntity="AgencyDesk\DBBundle\Entity\Project\Task", fetch="EAGER")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Project\Task", fetch="EAGER")
      * @ORM\JoinColumn(name="task", referencedColumnName="id")
      */
     protected $task;
@@ -154,10 +154,10 @@ class ActualWork {
     /**
      * Set Task
      *
-     * @param \AgencyDesk\DBBundle\Entity\Project\Task $task
+     * @param \App\Entity\Project\Task $task
      * @return ActualWork
      */
-    public function setTask(\AgencyDesk\DBBundle\Entity\Project\Task $task = null)
+    public function setTask(\App\Entity\Project\Task $task = null)
     {
         $this->task = $task;
 
@@ -167,7 +167,7 @@ class ActualWork {
     /**
      * Get Task
      *
-     * @return \AgencyDesk\DBBundle\Entity\Project\Task
+     * @return \App\Entity\Project\Task
      */
     public function getTask()
     {
@@ -177,10 +177,10 @@ class ActualWork {
     /**
      * Set developer
      *
-     * @param \AgencyDesk\DBBundle\Entity\User\Developer $developer
+     * @param \App\Entity\User\Developer $developer
      * @return ActualWork
      */
-    public function setDeveloper(\AgencyDesk\DBBundle\Entity\User\Developer $developer = null)
+    public function setDeveloper(\App\Entity\User\Developer $developer = null)
     {
         $this->developer = $developer;
 
@@ -190,7 +190,7 @@ class ActualWork {
     /**
      * Get developer
      *
-     * @return \AgencyDesk\DBBundle\Entity\User\Developer
+     * @return \App\Entity\User\Developer
      */
     public function getDeveloper()
     {
@@ -200,11 +200,11 @@ class ActualWork {
     /**
      * Set creditCard
      *
-     * @param \AgencyDesk\DBBundle\Entity\Financial\CreditCard $creditCard
+     * @param \App\Entity\Financial\CreditCard $creditCard
      *
      * @return ActualWork
      */
-    public function setCreditCard(\AgencyDesk\DBBundle\Entity\Financial\CreditCard $creditCard = null)
+    public function setCreditCard(\App\Entity\Financial\CreditCard $creditCard = null)
     {
         $this->creditCard = $creditCard;
     
@@ -214,7 +214,7 @@ class ActualWork {
     /**
      * Get creditCard
      *
-     * @return \AgencyDesk\DBBundle\Entity\Financial\CreditCard
+     * @return \App\Entity\Financial\CreditCard
      */
     public function getCreditCard()
     {
@@ -224,11 +224,11 @@ class ActualWork {
     /**
      * Set invoice
      *
-     * @param \AgencyDesk\DBBundle\Entity\Financial\Invoice $invoice
+     * @param \App\Entity\Financial\Invoice $invoice
      *
      * @return ActualWork
      */
-    public function setInvoice(\AgencyDesk\DBBundle\Entity\Financial\Invoice $invoice = null)
+    public function setInvoice(\App\Entity\Financial\Invoice $invoice = null)
     {
         $this->invoice = $invoice;
 
@@ -238,7 +238,7 @@ class ActualWork {
     /**
      * Get invoice
      *
-     * @return \AgencyDesk\DBBundle\Entity\Financial\Invoice
+     * @return \App\Entity\Financial\Invoice
      */
     public function getInvoice()
     {

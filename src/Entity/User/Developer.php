@@ -1,6 +1,7 @@
 <?php
-namespace AgencyDesk\DBBundle\Entity\User;
+namespace App\Entity\User;
 
+use DateTime;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\Role;
 use Symfony\Component\Security\Core\User\UserInterface;
@@ -8,7 +9,7 @@ use Gedmo\Mapping\Annotation as Gedmo;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * AgencyDesk\DBBundle\Entity\User\Developer
+ * App\Entity\User\Developer
  *
  * @ORM\Table(name = "developer")
  * @ORM\Entity

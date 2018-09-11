@@ -1,14 +1,15 @@
 <?php
 
-namespace AgencyDesk\DBBundle\Entity\User;
+namespace App\Entity\User;
 
-use AgencyDesk\DBBundle\Entity\Project\Project;
+use App\Entity\Project\Project;
+use DateTime;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
-use AgencyDesk\DBBundle\Entity\User\Customer;
+use App\Entity\User\Customer;
 
 /**
- * AgencyDesk\DBBundle\Entity\User\CustomerProject
+ * App\Entity\User\CustomerProject
  *
  * @ORM\Table(name = "customer_project")
  * @ORM\Entity
@@ -26,7 +27,7 @@ class CustomerProject {
     /**
      * @var Customer $customer
      *
-     * @ORM\ManyToOne(targetEntity="AgencyDesk\DBBundle\Entity\User\Customer")
+     * @ORM\ManyToOne(targetEntity="App\Entity\User\Customer")
      * @ORM\JoinColumn(name="customer_id", referencedColumnName="id")
      */
     protected $customer;
@@ -34,7 +35,7 @@ class CustomerProject {
     /**
      * @var Project $Project
      *
-     * @ORM\ManyToOne(targetEntity="AgencyDesk\DBBundle\Entity\Project\Project")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Project\Project")
      * @ORM\JoinColumn(name="project_id", referencedColumnName="id")
      */
     protected $project;
@@ -68,10 +69,10 @@ class CustomerProject {
     /**
      * Set Customer
      *
-     * @param \AgencyDesk\DBBundle\Entity\User\Customer $customer
+     * @param \App\Entity\User\Customer $customer
      * @return CustomerProject
      */
-    public function setCustomer(\AgencyDesk\DBBundle\Entity\User\Customer $customer = null)
+    public function setCustomer(\App\Entity\User\Customer $customer = null)
     {
         $this->customer = $customer;
 
@@ -81,7 +82,7 @@ class CustomerProject {
     /**
      * Get Customer
      *
-     * @return \AgencyDesk\DBBundle\Entity\User\Customer
+     * @return \App\Entity\User\Customer
      */
     public function getCustomer()
     {
@@ -91,10 +92,10 @@ class CustomerProject {
     /**
      * Set Project
      *
-     * @param \AgencyDesk\DBBundle\Entity\Project\Project $project
+     * @param \App\Entity\Project\Project $project
      * @return CustomerProject
      */
-    public function setProject(\AgencyDesk\DBBundle\Entity\Project\Project $project = null)
+    public function setProject(\App\Entity\Project\Project $project = null)
     {
         $this->project = $project;
 
@@ -104,7 +105,7 @@ class CustomerProject {
     /**
      * Get Project
      *
-     * @return \AgencyDesk\DBBundle\Entity\Project\Project
+     * @return \App\Entity\Project\Project
      */
     public function getProject()
     {

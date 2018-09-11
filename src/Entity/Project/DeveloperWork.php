@@ -1,11 +1,12 @@
 <?php
-namespace AgencyDesk\DBBundle\Entity\Project;
+namespace App\Entity\Project;
 
+use App\Entity\User\Developer;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
- * AgencyDesk\DBBundle\Entity\Project\DeveloperWork
+ * App\Entity\Project\DeveloperWork
  *
  * @ORM\Table(name = "developer_work")
  * @ORM\Entity
@@ -23,7 +24,7 @@ class DeveloperWork {
     /**
      * @var ActualWork $ActualWork
      *
-     * @ORM\ManyToOne(targetEntity="AgencyDesk\DBBundle\Entity\Project\ActualWork", fetch="EAGER")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Project\ActualWork", fetch="EAGER")
      * @ORM\JoinColumn(name="actualwork_id", referencedColumnName="id")
      */
     protected $ActualWork;
@@ -31,7 +32,7 @@ class DeveloperWork {
     /**
      * @var Developer $Developer
      *
-     * @ORM\ManyToOne(targetEntity="AgencyDesk\DBBundle\Entity\User\Developer", fetch="EAGER")
+     * @ORM\ManyToOne(targetEntity="App\Entity\User\Developer", fetch="EAGER")
      * @ORM\JoinColumn(name="developer_id", referencedColumnName="id")
      */
     protected $Developer;
@@ -49,10 +50,10 @@ class DeveloperWork {
     /**
      * Set ActualWork
      *
-     * @param \AgencyDesk\DBBundle\Entity\Project\ActualWork $actualWork
+     * @param \App\Entity\Project\ActualWork $actualWork
      * @return DeveloperWork
      */
-    public function setActualWork(\AgencyDesk\DBBundle\Entity\Project\ActualWork $actualWork = null)
+    public function setActualWork(\App\Entity\Project\ActualWork $actualWork = null)
     {
         $this->ActualWork = $actualWork;
 
@@ -62,7 +63,7 @@ class DeveloperWork {
     /**
      * Get ActualWork
      *
-     * @return \AgencyDesk\DBBundle\Entity\Project\ActualWork
+     * @return \App\Entity\Project\ActualWork
      */
     public function getActualWork()
     {
@@ -72,10 +73,10 @@ class DeveloperWork {
     /**
      * Set Developer
      *
-     * @param \AgencyDesk\DBBundle\Entity\User\Developer $developer
+     * @param \App\Entity\User\Developer $developer
      * @return DeveloperWork
      */
-    public function setDeveloper(\AgencyDesk\DBBundle\Entity\User\Developer $developer = null)
+    public function setDeveloper(\App\Entity\User\Developer $developer = null)
     {
         $this->Developer = $developer;
 
@@ -85,7 +86,7 @@ class DeveloperWork {
     /**
      * Get Developer
      *
-     * @return \AgencyDesk\DBBundle\Entity\User\Developer
+     * @return \App\Entity\User\Developer
      */
     public function getDeveloper()
     {

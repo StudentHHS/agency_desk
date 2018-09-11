@@ -9,39 +9,27 @@
 namespace App\Controller;
 
 use App\Entity\Client;
-
 use function PHPSTORM_META\type;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
-
 use Symfony\Component\Routing\Annotation\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
-
-
 class AdminController extends AbstractController
 {
-
-
     /**
-     *@Route("/admin", name="admin_page")
+     * @Route("/admin", name="admin_page")
      */
     public function index()
     {
-        $klanten= $this->getDoctrine()->getRepository(Client::class)->findAll();
-
+        $klanten = $this->getDoctrine()->getRepository(Client::class)->findAll();
         return $this->render('admin/admin.html.twig', array
-        ('klanten'=>$klanten));
-
+        ('klanten' => $klanten));
     }
-
-
 //    /**
 //     * @Route("/admin/save")
 //     */
@@ -57,7 +45,6 @@ class AdminController extends AbstractController
 //
 //        return new Response('Saves the client with an id of '.$client->getId());
 //    }
-
 //    /**
 //     * @Route("/admin/new", name="new_client")
 //     * @Method({"GET", "POST"})
@@ -88,7 +75,6 @@ class AdminController extends AbstractController
 //    /**
 //     * @Route("/admin/{id}", name="show_client")
 //     */
-
 //    public function show($id)
 //    {
 //        $klant = $this->getDoctrine()->getRepository(Client::class)->find($id);

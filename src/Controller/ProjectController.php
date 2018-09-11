@@ -8,7 +8,6 @@
 
 namespace App\Controller;
 
-
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -18,16 +17,13 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 
 #<!-- wanneer je een normale controller extend -->
 #use Symfony\Bundle\FrameworkExtraBundle\Controller\Controller;
-
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
-
 use App\Entity\Project;
 
 class ProjectController extends AbstractController
 {
-
     /**
      * @Route("/admin/project", name="index_project")
      * @Template
@@ -35,10 +31,8 @@ class ProjectController extends AbstractController
     public function index()
     {
         $projecten = $this->getDoctrine()->getRepository(Project::class)->findAll();
-
         return ['projecten' => $projecten];
     }
-
 
     /**
      * @Route("/admin/project/create", name="create_project")
@@ -48,7 +42,6 @@ class ProjectController extends AbstractController
     public function create(Request $request)
     {
         $project = new Project();
-
         $form = $this->createFormBuilder($project)
             ->add('name', TextareaType::class,
                 array('required' => false, 'attr' => array('class' => 'form-control')))
@@ -60,23 +53,16 @@ class ProjectController extends AbstractController
                 'attr' => array('class' => 'btn btn-primary mt-3')
             ))
             ->getForm();
-
         $form->handleRequest($request);
-
         if ($form->isSubmitted() && $form->isValid()) {
             $project = $form->getData();
-
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($project);
             $entityManager->flush();
-
             return $this->redirectToRoute('index_project');
         }
-
-
         return ['form' => $form->createView()];
     }
-
 
     /**
      * @Route("/admin/project/edit/{id}", name="edit_project")
@@ -87,7 +73,6 @@ class ProjectController extends AbstractController
     {
         $project = new Project();
         $project = $this->getDoctrine()->getRepository(Project::class)->find($id);
-
         $form = $this->createFormBuilder($project)
             ->add('name', TextareaType::class,
                 array('required' => false, 'attr' => array('class' => 'form-control')))
@@ -99,17 +84,12 @@ class ProjectController extends AbstractController
                 'attr' => array('class' => 'btn btn-primary mt-3')
             ))
             ->getForm();
-
         $form->handleRequest($request);
-
         if ($form->isSubmitted() && $form->isValid()) {
-
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->flush();
-
             return $this->redirectToRoute('index_project');
         }
-
         return ['form' => $form->createView()];
     }
 
@@ -120,7 +100,6 @@ class ProjectController extends AbstractController
     public function show($id)
     {
         $project = $this->getDoctrine()->getRepository(Project::class)->find($id);
-
         return ['project' => $project];
     }
 
@@ -132,14 +111,10 @@ class ProjectController extends AbstractController
     public function delete(Request $request, $id)
     {
         $project = $this->getDoctrine()->getRepository(Project::class)->find($id);
-
         $entityManager = $this->getDoctrine()->getManager();
         $entityManager->remove($project);
         $entityManager->flush();
-
         $response = new Response();
         $response->send();
     }
-
-
 }

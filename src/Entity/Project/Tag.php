@@ -1,14 +1,15 @@
 <?php
 
-namespace AgencyDesk\DBBundle\Entity\Project;
+namespace App\Entity\Project;
 
-use AgencyDesk\DBBundle\Entity\Relation\TaskDeveloper;
+use App\Entity\Relation\TaskDeveloper;
+use DateTime;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 use Doctrine\Common\Collections\ArrayCollection;
 
 /**
- * AgencyDesk\DBBundle\Entity\Project\Tag
+ * App\Entity\Project\Tag
  *
  * @ORM\Table(name = "tag")
  * @ORM\Entity

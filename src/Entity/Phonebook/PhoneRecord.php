@@ -1,8 +1,9 @@
 <?php
 
-namespace AgencyDesk\DBBundle\Entity\Phonebook;
+namespace App\Entity\Phonebook;
 
-use AgencyDesk\DBBundle\Entity\User\Customer;
+use App\Entity\User\Customer;
+use DateTime;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 
@@ -26,7 +27,7 @@ class PhoneRecord
     /**
      * @var PhoneBook $phonebook
      *
-     * @ORM\ManyToOne(targetEntity="AgencyDesk\DBBundle\Entity\Phonebook\PhoneBook", inversedBy="phonebook", cascade={"persist"})
+     * @ORM\ManyToOne(targetEntity="App\Entity\Phonebook\PhoneBook", inversedBy="phonebook", cascade={"persist"})
      * @ORM\JoinColumn(name="phonebook_id", referencedColumnName="id", onDelete="NO ACTION")
      */
     protected $phonebook;
@@ -34,7 +35,7 @@ class PhoneRecord
     /**
      * @var Customer $customer
      *
-     * @ORM\ManyToOne(targetEntity="AgencyDesk\DBBundle\Entity\User\Customer", cascade={"persist"})
+     * @ORM\ManyToOne(targetEntity="App\Entity\User\Customer", cascade={"persist"})
      * @ORM\JoinColumn(name="customer_id", referencedColumnName="id", onDelete="NO ACTION")
      */
     protected $customer;
@@ -116,11 +117,11 @@ class PhoneRecord
     /**
      * Set phonebook
      *
-     * @param \AgencyDesk\DBBundle\Entity\Phonebook\PhoneBook $phonebook
+     * @param \App\Entity\Phonebook\PhoneBook $phonebook
      *
      * @return PhoneRecord
      */
-    public function setPhonebook(\AgencyDesk\DBBundle\Entity\Phonebook\PhoneBook $phonebook = null)
+    public function setPhonebook(\App\Entity\Phonebook\PhoneBook $phonebook = null)
     {
         $this->phonebook = $phonebook;
 
@@ -130,7 +131,7 @@ class PhoneRecord
     /**
      * Get phonebook
      *
-     * @return \AgencyDesk\DBBundle\Entity\Phonebook\PhoneBook
+     * @return \App\Entity\Phonebook\PhoneBook
      */
     public function getPhonebook()
     {
@@ -140,11 +141,11 @@ class PhoneRecord
     /**
      * Set customer
      *
-     * @param \AgencyDesk\DBBundle\Entity\User\Customer $customer
+     * @param \App\Entity\User\Customer $customer
      *
      * @return PhoneRecord
      */
-    public function setCustomer(\AgencyDesk\DBBundle\Entity\User\Customer $customer = null)
+    public function setCustomer(\App\Entity\User\Customer $customer = null)
     {
         $this->customer = $customer;
 
@@ -154,7 +155,7 @@ class PhoneRecord
     /**
      * Get customer
      *
-     * @return \AgencyDesk\DBBundle\Entity\User\Customer
+     * @return \App\Entity\User\Customer
      */
     public function getCustomer()
     {

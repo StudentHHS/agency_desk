@@ -1,8 +1,9 @@
 <?php
 
-namespace AgencyDesk\DBBundle\Entity\Financial;
+namespace App\Entity\Financial;
 
-use AgencyDesk\DBBundle\Entity\System\VatTariff;
+use App\Entity\System\VatTariff;
+use DateTime;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 
@@ -26,7 +27,7 @@ class InvoiceLine
     /**
      * @var Invoice $invoice
      *
-     * @ORM\ManyToOne(targetEntity="AgencyDesk\DBBundle\Entity\Financial\Invoice")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Financial\Invoice")
      * @ORM\JoinColumn(name="invoice_id", referencedColumnName="id", onDelete="cascade")
      */
     protected $invoice;
@@ -55,7 +56,7 @@ class InvoiceLine
     /**
      * @var VatTariff $vatTariff
      *
-     * @ORM\ManyToOne(targetEntity="AgencyDesk\DBBundle\Entity\System\VatTariff")
+     * @ORM\ManyToOne(targetEntity="App\Entity\System\VatTariff")
      * @ORM\JoinColumn(name="vat_tariff_id", referencedColumnName="id", onDelete="cascade")
      */
     protected $vatTariff;
@@ -171,7 +172,7 @@ class InvoiceLine
     /**
      * Get created
      *
-     * @return \DateTime 
+     * @return datetime
      */
     public function getCreated()
     {
@@ -194,7 +195,7 @@ class InvoiceLine
     /**
      * Get updated
      *
-     * @return \DateTime 
+     * @return datetime
      */
     public function getUpdated()
     {
@@ -204,10 +205,10 @@ class InvoiceLine
     /**
      * Set invoice
      *
-     * @param \AgencyDesk\DBBundle\Entity\Financial\Invoice $invoice
+     * @param \App\Entity\Financial\Invoice $invoice
      * @return InvoiceLine
      */
-    public function setInvoice(\AgencyDesk\DBBundle\Entity\Financial\Invoice $invoice = null)
+    public function setInvoice(\App\Entity\Financial\Invoice $invoice = null)
     {
         $this->invoice = $invoice;
     
@@ -217,7 +218,7 @@ class InvoiceLine
     /**
      * Get invoice
      *
-     * @return \AgencyDesk\DBBundle\Entity\Financial\Invoice 
+     * @return \App\Entity\Financial\Invoice
      */
     public function getInvoice()
     {
@@ -227,10 +228,10 @@ class InvoiceLine
     /**
      * Set vatTariff
      *
-     * @param \AgencyDesk\DBBundle\Entity\System\VatTariff $vatTariff
+     * @param \App\Entity\System\VatTariff $vatTariff
      * @return InvoiceLine
      */
-    public function setVatTariff(\AgencyDesk\DBBundle\Entity\System\VatTariff $vatTariff = null)
+    public function setVatTariff(\App\Entity\System\VatTariff $vatTariff = null)
     {
         $this->vatTariff = $vatTariff;
     
@@ -240,7 +241,7 @@ class InvoiceLine
     /**
      * Get vatTariff
      *
-     * @return \AgencyDesk\DBBundle\Entity\System\VatTariff 
+     * @return \App\Entity\System\VatTariff
      */
     public function getVatTariff()
     {

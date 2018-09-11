@@ -1,12 +1,15 @@
 <?php
 
-namespace AgencyDesk\DBBundle\Entity\Project;
+namespace App\Entity\Project;
 
+use App\Entity\User\Customer;
+use DateTime;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
+use Symfony\Component\Security\Core\User\User;
 
 /**
- * AgencyDesk\DBBundle\Entity\Project\Project
+ * App\Entity\Project\Project
  *
  * @ORM\Table(name = "project")
  * @ORM\Entity
@@ -25,7 +28,7 @@ class Project
     /**
      * @var Customer $customer
      *
-     * @ORM\ManyToOne(targetEntity="AgencyDesk\DBBundle\Entity\User\Customer", inversedBy="projects")
+     * @ORM\ManyToOne(targetEntity="App\Entity\User\Customer", inversedBy="projects")
      * @ORM\JoinColumn(name="customer_id", referencedColumnName="id", nullable=true)
      */
     protected $customer;
@@ -68,7 +71,7 @@ class Project
     /**
      * @var User $user
      *
-     * @ORM\ManyToOne(targetEntity="AgencyDesk\DBBundle\Entity\User\User", fetch="EAGER")
+     * @ORM\ManyToOne(targetEntity="App\Entity\User\User", fetch="EAGER")
      * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
      */
     protected $user;
@@ -76,13 +79,13 @@ class Project
     /**
      * @var User $accounts
      *
-     * @ORM\ManyToOne(targetEntity="AgencyDesk\DBBundle\Entity\Project\Accounts", fetch="EAGER")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Project\Accounts", fetch="EAGER")
      * @ORM\JoinColumn(name="account_id", referencedColumnName="id")
      */
     protected $accounts;
 
     /**
-     * @ORM\OneToMany(targetEntity="\AgencyDesk\DBBundle\Entity\Project\ReleaseCandidate", mappedBy="project", cascade={"persist"})
+     * @ORM\OneToMany(targetEntity="\App\Entity\Project\ReleaseCandidate", mappedBy="project", cascade={"persist"})
      * @ORM\OrderBy({"scheduled_release_date" = "DESC"})
      * @var \Doctrine\Common\Collections\Collection $releaseCandidates
      */
@@ -324,11 +327,11 @@ class Project
     /**
      * Set customer
      *
-     * @param \AgencyDesk\DBBundle\Entity\User\Customer $customer
+     * @param \App\Entity\User\Customer $customer
      *
      * @return Project
      */
-    public function setCustomer(\AgencyDesk\DBBundle\Entity\User\Customer $customer = null)
+    public function setCustomer(\App\Entity\User\Customer $customer = null)
     {
         $this->customer = $customer;
 
@@ -338,7 +341,7 @@ class Project
     /**
      * Get customer
      *
-     * @return \AgencyDesk\DBBundle\Entity\User\Customer
+     * @return \App\Entity\User\Customer
      */
     public function getCustomer()
     {
@@ -348,11 +351,11 @@ class Project
     /**
      * Set user
      *
-     * @param \AgencyDesk\DBBundle\Entity\User\User $user
+     * @param \App\Entity\User\User $user
      *
      * @return Project
      */
-    public function setUser(\AgencyDesk\DBBundle\Entity\User\User $user = null)
+    public function setUser(\App\Entity\User\User $user = null)
     {
         $this->user = $user;
 
@@ -362,7 +365,7 @@ class Project
     /**
      * Get user
      *
-     * @return \AgencyDesk\DBBundle\Entity\User\User
+     * @return \App\Entity\User\User
      */
     public function getUser()
     {
@@ -372,11 +375,11 @@ class Project
     /**
      * Set accounts
      *
-     * @param \AgencyDesk\DBBundle\Entity\Project\Accounts $accounts
+     * @param \App\Entity\Project\Accounts $accounts
      *
      * @return Project
      */
-    public function setAccounts(\AgencyDesk\DBBundle\Entity\Project\Accounts $accounts = null)
+    public function setAccounts(\App\Entity\Project\Accounts $accounts = null)
     {
         $this->accounts = $accounts;
 
@@ -386,7 +389,7 @@ class Project
     /**
      * Get accounts
      *
-     * @return \AgencyDesk\DBBundle\Entity\Project\Accounts
+     * @return \App\Entity\Project\Accounts
      */
     public function getAccounts()
     {
@@ -396,11 +399,11 @@ class Project
     /**
      * Add releaseCandidate
      *
-     * @param \AgencyDesk\DBBundle\Entity\Project\ReleaseCandidate $releaseCandidate
+     * @param \App\Entity\Project\ReleaseCandidate $releaseCandidate
      *
      * @return Project
      */
-    public function addReleaseCandidate(\AgencyDesk\DBBundle\Entity\Project\ReleaseCandidate $releaseCandidate)
+    public function addReleaseCandidate(\App\Entity\Project\ReleaseCandidate $releaseCandidate)
     {
         $this->releaseCandidates[] = $releaseCandidate;
 
@@ -410,9 +413,9 @@ class Project
     /**
      * Remove releaseCandidate
      *
-     * @param \AgencyDesk\DBBundle\Entity\Project\ReleaseCandidate $releaseCandidate
+     * @param \App\Entity\Project\ReleaseCandidate $releaseCandidate
      */
-    public function removeReleaseCandidate(\AgencyDesk\DBBundle\Entity\Project\ReleaseCandidate $releaseCandidate)
+    public function removeReleaseCandidate(\App\Entity\Project\ReleaseCandidate $releaseCandidate)
     {
         $this->releaseCandidates->removeElement($releaseCandidate);
     }

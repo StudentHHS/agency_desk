@@ -1,14 +1,15 @@
 <?php
 
-namespace AgencyDesk\DBBundle\Entity\User;
+namespace App\Entity\User;
 
-use AgencyDesk\DBBundle\Entity\System\LegalForm;
+use App\Entity\System\LegalForm;
+use DateTime;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
- * AgencyDesk\DBBundle\Entity\User\Customer
+ * App\Entity\User\Customer
  *
  * @ORM\Table(name = "customer")
  * @ORM\Entity
@@ -101,7 +102,7 @@ class Customer {
     /**
      * @var AddressType $type
      *
-     * @ORM\ManyToOne(targetEntity="AgencyDesk\DBBundle\Entity\User\AddressType")
+     * @ORM\ManyToOne(targetEntity="App\Entity\User\AddressType")
      * @ORM\JoinColumn(name="type", referencedColumnName="id", nullable=true)
      */
     protected $type;
@@ -109,7 +110,7 @@ class Customer {
     /**
      * @var LegalForm $legalForm
      *
-     * @ORM\ManyToOne(targetEntity="AgencyDesk\DBBundle\Entity\System\LegalForm")
+     * @ORM\ManyToOne(targetEntity="App\Entity\System\LegalForm")
      * @ORM\JoinColumn(name="legal_form_id", referencedColumnName="id", onDelete="cascade")
      */
     protected $legalForm;
@@ -131,7 +132,7 @@ class Customer {
     /**
      * @var User $owner
      *
-     * @ORM\ManyToOne(targetEntity="AgencyDesk\DBBundle\Entity\User\User")
+     * @ORM\ManyToOne(targetEntity="App\Entity\User\User")
      * @ORM\JoinColumn(name="user_id", referencedColumnName="id", nullable=true)
      */
     protected $owner;
@@ -144,12 +145,12 @@ class Customer {
     protected $active = false;
 
     /**
-     * @ORM\OneToMany(targetEntity="AgencyDesk\DBBundle\Entity\Financial\CreditCard", mappedBy="customer", cascade={"persist", "remove"}, orphanRemoval=true)
+     * @ORM\OneToMany(targetEntity="App\Entity\Financial\CreditCard", mappedBy="customer", cascade={"persist", "remove"}, orphanRemoval=true)
      */
     private $creditcards;
 
     /**
-     * @ORM\OneToMany(targetEntity="AgencyDesk\DBBundle\Entity\Project\Project", mappedBy="customer", cascade={"persist", "remove"}, orphanRemoval=true)
+     * @ORM\OneToMany(targetEntity="App\Entity\Project\Project", mappedBy="customer", cascade={"persist", "remove"}, orphanRemoval=true)
      * @ORM\OrderBy({"sequence" = "ASC"})
      */
     private $projects;
@@ -341,10 +342,10 @@ class Customer {
     /**
      * Set legalForm
      *
-     * @param \AgencyDesk\DBBundle\Entity\System\LegalForm $legalForm
+     * @param \App\Entity\System\LegalForm $legalForm
      * @return Customer
      */
-    public function setLegalForm(\AgencyDesk\DBBundle\Entity\System\LegalForm $legalForm = null)
+    public function setLegalForm(\App\Entity\System\LegalForm $legalForm = null)
     {
         $this->legalForm = $legalForm;
 
@@ -354,7 +355,7 @@ class Customer {
     /**
      * Get legalForm
      *
-     * @return \AgencyDesk\DBBundle\Entity\System\LegalForm
+     * @return \App\Entity\System\LegalForm
      */
     public function getLegalForm()
     {
@@ -364,10 +365,10 @@ class Customer {
     /**
      * Set owner
      *
-     * @param \AgencyDesk\DBBundle\Entity\User\User $owner
+     * @param \App\Entity\User\User $owner
      * @return Customer
      */
-    public function setOwner(\AgencyDesk\DBBundle\Entity\User\User $owner = null)
+    public function setOwner(\App\Entity\User\User $owner = null)
     {
         $this->owner = $owner;
 
@@ -377,7 +378,7 @@ class Customer {
     /**
      * Get owner
      *
-     * @return \AgencyDesk\DBBundle\Entity\User\User
+     * @return \App\Entity\User\User
      */
     public function getOwner()
     {
@@ -387,10 +388,10 @@ class Customer {
     /**
      * Add projects
      *
-     * @param \AgencyDesk\DBBundle\Entity\Project\Project $projects
+     * @param \App\Entity\Project\Project $projects
      * @return Customer
      */
-    public function addProject(\AgencyDesk\DBBundle\Entity\Project\Project $projects)
+    public function addProject(\App\Entity\Project\Project $projects)
     {
         $this->projects[] = $projects;
 
@@ -400,9 +401,9 @@ class Customer {
     /**
      * Remove projects
      *
-     * @param \AgencyDesk\DBBundle\Entity\Project\Project $projects
+     * @param \App\Entity\Project\Project $projects
      */
-    public function removeProject(\AgencyDesk\DBBundle\Entity\Project\Project $projects)
+    public function removeProject(\App\Entity\Project\Project $projects)
     {
         $this->projects->removeElement($projects);
     }
@@ -660,11 +661,11 @@ class Customer {
     /**
      * Set type
      *
-     * @param \AgencyDesk\DBBundle\Entity\User\AddressType $type
+     * @param \App\Entity\User\AddressType $type
      *
      * @return Customer
      */
-    public function setType(\AgencyDesk\DBBundle\Entity\User\AddressType $type = null)
+    public function setType(\App\Entity\User\AddressType $type = null)
     {
         $this->type = $type;
 
@@ -674,7 +675,7 @@ class Customer {
     /**
      * Get type
      *
-     * @return \AgencyDesk\DBBundle\Entity\User\AddressType
+     * @return \App\Entity\User\AddressType
      */
     public function getType()
     {
@@ -684,11 +685,11 @@ class Customer {
     /**
      * Add creditcard
      *
-     * @param \AgencyDesk\DBBundle\Entity\Financial\CreditCard $creditcard
+     * @param \App\Entity\Financial\CreditCard $creditcard
      *
      * @return Customer
      */
-    public function addCreditcard(\AgencyDesk\DBBundle\Entity\Financial\CreditCard $creditcard)
+    public function addCreditcard(\App\Entity\Financial\CreditCard $creditcard)
     {
         $this->creditcards[] = $creditcard;
 
@@ -698,9 +699,9 @@ class Customer {
     /**
      * Remove creditcard
      *
-     * @param \AgencyDesk\DBBundle\Entity\Financial\CreditCard $creditcard
+     * @param \App\Entity\Financial\CreditCard $creditcard
      */
-    public function removeCreditcard(\AgencyDesk\DBBundle\Entity\Financial\CreditCard $creditcard)
+    public function removeCreditcard(\App\Entity\Financial\CreditCard $creditcard)
     {
         $this->creditcards->removeElement($creditcard);
     }

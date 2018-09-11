@@ -93,7 +93,7 @@ class KlantController extends AbstractController
                 array('required' => false, 'attr' => array('class' => 'form-control')))
             ->add('function', TextareaType::class,
                 array('required' => false, 'attr' => array('class' => 'form-control')
-            ))
+                ))
             ->add('save', SubmitType::class, array(
                 'label' => 'Confirm',
                 'attr' => array('class' => 'btn btn-primary mt-3')

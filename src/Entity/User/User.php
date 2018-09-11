@@ -1,14 +1,14 @@
 <?php
-namespace AgencyDesk\DBBundle\Entity\User;
+namespace App\Entity\User;
 
+use DateTime;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\Role;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
- * AgencyDesk\DBBundle\Entity\User\User
- *
+ * @ORM\Entity(repositoryClass="App\Repository\AdminRepository")
  * @ORM\Table(name = "user")
  * @ORM\Entity
  */
@@ -112,7 +112,7 @@ class User implements UserInterface{
     protected $updated;
 
     /**
-     * @ORM\OneToMany(targetEntity="\AgencyDesk\DBBundle\Entity\User\Employee", mappedBy="user", cascade={"persist"})
+     * @ORM\OneToMany(targetEntity="\App\Entity\User\Employee", mappedBy="user", cascade={"persist"})
      * @var \Doctrine\Common\Collections\Collection $employees
      */
     protected $employees;
@@ -382,10 +382,10 @@ class User implements UserInterface{
     /**
      * Add employees
      *
-     * @param \AgencyDesk\DBBundle\Entity\User\Employee $employees
+     * @param \App\Entity\User\Employee $employees
      * @return User
      */
-    public function addEmployee(\AgencyDesk\DBBundle\Entity\User\Employee $employees)
+    public function addEmployee(\App\Entity\User\Employee $employees)
     {
         $this->employees[] = $employees;
 
@@ -395,9 +395,9 @@ class User implements UserInterface{
     /**
      * Remove employees
      *
-     * @param \AgencyDesk\DBBundle\Entity\User\Employee $employees
+     * @param \App\Entity\User\Employee $employees
      */
-    public function removeEmployee(\AgencyDesk\DBBundle\Entity\User\Employee $employees)
+    public function removeEmployee(\App\Entity\User\Employee $employees)
     {
         $this->employees->removeElement($employees);
     }

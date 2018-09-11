@@ -1,14 +1,15 @@
 <?php
 
-namespace AgencyDesk\DBBundle\Entity\Vault;
+namespace App\Entity\Vault;
 
-use AgencyDesk\DBBundle\Entity\System\LegalForm;
+use App\Entity\System\LegalForm;
+use DateTime;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
- * AgencyDesk\DBBundle\Entity\Vault\File
+ * App\Entity\Vault\File
  *
  * @ORM\Table(name = "vault_files")
  * @ORM\Entity

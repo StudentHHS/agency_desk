@@ -1,7 +1,8 @@
 <?php
 
-namespace AgencyDesk\DBBundle\Entity\Product;
+namespace App\Entity\Product;
 
+use DateTime;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 
