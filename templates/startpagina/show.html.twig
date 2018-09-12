@@ -1,6 +1,4 @@
-{% extends 'base.html.twig' %}
-
-{% block title %}Welcome!{% endblock %}
+{% block title %}{% endblock %}
 
 {% block stylesheets %}
     <!-- Google Fonts -->
@@ -46,12 +44,10 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#clients">Clients</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Login</a>
-                    </li>
+
                     <!--Link naar de admin pagina-->
                     <li class="nav-item">
-                        <a href="" class="btn btn-custom navbar-btn">Login (admin)</a>
+                        <a href="{{ path('admin_page') }}" class="btn btn-custom navbar-btn">Login (admin)</a>
                     </li>
                 </ul>
 

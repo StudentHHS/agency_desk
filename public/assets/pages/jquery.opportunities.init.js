@@ -1,5 +1,5 @@
 /**
-* Theme: Ubold Admin
+* Theme: Ubold Client
 * Author: Coderthemes
 * Page: opportunities
 */
