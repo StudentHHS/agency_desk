@@ -198,7 +198,7 @@ final class Version20180911145407 extends AbstractMigration
         $this->addSql('DROP TABLE task');
         $this->addSql('DROP TABLE link__task__developer');
         $this->addSql('DROP TABLE country');
-        $this->addSql('DROP TABLE external_system');
+        $this->addSql('DROP TABLE external_system'); 
         $this->addSql('DROP TABLE legal_form');
         $this->addSql('DROP TABLE vat_tariff');
         $this->addSql('DROP TABLE token');
