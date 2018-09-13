@@ -9,18 +9,15 @@ body {
   color: rgba($white,0.7);
   font-family: $font-primary;
   font-size: $font-size-priary;
-  padding-bottom: 60px;
 }
 html {
   position: relative;
   min-height: 100%;
   background: darken($dark,3%);
-
 }
 h1, h2, h3, h4, h5, h6 {
   margin: 10px 0;
   font-family: $font-secondary;
-  font-weight: 600;
 }
 
 

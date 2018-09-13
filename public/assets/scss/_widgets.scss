@@ -92,6 +92,7 @@
   -webkit-border-radius: 100%;
   border-radius: 100%;
   background-color: rgba($white,0.2);
+  display: inline-block;
   float: left;
   font-size: 30px;
   height: 60px;
@@ -182,6 +183,7 @@
     margin-bottom: 24px;
   }
   .chat-avatar {
+    display: inline-block;
     float: left;
     text-align: center;
     width: 40px;
@@ -228,6 +230,7 @@
     }
   }
   .conversation-text {
+    display: inline-block;
     float: left;
     font-size: 12px;
     margin-left: 12px;
@@ -278,7 +281,7 @@
     border-radius: 0;
     border: 0;
     margin: 0;
-    padding: 10px 5px;
+    padding: 10px 0;
     color: $muted;
     display: block;
     &:last-of-type {
@@ -287,7 +290,9 @@
   }
 }
 
+
 /* Chat app */
+
 .chat-app-list {
   padding: 0 20px;
 
