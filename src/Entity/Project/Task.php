@@ -98,8 +98,9 @@ class Task
     /**
      * @var integer $vivifyId
      *
-     * @ORM\Column(name="vivify_id", type="integer", nullable=true, unique=true)
+     * @ORM\Column(name="vivify_id", type="integer", nullable=true)
      */
+//, unique=true
     protected $vivifyId;
 
     /**
