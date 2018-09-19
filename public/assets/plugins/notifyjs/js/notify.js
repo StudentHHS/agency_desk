@@ -224,7 +224,7 @@
 	var getAnchorElement = function(element) {
 		var radios;
 		if (element.is('[type=radio]')) {
-			radios = element.parents('form:first').find('[type=radio]').filter(function(i, e) {
+			radios = element.parents('forms:first').find('[type=radio]').filter(function(i, e) {
 				return $(e).attr("name") === element.attr("name");
 			});
 			element = radios.first();

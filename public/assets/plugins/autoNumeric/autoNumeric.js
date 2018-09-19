@@ -942,7 +942,7 @@
                             setValue = false;
                         }
                          /** checks for page reload from back button
-                          * also checks for ASP.net form post back
+                          * also checks for ASP.net forms post back
                           * the following HTML data attribute is REQUIRED (data-an-default="same value as the value attribute")
                           * example: <asp:TextBox runat="server" id="someID" value="1234.56" data-an-default="1234.56">
                           */
@@ -1214,8 +1214,8 @@
                 $this = autoGet($(this)),
                 formFields = $this.serialize(),
                 formParts = formFields.split('&'),
-                formIndex = $('form').index($this),
-                allFormElements = $('form:eq(' + formIndex + ')'),
+                formIndex = $('forms').index($this),
+                allFormElements = $('forms:eq(' + formIndex + ')'),
                 aiIndex = [], /* all input index */
                 scIndex = [], /* successful control index */
                 rsubmitterTypes = /^(?:submit|button|image|reset|file)$/i, /* from jQuery serialize method */
@@ -1250,11 +1250,11 @@
                 miniParts = formParts[i].split('=');
                 var scElement = $.inArray(i, scIndex);
                 if (scElement > -1 && aiIndex[scElement] > -1) {
-                    var testInput = $('form:eq(' + formIndex + ') input:eq(' + aiIndex[scElement] + ')'),
+                    var testInput = $('forms:eq(' + formIndex + ') input:eq(' + aiIndex[scElement] + ')'),
                         settings = testInput.data('autoNumeric');
                     if (typeof settings === 'object') {
                         if (miniParts[1] !== null) {
-                            miniParts[1] = $('form:eq(' + formIndex + ') input:eq(' + aiIndex[scElement] + ')').autoNumeric('get').toString();
+                            miniParts[1] = $('forms:eq(' + formIndex + ') input:eq(' + aiIndex[scElement] + ')').autoNumeric('get').toString();
                             formParts[i] = miniParts.join('=');
                             isAutoNumeric = true;
                         }
@@ -1278,8 +1278,8 @@
             var isAutoNumeric = false,
                 $this = autoGet($(this)),
                 formFields = $this.serializeArray(),
-                formIndex = $('form').index($this),
-                allFormElements = $('form:eq(' + formIndex + ')'),
+                formIndex = $('forms').index($this),
+                allFormElements = $('forms:eq(' + formIndex + ')'),
                 aiIndex = [], /* all input index */
                 scIndex = [], /* successful control index */
                 rsubmitterTypes = /^(?:submit|button|image|reset|file)$/i, /* from jQuery serialize method */
@@ -1313,17 +1313,17 @@
             $.each(formFields, function (i, field) {
                 var scElement = $.inArray(i, scIndex);
                 if (scElement > -1 && aiIndex[scElement] > -1) {
-                    var testInput = $('form:eq(' + formIndex + ') input:eq(' + aiIndex[scElement] + ')'),
+                    var testInput = $('forms:eq(' + formIndex + ') input:eq(' + aiIndex[scElement] + ')'),
                         settings = testInput.data('autoNumeric');
                     if (typeof settings === 'object') {
-                        field.value = $('form:eq(' + formIndex + ') input:eq(' + aiIndex[scElement] + ')').autoNumeric('get').toString();
+                        field.value = $('forms:eq(' + formIndex + ') input:eq(' + aiIndex[scElement] + ')').autoNumeric('get').toString();
                         isAutoNumeric = true;
                     }
                 }
             });
             /*jslint unparam: false*/
             if (!isAutoNumeric) {
-                $.error("None of the successful form inputs are initialized by autoNumeric.");
+                $.error("None of the successful forms inputs are initialized by autoNumeric.");
             }
             return formFields;
         },

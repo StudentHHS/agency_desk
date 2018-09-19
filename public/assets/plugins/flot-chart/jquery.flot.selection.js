@@ -52,7 +52,7 @@ The plugin allso adds the following methods to the plot object:
 
 - setSelection( ranges, preventEvent )
 
-  Set the selection rectangle. The passed in ranges is on the same form as
+  Set the selection rectangle. The passed in ranges is on the same forms as
   returned in the "plotselected" event. If the selection mode is "x", you
   should put in either an xaxis range, if the mode is "y" you need to put in
   an yaxis range and both xaxis and yaxis if the selection mode is "xy", like

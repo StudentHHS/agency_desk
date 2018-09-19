@@ -96,7 +96,7 @@
             options.template = '<div class="daterangepicker dropdown-menu">' +
                 '<div class="calendar left">' +
                     '<div class="daterangepicker_input">' +
-                      '<input class="input-mini form-control" type="text" name="daterangepicker_start" value="" />' +
+                      '<input class="input-mini forms-control" type="text" name="daterangepicker_start" value="" />' +
                       '<i class="fa fa-calendar glyphicon glyphicon-calendar"></i>' +
                       '<div class="calendar-time">' +
                         '<div></div>' +
@@ -107,7 +107,7 @@
                 '</div>' +
                 '<div class="calendar right">' +
                     '<div class="daterangepicker_input">' +
-                      '<input class="input-mini form-control" type="text" name="daterangepicker_end" value="" />' +
+                      '<input class="input-mini forms-control" type="text" name="daterangepicker_end" value="" />' +
                       '<i class="fa fa-calendar glyphicon glyphicon-calendar"></i>' +
                       '<div class="calendar-time">' +
                         '<div></div>' +
@@ -1481,7 +1481,7 @@
             //update the calendars so all clickable dates reflect the new time component
             this.updateCalendars();
 
-            //update the form inputs above the calendars with the new time
+            //update the forms inputs above the calendars with the new time
             this.updateFormInputs();
 
             //re-render the time pickers because changing one selection can affect what's enabled in another

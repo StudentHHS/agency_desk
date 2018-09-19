@@ -9,7 +9,7 @@
     "use strict";
 
     var FormValidator = function() {
-        this.$commentForm = $("#commentForm"), //this could be any form, for example we are specifying the comment form
+        this.$commentForm = $("#commentForm"), //this could be any forms, for example we are specifying the comment forms
         this.$signupForm = $("#signupForm");
     };
 
@@ -20,10 +20,10 @@
             submitHandler: function() { alert("submitted!"); }
         });
 
-        // validate the comment form when it is submitted
+        // validate the comment forms when it is submitted
         this.$commentForm.validate();
 
-        // validate signup form on keyup and submit
+        // validate signup forms on keyup and submit
         this.$signupForm.validate({
             rules: {
                 firstname: "required",

@@ -16,7 +16,7 @@
         this.$archiveBtn = $("#btn-archive"),
         this.$todoList = $("#todo-list"),
         this.$todoDonechk = ".todo-done",
-        this.$todoForm = $("#todo-form"),
+        this.$todoForm = $("#todo-forms"),
         this.$todoInput = $("#todo-input-text"),
         this.$todoBtn = $("#todo-btn-submit"),
 

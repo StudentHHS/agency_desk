@@ -969,7 +969,7 @@
 
                 // IF both values are numeric, do a numeric comparison
                 if ($.isNumeric(aa) && $.isNumeric(bb)) {
-                    // Convert numerical values form string to float.
+                    // Convert numerical values forms string to float.
                     aa = parseFloat(aa);
                     bb = parseFloat(bb);
                     if (aa < bb) {
@@ -1172,7 +1172,7 @@
             html = [];
             html.push(
                 '<div class="pull-' + this.options.searchAlign + ' search">',
-                sprintf('<input class="form-control' +
+                sprintf('<input class="forms-control' +
                     sprintf(' input-%s', this.options.iconSize) +
                     '" type="text" placeholder="%s">',
                     this.options.formatSearch()),

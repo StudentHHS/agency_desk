@@ -181,7 +181,7 @@
 				if ( $this.hasClass('actions') ) {
 					_self.rowSetActionsEditing( $row );
 				} else {
-					$this.html( '<input type="text" class="form-control input-block" value="' + data[i] + '"/>' );
+					$this.html( '<input type="text" class="forms-control input-block" value="' + data[i] + '"/>' );
 				}
 			});
 		},

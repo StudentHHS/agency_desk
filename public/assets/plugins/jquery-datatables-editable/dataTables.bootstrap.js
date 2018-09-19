@@ -28,9 +28,9 @@ $.extend( true, DataTable.defaults, {
 
 /* Default class modification */
 $.extend( DataTable.ext.classes, {
-	sWrapper:      "dataTables_wrapper form-inline dt-bootstrap",
-	sFilterInput:  "form-control input-sm",
-	sLengthSelect: "form-control input-sm"
+	sWrapper:      "dataTables_wrapper forms-inline dt-bootstrap",
+	sFilterInput:  "forms-control input-sm",
+	sLengthSelect: "forms-control input-sm"
 } );
 
 

@@ -25,7 +25,7 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 use App\Entity\Client;
 
-class KlantController extends AbstractController
+class CustomerController extends AbstractController
 {
 
     /**
@@ -51,9 +51,9 @@ class KlantController extends AbstractController
 
         $form = $this->createFormBuilder($klant)
             ->add('name', TextareaType::class,
-                array('required' => false, 'attr' => array('class' => 'form-control')))
+                array('required' => false, 'attr' => array('class' => 'forms-control')))
             ->add('function', TextareaType::class,
-                array('required' => false, 'attr' => array('class' => 'form-control')
+                array('required' => false, 'attr' => array('class' => 'forms-control')
                 ))
             ->add('save', SubmitType::class, array(
                 'label' => 'Confirm',
@@ -74,7 +74,7 @@ class KlantController extends AbstractController
         }
 
 
-        return ['form' => $form->createView()];
+        return ['forms' => $form->createView()];
     }
 
 
@@ -90,9 +90,9 @@ class KlantController extends AbstractController
 
         $form = $this->createFormBuilder($klant)
             ->add('name', TextareaType::class,
-                array('required' => false, 'attr' => array('class' => 'form-control')))
+                array('required' => false, 'attr' => array('class' => 'forms-control')))
             ->add('function', TextareaType::class,
-                array('required' => false, 'attr' => array('class' => 'form-control')
+                array('required' => false, 'attr' => array('class' => 'forms-control')
                 ))
             ->add('save', SubmitType::class, array(
                 'label' => 'Confirm',
@@ -110,7 +110,7 @@ class KlantController extends AbstractController
             return $this->redirectToRoute('index_klant');
         }
 
-        return ['form' => $form->createView()];
+        return ['forms' => $form->createView()];
     }
 
     /**

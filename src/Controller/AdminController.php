@@ -54,12 +54,12 @@ class AdminController extends AbstractController
 //    {
 //        $admin = new Client();
 //
-//        $form = $this->createFormBuilder($admin)
+//        $forms = $this->createFormBuilder($admin)
 //            ->add('name', TextType::class,
-//            array('attr' => array('class', 'form-control')))
+//            array('attr' => array('class', 'forms-control')))
 //            ->add('function', TextareaType::class, array(
 //                'required' => false,
-//                'attr' => array('class' => 'form-control')
+//                'attr' => array('class' => 'forms-control')
 //            ))
 //            ->add('save', SubmitType::class, array(
 //                'label' => 'Create',
@@ -68,7 +68,7 @@ class AdminController extends AbstractController
 //            ->getForm();
 //
 //        return $this->render('klant/create.html.twig', array(
-//            'form' => $form->createView()
+//            'forms' => $forms->createView()
 //        ));
 //    }
 //

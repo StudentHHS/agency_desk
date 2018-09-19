@@ -44,9 +44,9 @@ class DeveloperController extends AbstractController
         $developer = new Developer();
         $form = $this->createFormBuilder($developer)
             ->add('name', TextareaType::class,
-                array('required' => false, 'attr' => array('class' => 'form-control')))
+                array('required' => false, 'attr' => array('class' => 'forms-control')))
             ->add('function', TextareaType::class,
-                array('required' => false, 'attr' => array('class' => 'form-control')
+                array('required' => false, 'attr' => array('class' => 'forms-control')
                 ))
             ->add('save', SubmitType::class, array(
                 'label' => 'Create',
@@ -61,7 +61,7 @@ class DeveloperController extends AbstractController
             $entityManager->flush();
             return $this->redirectToRoute('index_developer');
         }
-        return ['form' => $form->createView()];
+        return ['forms' => $form->createView()];
     }
 
     /**
@@ -75,9 +75,9 @@ class DeveloperController extends AbstractController
         $developer = $this->getDoctrine()->getRepository(Developer::class)->find($id);
         $form = $this->createFormBuilder($developer)
             ->add('name', TextareaType::class,
-                array('required' => false, 'attr' => array('class' => 'form-control')))
+                array('required' => false, 'attr' => array('class' => 'forms-control')))
             ->add('function', TextareaType::class,
-                array('required' => false, 'attr' => array('class' => 'form-control')
+                array('required' => false, 'attr' => array('class' => 'forms-control')
                 ))
             ->add('save', SubmitType::class, array(
                 'label' => 'Create',
@@ -90,7 +90,7 @@ class DeveloperController extends AbstractController
             $entityManager->flush();
             return $this->redirectToRoute('index_developer');
         }
-        return ['form' => $form->createView()];
+        return ['forms' => $form->createView()];
     }
 
     /**

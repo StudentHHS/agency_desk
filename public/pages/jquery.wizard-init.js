@@ -15,20 +15,20 @@
             bodyTag: "section",
             transitionEffect: "slideLeft",
             onFinishing: function (event, currentIndex) { 
-                //NOTE: Here you can do form validation and return true or false based on your validation logic
+                //NOTE: Here you can do forms validation and return true or false based on your validation logic
                 console.log("Form has been validated!");
                 return true; 
             }, 
             onFinished: function (event, currentIndex) {
-               //NOTE: Submit the form, if all validation passed.
-                console.log("Form can be submitted using submit method. E.g. $('#basic-form').submit()"); 
-                $("#basic-form").submit();
+               //NOTE: Submit the forms, if all validation passed.
+                console.log("Form can be submitted using submit method. E.g. $('#basic-forms').submit()");
+                $("#basic-forms").submit();
 
             }
         });
         return $form_container;
     },
-    //creates form with validation
+    //creates forms with validation
     FormWizard.prototype.createValidatorForm = function($form_container) {
         $form_container.validate({
             errorPlacement: function errorPlacement(error, element) {
@@ -54,7 +54,7 @@
 
         return $form_container;
     },
-    //creates vertical form
+    //creates vertical forms
     FormWizard.prototype.createVertical = function($form_container) {
         $form_container.steps({
             headerTag: "h3",
@@ -67,13 +67,13 @@
     FormWizard.prototype.init = function() {
         //initialzing various forms
 
-        //basic form
-        this.createBasic($("#basic-form"));
+        //basic forms
+        this.createBasic($("#basic-forms"));
 
-        //form with validation
-        this.createValidatorForm($("#wizard-validation-form"));
+        //forms with validation
+        this.createValidatorForm($("#wizard-validation-forms"));
 
-        //vertical form
+        //vertical forms
         this.createVertical($("#wizard-vertical"));
     },
     //init

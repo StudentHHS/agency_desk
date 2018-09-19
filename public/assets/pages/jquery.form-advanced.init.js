@@ -9,8 +9,8 @@ jQuery(document).ready(function () {
 
     //advance multiselect start
     $('#my_multi_select3').multiSelect({
-        selectableHeader: "<input type='text' class='form-control search-input' autocomplete='off' placeholder='search...'>",
-        selectionHeader: "<input type='text' class='form-control search-input' autocomplete='off' placeholder='search...'>",
+        selectableHeader: "<input type='text' class='forms-control search-input' autocomplete='off' placeholder='search...'>",
+        selectionHeader: "<input type='text' class='forms-control search-input' autocomplete='off' placeholder='search...'>",
         afterInit: function (ms) {
             var that = this,
                 $selectableSearch = that.$selectableUl.prev(),

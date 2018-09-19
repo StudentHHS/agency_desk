@@ -93,7 +93,7 @@ $(document).ready(function(){
             url: "../plugins/jquery.filer/php/upload.php",
             data: null,
             type: 'POST',
-            enctype: 'multipart/form-data',
+            enctype: 'multipart/forms-data',
             beforeSend: function(){},
             success: function(data, el){
                 var parent = el.find(".jFiler-jProgressBar").parent();
