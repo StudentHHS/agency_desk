@@ -138,7 +138,7 @@
       }
 
       /**
-       * Returns how many chars are left to complete the fill up of the form.
+       * Returns how many chars are left to complete the fill up of the forms.
        *
        * @param input
        * @param maxlength
@@ -236,7 +236,7 @@
         }
 
         if (options.allowOverMax) {
-          // class to use for form validation on custom maxlength attribute
+          // class to use for forms validation on custom maxlength attribute
           if (remaining < 0) {
             currentInput.addClass('overmax');
           } else {

@@ -22,35 +22,15 @@ class Customer {
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
+
     protected $id;
 
     /**
      * @var string $title
      *
-     * @ORM\Column(name="name", type="string", length=255, nullable=true)
+     * @ORM\Column(name="title", type="string", length=255, nullable=true)
      */
     protected $title;
-
-    /**
-     * @var string $firstname
-     *
-     * @ORM\Column(name="firstname", type="string", length=255, nullable=true)
-     */
-    protected $firstname;
-
-    /**
-     * @var string $lastname
-     *
-     * @ORM\Column(name="lastname", type="string", length=255, nullable=true)
-     */
-    protected $lastname;
-
-    /**
-     * @var string $sex
-     *
-     * @ORM\Column(name="sex", type="string", length=255, nullable=true)
-     */
-    protected $sex;
 
     /**
      * @var string $street
@@ -73,11 +53,11 @@ class Customer {
      */
     protected $kvknumber;
     /**
-     * @var string $mobile_phone
+     * @var string $phone
      *
-     * @ORM\Column(name="mobile_phone", type="string", length=255, nullable=true)
+     * @ORM\Column(name="phone", type="string", length=255, nullable=true)
      */
-    protected $mobile_phone;
+    protected $phone;
     /**
      * @var string $fax
      *
@@ -123,13 +103,6 @@ class Customer {
     protected $vatNumber;
 
     /**
-     * @var string $kvkNumber
-     *
-     * @ORM\Column(name="kvk_number", type="string", length=255, nullable=true)
-     */
-    protected $kvkNumber;
-
-    /**
      * @var User $owner
      *
      * @ORM\ManyToOne(targetEntity="App\Entity\User\User")
@@ -154,6 +127,13 @@ class Customer {
      * @ORM\OrderBy({"sequence" = "ASC"})
      */
     private $projects;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\User\CustomerContact", mappedBy="customer", cascade={"persist", "remove"}, orphanRemoval=true)
+     * @ORM\OrderBy({"sequence" = "ASC"})
+     */
+    private $customerContact;
+
 
     /**
      * @var decimal $hourlyRate
@@ -267,7 +247,7 @@ class Customer {
      */
     public function getKvkNumber()
     {
-        return $this->kvkNumber;
+        return $this->kvknumber;
     }
 
     /**
@@ -419,6 +399,39 @@ class Customer {
     }
 
     /**
+     * Add customerContacts
+     *
+     * @param \App\Entity\User\CustomerContact $customerContact
+     * @return Customer
+     */
+    public function addCustomerContact(\App\Entity\User\CustomerContact $customerContact)
+    {
+        $this->customerContact[] = $customerContact;
+
+        return $this;
+    }
+
+    /**
+     * Remove customerContact
+     *
+     * @param \App\Entity\User\CustomerContact $customerContact
+     */
+    public function removeCustomerContact(\App\Entity\User\CustomerContact $customerContact)
+    {
+        $this->customerContact->removeElement($customerContact);
+    }
+
+    /**
+     * Get customerContact
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getCustomerContact()
+    {
+        return $this->customerContact;
+    }
+
+    /**
      * Set title
      *
      * @param string $title
@@ -440,78 +453,6 @@ class Customer {
     public function getTitle()
     {
         return $this->title;
-    }
-
-    /**
-     * Set firstname
-     *
-     * @param string $firstname
-     *
-     * @return Customer
-     */
-    public function setFirstname($firstname)
-    {
-        $this->firstname = $firstname;
-
-        return $this;
-    }
-
-    /**
-     * Get firstname
-     *
-     * @return string
-     */
-    public function getFirstname()
-    {
-        return $this->firstname;
-    }
-
-    /**
-     * Set lastname
-     *
-     * @param string $lastname
-     *
-     * @return Customer
-     */
-    public function setLastname($lastname)
-    {
-        $this->lastname = $lastname;
-
-        return $this;
-    }
-
-    /**
-     * Get lastname
-     *
-     * @return string
-     */
-    public function getLastname()
-    {
-        return $this->lastname;
-    }
-
-    /**
-     * Set sex
-     *
-     * @param string $sex
-     *
-     * @return Customer
-     */
-    public function setSex($sex)
-    {
-        $this->sex = $sex;
-
-        return $this;
-    }
-
-    /**
-     * Get sex
-     *
-     * @return string
-     */
-    public function getSex()
-    {
-        return $this->sex;
     }
 
     /**
@@ -563,27 +504,27 @@ class Customer {
     }
 
     /**
-     * Set mobilePhone
+     * Set phone
      *
-     * @param string $mobilePhone
+     * @param string $phone
      *
      * @return Customer
      */
-    public function setMobilePhone($mobilePhone)
+    public function setPhone($phone)
     {
-        $this->mobile_phone = $mobilePhone;
+        $this->phone = $phone;
 
         return $this;
     }
 
     /**
-     * Get mobilePhone
+     * Get phone
      *
      * @return string
      */
-    public function getMobilePhone()
+    public function getPhone()
     {
-        return $this->mobile_phone;
+        return $this->phone;
     }
 
     /**

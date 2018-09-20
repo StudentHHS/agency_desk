@@ -12,7 +12,7 @@
         this.$topSection = $('#home-fullscreen'),
         this.$topNavbar = $("#navbarsMenu"),
         this.$backToTop = $('#back-to-top'),
-        this.$contactForm = $("#contact-form")
+        this.$contactForm = $("#contact-forms")
     };
 
     //

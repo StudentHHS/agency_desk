@@ -66,8 +66,8 @@ table.focus-on {
   }
 }
 
-.fixed-solution .sticky-table-header {
-  top: 147px !important;
+.sticky-table-header.fixed-solution {
+  top: 70px !important;
   background-color: $custom;
 }
 
@@ -86,11 +86,6 @@ table.focus-on {
 
 
 /* Data table */
-.dataTables_wrapper.container-fluid {
-  max-width: 100%;
-  padding: 0;
-}
-
 #datatable-editable {
   .actions {
     a {
@@ -232,6 +227,12 @@ table[data-toggle="table"] {
   }
 }
 
+// Responsive table 
+.fixed-solution .sticky-table-header {
+  top: 69px !important;
+  background-color: $custom;
+}
+
 /* Tablesaw */
 .tablesaw thead {
   background: lighten($dark,5%);
@@ -309,10 +310,17 @@ table.tablesaw thead th, table.tablesaw thead td {
   top: 60px !important;
 }
 /* Key Table */
-table.dataTable th.focus,table.dataTable td.focus{
-  outline:3px solid $custom !important;
-  outline-offset:-1px;
-  background-color: rgba($custom,0.2);
+table.dataTable th.focus,
+table.dataTable td.focus {
+    outline: 2px solid $custom !important;
+    outline-offset: -1px;
+    background-color: rgba($custom, 0.2);
+}
+
+// Multi select table
+table.dataTable tbody>tr.selected,
+table.dataTable tbody>tr>.selected {
+    background-color: $custom;
 }
 
 /* ColVid Tables */
@@ -395,7 +403,7 @@ ul.ColVis_collection {
   border: 1px solid lighten($dark,10%);
   padding: .4em .6em;
   color: $white;
-  background-color: $dark;
+  background-color: transparent;
 }
 
 .jsgrid-pager-container {

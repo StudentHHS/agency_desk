@@ -32,8 +32,10 @@ class PhoneBook
 
     /**
      * @Gedmo\Slug(fields={"name"}, updatable=true)
-     * @ORM\Column(length=255, unique=true)
+     * @ORM\Column(length=255)
+     *
      */
+//, unique=true
     protected $slug;
 
     /**

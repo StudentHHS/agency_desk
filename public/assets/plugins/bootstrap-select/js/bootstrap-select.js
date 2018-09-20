@@ -441,7 +441,7 @@
       var header = this.options.header ? '<div class="popover-title"><button type="button" class="close" aria-hidden="true">&times;</button>' + this.options.header + '</div>' : '';
       var searchbox = this.options.liveSearch ?
       '<div class="bs-searchbox">' +
-      '<input type="text" class="form-control" autocomplete="off"' +
+      '<input type="text" class="forms-control" autocomplete="off"' +
       (null === this.options.liveSearchPlaceholder ? '' : ' placeholder="' + htmlEscape(this.options.liveSearchPlaceholder) + '"') + '>' +
       '</div>'
           : '';
@@ -780,7 +780,7 @@
         // create a span instead of input as creating an input element is slower
         var input = document.createElement('span');
         search.className = 'bs-searchbox';
-        input.className = 'form-control';
+        input.className = 'forms-control';
         search.appendChild(input);
         menu.appendChild(search);
       }

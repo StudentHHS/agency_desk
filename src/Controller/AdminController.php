@@ -9,6 +9,7 @@
 namespace App\Controller;
 
 use App\Entity\Client;
+use App\Entity\User\Customer;
 use function PHPSTORM_META\type;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -26,9 +27,9 @@ class AdminController extends AbstractController
      */
     public function index()
     {
-        $klanten = $this->getDoctrine()->getRepository(Client::class)->findAll();
+        $customers = $this->getDoctrine()->getRepository(Customer::class)->findAll();
         return $this->render('admin/admin.html.twig', array
-        ('klanten' => $klanten));
+        ('customers' => $customers));
     }
 //    /**
 //     * @Route("/admin/save")
@@ -54,12 +55,12 @@ class AdminController extends AbstractController
 //    {
 //        $admin = new Client();
 //
-//        $form = $this->createFormBuilder($admin)
+//        $forms = $this->createFormBuilder($admin)
 //            ->add('name', TextType::class,
-//            array('attr' => array('class', 'form-control')))
+//            array('attr' => array('class', 'forms-control')))
 //            ->add('function', TextareaType::class, array(
 //                'required' => false,
-//                'attr' => array('class' => 'form-control')
+//                'attr' => array('class' => 'forms-control')
 //            ))
 //            ->add('save', SubmitType::class, array(
 //                'label' => 'Create',
@@ -67,8 +68,8 @@ class AdminController extends AbstractController
 //            ))
 //            ->getForm();
 //
-//        return $this->render('klant/create.html.twig', array(
-//            'form' => $form->createView()
+//        return $this->render('customer/create.html.twig', array(
+//            'forms' => $forms->createView()
 //        ));
 //    }
 //
@@ -77,10 +78,10 @@ class AdminController extends AbstractController
 //     */
 //    public function show($id)
 //    {
-//        $klant = $this->getDoctrine()->getRepository(Client::class)->find($id);
+//        $customer = $this->getDoctrine()->getRepository(Client::class)->find($id);
 //
 //        return $this->render('index.html.twig', array
-//        ('klant' => $klant));
+//        ('customer' => $customer));
 //    }
 //
 }
