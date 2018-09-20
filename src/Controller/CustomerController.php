@@ -9,6 +9,8 @@
 namespace App\Controller;
 
 
+use App\Entity\User\Customer;
+use App\Form\CustomerForm;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -23,63 +25,55 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
-use App\Entity\Client;
-
 class CustomerController extends AbstractController
 {
 
     /**
-     * @Route("/admin/klant", name="index_klant")
+     * @Route("/admin/customer", name="index_customer")
      * @Template
      */
     public function index()
     {
-        $klanten = $this->getDoctrine()->getRepository(Client::class)->findAll();
+        $customer = new Customer();
+        $form = $this->createForm(CustomerForm::class, $customer);
 
-        return ['klanten' => $klanten];
+        return [
+            'form' => $form->createView(),
+            'customers' => array($customer)];
     }
 
 
     /**
-     * @Route("/admin/klant/create", name="create_klant")
+     * @Route("/admin/customer/create", name="create_customer")
      * @Method({"GET", "POST"})
      * @Template()
      */
     public function create(Request $request)
     {
-        $klant = new Client();
+        $customer = new Customer();
+        $form = $this->createForm(CustomerForm::class, $customer);
 
-        $form = $this->createFormBuilder($klant)
-            ->add('name', TextareaType::class,
-                array('required' => false, 'attr' => array('class' => 'forms-control')))
-            ->add('function', TextareaType::class,
-                array('required' => false, 'attr' => array('class' => 'forms-control')
-                ))
-            ->add('save', SubmitType::class, array(
-                'label' => 'Confirm',
-                'attr' => array('class' => 'btn btn-primary mt-3')
-            ))
-            ->getForm();
+//        $form->handleRequest($request);
 
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $klant = $form->getData();
-
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($klant);
-            $entityManager->flush();
-
-            return $this->redirectToRoute('index_klant');
-        }
+//        if ($form->isSubmitted() && $form->isValid()) {
+//            $customer = $form->getData();
+//
+//            $entityManager = $this->getDoctrine()->getManager();
+//            $entityManager->persist($customer);
+//            $entityManager->flush();
+//
+//            return $this->redirectToRoute('admin_page');
+//        }
 
 
-        return ['forms' => $form->createView()];
+        return [
+            'form' => $form->createView(),
+            'customers' => array($customer)];
     }
 
 
     /**
-     * @Route("/admin/klant/edit/{id}", name="edit_klant")
+     * @Route("/admin/customer/edit/{id}", name="edit_customer")
      * @Method({"GET", "POST"})
      * @Template()
      */
@@ -114,18 +108,18 @@ class CustomerController extends AbstractController
     }
 
     /**
-     * @Route("/admin/klant/{id}", name="show_klant")
+     * @Route("/admin/customer/{id}", name="show_customer")
      * @Template()
      */
     public function show($id)
     {
         $klant = $this->getDoctrine()->getRepository(Client::class)->find($id);
 
-        return ['klant' => $klant];
+        return ['customer' => $klant];
     }
 
     /**
-     * @Route("/admin/klant/delete/{id}")
+     * @Route("/admin/customer/delete/{id}")
      * @Method({"DELETE"})
      * @Template()
      */

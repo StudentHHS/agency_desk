@@ -28,7 +28,7 @@ class Customer {
     /**
      * @var string $title
      *
-     * @ORM\Column(name="name", type="string", length=255, nullable=true)
+     * @ORM\Column(name="title", type="string", length=255, nullable=true)
      */
     protected $title;
 
@@ -101,13 +101,6 @@ class Customer {
      * @ORM\Column(name="vat_number", type="string", length=255, nullable=true)
      */
     protected $vatNumber;
-
-    /**
-     * @var string $kvkNumber
-     *
-     * @ORM\Column(name="kvk_number", type="string", length=255, nullable=true)
-     */
-    protected $kvkNumber;
 
     /**
      * @var User $owner
@@ -254,7 +247,7 @@ class Customer {
      */
     public function getKvkNumber()
     {
-        return $this->kvkNumber;
+        return $this->kvknumber;
     }
 
     /**

@@ -27,7 +27,7 @@
             <!-- LOGO -->
             <div class="topbar-left">
                 <div class="text-center">
-                    <a href="index.html" class="logo"><i class="icon-magnet icon-c-logo"></i><span>Ub<i
+                    <a href="{{ path('admin_page') }}" class="logo"><i class="icon-magnet icon-c-logo"></i><span>Ub<i
                                     class="md md-album"></i>ld</span></a>
                     <!-- Image Logo here -->
                     <!--<a href="index.html" class="logo">-->
@@ -175,7 +175,7 @@
                                             class="ti-user"></i> <span> Klanten </span> <span
                                             class="menu-arrow"></span></a>
                                 <ul class="list-unstyled" style="display: block;">
-                                    <li class="active"><a href="#" class="active">Klant(en) toevoegen</a></li>
+                                    <li class="active"><a href="{{ path('create_customer') }}" class="active">Klant(en) toevoegen</a></li>
                                 </ul>
                             </li>
 
@@ -271,7 +271,7 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div class="p-20">
-                                        <form class="form-horizontal" role="form" action="{{ action('src/Controller/CustomerController.php') }}" method="post">
+                                        <form class="form-horizontal" role="form" action="#" method="post">
 
                                             <!--Name-->
                                             <div class="form-group row">
@@ -376,23 +376,23 @@
                                             </div>
                                             <!--End hourly rate-->
 
-                                            <!--Created-->
-                                            <div class="form-group row">
-                                                <label class="col-2 col-form-label">Created</label>
-                                                <div class="col-10">
-                                                    <input class="form-control" type="datetime-local" name="date">
-                                                </div>
-                                            </div>
-                                            <!--End created-->
+                                            {#<!--Created-->#}
+                                            {#<div class="form-group row">#}
+                                                {#<label class="col-2 col-form-label">Created</label>#}
+                                                {#<div class="col-10">#}
+                                                    {#<input class="form-control" type="datetime-local" name="date">#}
+                                                {#</div>#}
+                                            {#</div>#}
+                                            {#<!--End created-->#}
 
-                                            <!--Updated-->
-                                            <div class="form-group row">
-                                                <label class="col-2 col-form-label">Updated</label>
-                                                <div class="col-10">
-                                                    <input class="form-control" type="datetime-local" name="date">
-                                                </div>
-                                            </div>
-                                            <!--End updated-->
+                                            {#<!--Updated-->#}
+                                            {#<div class="form-group row">#}
+                                                {#<label class="col-2 col-form-label">Updated</label>#}
+                                                {#<div class="col-10">#}
+                                                    {#<input class="form-control" type="datetime-local" name="date">#}
+                                                {#</div>#}
+                                            {#</div>#}
+                                            {#<!--End updated-->#}
 
                                             </br>
                                             </br>

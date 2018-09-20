@@ -2,79 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="592cba6a-2e79-4f1d-a0ab-904970897a9b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Form/CustomerForm.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bootstrap/dist/js/bootstrap.bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/bootstrap/dist/js/bootstrap.bundle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bootstrap/dist/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/bootstrap/dist/js/bootstrap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bootstrap/dist/js/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/bootstrap/dist/js/bootstrap.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bootstrap/js/dist/dropdown.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/bootstrap/js/dist/dropdown.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bootstrap/js/src/dropdown.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/bootstrap/js/src/dropdown.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bootstrap/scss/_button-group.scss" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/bootstrap/scss/_button-group.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bootstrap/scss/_forms.scss" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/bootstrap/scss/_forms.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bootstrap/scss/_input-group.scss" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/bootstrap/scss/_input-group.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bootstrap/scss/_reboot.scss" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/bootstrap/scss/_reboot.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/bootstrap.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/fastclick.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/fastclick.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/jquery.easing.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/jquery.easing.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/jquery.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/jquery.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/pages/datatables.editable.init.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/pages/datatables.editable.init.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/pages/form-validation-init.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/pages/form-validation-init.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/pages/jquery.filer.init.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/pages/jquery.filer.init.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/pages/jquery.form-advanced.init.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/pages/jquery.form-advanced.init.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/pages/jquery.fullcalendar.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/pages/jquery.fullcalendar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/pages/jquery.todo.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/pages/jquery.todo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/pages/jquery.wizard-init.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/pages/jquery.wizard-init.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/plugins/autoNumeric/autoNumeric.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/plugins/autoNumeric/autoNumeric.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/plugins/bootstrap-daterangepicker/daterangepicker.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/plugins/bootstrap-daterangepicker/daterangepicker.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/plugins/bootstrap-filestyle/js/bootstrap-filestyle.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/plugins/bootstrap-filestyle/js/bootstrap-filestyle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/plugins/bootstrap-filestyle/js/bootstrap-filestyle.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/plugins/bootstrap-filestyle/js/bootstrap-filestyle.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/plugins/bootstrap-maxlength/bootstrap-maxlength.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/plugins/bootstrap-maxlength/bootstrap-maxlength.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/plugins/bootstrap-maxlength/src/bootstrap-maxlength.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/plugins/bootstrap-maxlength/src/bootstrap-maxlength.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/plugins/bootstrap-select/js/bootstrap-select.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/plugins/bootstrap-select/js/bootstrap-select.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/plugins/bootstrap-select/js/bootstrap-select.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/plugins/bootstrap-select/js/bootstrap-select.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/plugins/bootstrap-table/js/bootstrap-table.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/plugins/bootstrap-table/js/bootstrap-table.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/plugins/bootstrap-table/js/bootstrap-table.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/plugins/bootstrap-table/js/bootstrap-table.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/plugins/bootstrap-touchspin/js/jquery.bootstrap-touchspin.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/plugins/bootstrap-touchspin/js/jquery.bootstrap-touchspin.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/plugins/codemirror/js/codemirror.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/plugins/codemirror/js/codemirror.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/plugins/datatables/dataTables.bootstrap4.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/plugins/datatables/dataTables.bootstrap4.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/plugins/dropzone/dropzone-amd-module.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/plugins/dropzone/dropzone-amd-module.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/plugins/dropzone/dropzone.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/plugins/dropzone/dropzone.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/plugins/dropzone/min/dropzone-amd-module.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/plugins/dropzone/min/dropzone-amd-module.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/plugins/dropzone/min/dropzone.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/plugins/dropzone/min/dropzone.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/plugins/flot-chart/jquery.flot.crosshair.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/plugins/flot-chart/jquery.flot.crosshair.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/plugins/flot-chart/jquery.flot.selection.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/plugins/flot-chart/jquery.flot.selection.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/plugins/footable/js/footable.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/plugins/footable/js/footable.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/plugins/jquery-datatables-editable/dataTables.bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/plugins/jquery-datatables-editable/dataTables.bootstrap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/plugins/jquery-datatables-editable/jquery.dataTables.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/plugins/jquery-datatables-editable/jquery.dataTables.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/plugins/jquery-ui/external/jquery/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/plugins/jquery-ui/external/jquery/jquery.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/plugins/jquery-ui/jquery-ui.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/plugins/jquery-ui/jquery-ui.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/plugins/jquery-validation/js/jquery.validate.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/plugins/jquery-validation/js/jquery.validate.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/plugins/notifications/notify.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/plugins/notifications/notify.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/plugins/notifyjs/js/notify.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/plugins/notifyjs/js/notify.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/plugins/parsleyjs/parsley.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/plugins/parsleyjs/parsley.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/plugins/select2/js/select2.full.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/plugins/select2/js/select2.full.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/plugins/select2/js/select2.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/plugins/select2/js/select2.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/plugins/smoothproducts/js/jquery-2.1.3.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/plugins/smoothproducts/js/jquery-2.1.3.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/plugins/summernote/summernote-bs4.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/plugins/summernote/summernote-bs4.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/plugins/tinymce/plugins/save/plugin.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/plugins/tinymce/plugins/save/plugin.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/plugins/tinymce/plugins/spellchecker/plugin.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/plugins/tinymce/plugins/spellchecker/plugin.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/plugins/tinymce/tinymce.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/plugins/tinymce/tinymce.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/plugins/x-editable/css/bootstrap-editable.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/plugins/x-editable/css/bootstrap-editable.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/plugins/x-editable/js/bootstrap-editable.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/plugins/x-editable/js/bootstrap-editable.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/plugins/x-editable/js/bootstrap-editable.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/plugins/x-editable/js/bootstrap-editable.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/pages/datatables.editable.init.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/pages/datatables.editable.init.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/pages/form-validation-init.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/pages/form-validation-init.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/pages/jquery.filer.init.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/pages/jquery.filer.init.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/pages/jquery.form-advanced.init.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/pages/jquery.form-advanced.init.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/pages/jquery.fullcalendar.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/pages/jquery.fullcalendar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/pages/jquery.todo.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/pages/jquery.todo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/pages/jquery.wizard-init.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/pages/jquery.wizard-init.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/twig.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/twig.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AdminController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/DeveloperController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/DeveloperController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/KlantController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CustomerController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/ProjectController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ProjectController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/CustomerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CustomerController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Client.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Developer.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Project.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/User/Customer.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User/Customer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Migrations/Version20180914143954.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/admin/admin.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/admin.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/startpagina/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/startpagina/show.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/klant/create.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/customer/create.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/klant/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/customer/edit.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/klant/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/customer/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/klant/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/customer/show.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -103,12 +45,29 @@
     <window id="2">
       <content type="file-editors">
         <state>
-          <leaf>
+          <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
             <file pinned="false" current-in-tab="true">
               <entry file="file://$USER_HOME$/Desktop/Ubold_v2.7/Admin/dark-vertical/form-elements.html">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="2340">
+                  <state relative-caret-position="16490">
                     <caret line="970" selection-start-line="970" selection-end-line="970" />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+          </leaf>
+        </state>
+      </content>
+    </window>
+    <window id="2">
+      <content type="file-editors">
+        <state>
+          <leaf>
+            <file pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/src/Entity/User/Customer.php">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="282">
+                    <caret line="247" column="34" selection-start-line="247" selection-start-column="34" selection-end-line="247" selection-end-column="34" />
                   </state>
                 </provider>
               </entry>
@@ -181,34 +140,36 @@
           <entry key="project.open.time.10" value="2" />
           <entry key="project.open.time.14" value="1" />
           <entry key="project.open.time.6" value="2" />
-          <entry key="project.open.time.7" value="2" />
+          <entry key="project.open.time.7" value="3" />
           <entry key="project.open.time.8" value="3" />
           <entry key="project.open.time.9" value="3" />
-          <entry key="project.opened" value="14" />
+          <entry key="project.opened" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="css" value="5" />
           <entry key="dummy" value="41" />
-          <entry key="env" value="53" />
+          <entry key="env" value="56" />
           <entry key="html" value="9" />
           <entry key="js" value="536" />
-          <entry key="php" value="5234" />
+          <entry key="php" value="6333" />
           <entry key="scss" value="132" />
-          <entry key="twig" value="6081" />
+          <entry key="twig" value="6746" />
+          <entry key="yaml" value="76" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key=".env file" value="5" />
+          <entry key=".env file" value="8" />
           <entry key="CSS" value="5" />
           <entry key="HTML" value="9" />
           <entry key="JavaScript" value="539" />
-          <entry key="PHP" value="5234" />
+          <entry key="PHP" value="6333" />
           <entry key="PLAIN_TEXT" value="89" />
           <entry key="SCSS" value="132" />
-          <entry key="Twig" value="6078" />
+          <entry key="Twig" value="6743" />
+          <entry key="YAML" value="76" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -220,11 +181,12 @@
           <entry key="js" value="29" />
           <entry key="json" value="1" />
           <entry key="map" value="2" />
-          <entry key="php" value="241" />
+          <entry key="meta" value="3" />
+          <entry key="php" value="250" />
           <entry key="rnc" value="1" />
           <entry key="scss" value="35" />
-          <entry key="twig" value="90" />
-          <entry key="yaml" value="22" />
+          <entry key="twig" value="93" />
+          <entry key="yaml" value="24" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -234,13 +196,13 @@
           <entry key="HTML" value="16" />
           <entry key="JSON" value="1" />
           <entry key="JavaScript" value="29" />
-          <entry key="PHP" value="241" />
-          <entry key="PLAIN_TEXT" value="9" />
+          <entry key="PHP" value="250" />
+          <entry key="PLAIN_TEXT" value="12" />
           <entry key="RNG Compact" value="1" />
           <entry key="SCSS" value="35" />
           <entry key="SourceMap" value="2" />
-          <entry key="Twig" value="90" />
-          <entry key="YAML" value="22" />
+          <entry key="Twig" value="93" />
+          <entry key="YAML" value="24" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages">
@@ -250,39 +212,124 @@
       </usages-collector>
       <usages-collector id="statistics.php.new.class">
         <counts>
-          <entry key="PHP Class.type" value="6" />
+          <entry key="PHP Class.type" value="7" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/admin/admin.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="265">
-              <caret line="273" column="99" selection-start-line="273" selection-start-column="99" selection-end-line="273" selection-end-column="99" />
+            <state relative-caret-position="391">
+              <caret line="23" column="30" lean-forward="true" selection-start-line="23" selection-start-column="30" selection-end-line="23" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Controller/CustomerController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="372">
+              <caret line="48" column="18" selection-start-line="48" selection-start-column="18" selection-end-line="48" selection-end-column="18" />
               <folding>
-                <element signature="e#8423#8446#0#HTML" expanded="true" />
-                <element signature="e#9304#9327#0#HTML" expanded="true" />
-                <element signature="e#22340#22535#0#HTML" expanded="true" />
-                <element signature="e#22608#22774#0#HTML" expanded="true" />
-                <element signature="e#21929#21948#0#HTML" expanded="true" />
+                <element signature="e#117#146#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Controller/CustomerController.php">
-          <provider selected="true" editor-type-id="text-editor" />
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/customer/index.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="627">
+              <caret line="277" column="64" selection-start-line="277" selection-start-column="64" selection-end-line="277" selection-end-column="64" />
+              <folding>
+                <element signature="e#39#53#0#Twig" expanded="true" />
+                <element signature="e#7665#7738#0#HTML" expanded="true" />
+                <element signature="e#7798#7851#0#HTML" expanded="true" />
+                <element signature="e#8421#8444#0#HTML" expanded="true" />
+                <element signature="e#8995#9018#0#HTML" expanded="true" />
+                <element signature="e#9541#9564#0#HTML" expanded="true" />
+                <element signature="e#10087#10110#0#HTML" expanded="true" />
+                <element signature="e#10639#10662#0#HTML" expanded="true" />
+                <element signature="e#11067#11262#0#HTML" expanded="true" />
+                <element signature="e#11335#11501#0#HTML" expanded="true" />
+                <element signature="e#12084#12112#0#HTML" expanded="true" />
+                <element signature="e#12401#12423#0#HTML" expanded="true" />
+                <element signature="e#12477#12499#0#HTML" expanded="true" />
+                <element signature="e#12633#12655#0#HTML" expanded="true" />
+                <element signature="e#12705#12727#0#HTML" expanded="true" />
+                <element signature="e#12775#12797#0#HTML" expanded="true" />
+                <element signature="e#12846#12868#0#HTML" expanded="true" />
+                <element signature="e#12920#12942#0#HTML" expanded="true" />
+                <element signature="e#12994#13016#0#HTML" expanded="true" />
+                <element signature="e#13064#13086#0#HTML" expanded="true" />
+                <element signature="e#13132#13154#0#HTML" expanded="true" />
+                <element signature="e#13209#13231#0#HTML" expanded="true" />
+                <element signature="e#13280#13302#0#HTML" expanded="true" />
+                <element signature="e#13355#13377#0#HTML" expanded="true" />
+                <element signature="e#13426#13448#0#HTML" expanded="true" />
+                <element signature="e#13502#13524#0#HTML" expanded="true" />
+                <element signature="e#13574#13596#0#HTML" expanded="true" />
+                <element signature="e#13634#13676#0#HTML" expanded="true" />
+                <element signature="e#15095#15121#0#HTML" expanded="true" />
+                <element signature="e#15241#15269#0#HTML" expanded="true" />
+              </folding>
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/base.html.twig">
+        <entry file="file://$PROJECT_DIR$/templates/customer/create.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="503">
-              <caret line="53" column="16" selection-start-line="53" selection-start-column="16" selection-end-line="53" selection-end-column="16" />
+            <state relative-caret-position="291">
+              <caret line="29" column="53" selection-start-line="29" selection-start-column="53" selection-end-line="29" selection-end-column="53" />
+              <folding>
+                <element signature="e#12#26#0#Twig" expanded="true" />
+                <element signature="e#7656#7729#0#HTML" expanded="true" />
+                <element signature="e#7789#7842#0#HTML" expanded="true" />
+                <element signature="e#8412#8435#0#HTML" expanded="true" />
+                <element signature="e#8986#9009#0#HTML" expanded="true" />
+                <element signature="e#9532#9555#0#HTML" expanded="true" />
+                <element signature="e#10078#10101#0#HTML" expanded="true" />
+                <element signature="e#10630#10653#0#HTML" expanded="true" />
+                <element signature="e#11058#11253#0#HTML" expanded="true" />
+                <element signature="e#11326#11492#0#HTML" expanded="true" />
+                <element signature="e#12274#12302#0#HTML" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Form/CustomerForm.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="33" column="44" selection-start-line="33" selection-start-column="44" selection-end-line="33" selection-end-column="44" />
+              <folding>
+                <element signature="e#6#87#0#PHP" expanded="true" />
+                <element signature="e#111#140#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/packages/twig.yaml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" selection-start-line="5" selection-end-line="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Controller/AdminController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="32" column="5" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -292,18 +339,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="289">
               <caret line="17" selection-start-line="17" selection-end-line="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Entity/User/Customer.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="287">
-              <caret line="672" column="7" selection-start-line="672" selection-start-column="7" selection-end-line="672" selection-end-column="7" />
-              <folding>
-                <element signature="e#35#67#0#PHP" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -331,12 +366,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>agency</find>
-      <find>boot</find>
-      <find>title</find>
-      <find>style</find>
-      <find>stylesheet</find>
-      <find>javascript</find>
       <find>body.fixed-left .side-menu.left</find>
       <find>slimScrollDiv</find>
       <find>slimsc</find>
@@ -361,6 +390,12 @@
       <find>text</find>
       <find>hourl</find>
       <find>form ele</find>
+      <find>kvknu</find>
+      <find>created</find>
+      <find>twig.yam</find>
+      <find>twig.yaml</find>
+      <find>name</find>
+      <find>logo</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -377,13 +412,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Entity/Log/ElastAlert.php" />
-        <option value="$PROJECT_DIR$/src/Entity/Meta/MetaUser.php" />
-        <option value="$PROJECT_DIR$/src/Entity/Phonebook/PhoneRecord.php" />
-        <option value="$PROJECT_DIR$/src/Entity/Product/Category.php" />
-        <option value="$PROJECT_DIR$/src/Entity/Product/Domain.php" />
-        <option value="$PROJECT_DIR$/src/Entity/Product/DomainState.php" />
-        <option value="$PROJECT_DIR$/src/Entity/Product/Product.php" />
         <option value="$PROJECT_DIR$/src/Entity/Project/Accounts.php" />
         <option value="$PROJECT_DIR$/src/Entity/Project/ActualWork.php" />
         <option value="$PROJECT_DIR$/src/Entity/Project/Checklist.php" />
@@ -420,14 +448,21 @@
         <option value="$PROJECT_DIR$/templates/base.html.twig" />
         <option value="$PROJECT_DIR$/src/Entity/Phonebook/PhoneBook.php" />
         <option value="$PROJECT_DIR$/src/Entity/Project/Task.php" />
-        <option value="$PROJECT_DIR$/src/Entity/User/Customer.php" />
         <option value="$PROJECT_DIR$/src/Entity/User/CustomerContact.php" />
         <option value="$PROJECT_DIR$/src/Entity/User/CustomerType.php" />
-        <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/templates/startpagina/show.html.twig" />
         <option value="$USER_HOME$/Desktop/Ubold_v2.7/Admin/dark-vertical/form-elements.html" />
         <option value="$PROJECT_DIR$/templates/admin/CustomerController.php" />
+        <option value="$PROJECT_DIR$/.env" />
+        <option value="$PROJECT_DIR$/src/Controller/AdminController.php" />
+        <option value="$PROJECT_DIR$/var/cache/dev/srcDevDebugProjectContainerUrlMatcher.php.meta" />
+        <option value="$PROJECT_DIR$/src/Entity/User/Customer.php" />
+        <option value="$PROJECT_DIR$/templates/customer/index.html.twig" />
+        <option value="$PROJECT_DIR$/src/Controller/CustomerController.php" />
+        <option value="$PROJECT_DIR$/src/Form/CustomerForm.php" />
+        <option value="$PROJECT_DIR$/config/packages/twig.yaml" />
         <option value="$PROJECT_DIR$/templates/admin/admin.html.twig" />
+        <option value="$PROJECT_DIR$/templates/customer/create.html.twig" />
       </list>
     </option>
   </component>
@@ -525,8 +560,8 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="596" />
-    <option name="y" value="-14" />
+    <option name="x" value="290" />
+    <option name="y" value="-27" />
     <option name="width" value="974" />
     <option name="height" value="1047" />
   </component>
@@ -574,6 +609,18 @@
             <path>
               <item name="agency_desk" type="b2602c69:ProjectViewProjectNode" />
               <item name="agency_desk" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Entity" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="agency_desk" type="b2602c69:ProjectViewProjectNode" />
+              <item name="agency_desk" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Form" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="agency_desk" type="b2602c69:ProjectViewProjectNode" />
+              <item name="agency_desk" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -581,6 +628,18 @@
               <item name="agency_desk" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
               <item name="admin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="agency_desk" type="b2602c69:ProjectViewProjectNode" />
+              <item name="agency_desk" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="customer" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="agency_desk" type="b2602c69:ProjectViewProjectNode" />
+              <item name="agency_desk" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="developer" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -593,22 +652,22 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../agency_desk_bitbucket" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\agency_desk\templates\klant" />
-      <recent name="C:\xampp\htdocs\agency_desk\templates\article" />
-      <recent name="C:\xampp\htdocs\agency_desk\public" />
-      <recent name="C:\xampp\htdocs\agency_desk\public\js" />
-      <recent name="C:\Users\Jeroen\Documents\VersionControlAgencyDesk\agency_desk\public" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\agency_desk\public" />
       <recent name="C:\xampp\htdocs\agency_desk\public\assets\images" />
       <recent name="C:\xampp\htdocs\agency_desk\public\assets" />
       <recent name="C:\xampp\htdocs\agency_desk\public\css" />
       <recent name="C:\xampp\htdocs\agency_desk\public\assets\css" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\agency_desk\src\Form" />
+      <recent name="C:\xampp\htdocs\agency_desk\src\Entity\User" />
+      <recent name="C:\xampp\htdocs\agency_desk\templates\klant" />
+      <recent name="C:\xampp\htdocs\agency_desk\templates\article" />
+      <recent name="C:\xampp\htdocs\agency_desk\public" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -649,22 +708,23 @@
       <workItem from="1536841513091" duration="10140000" />
       <workItem from="1536913779700" duration="10843000" />
       <workItem from="1537171799745" duration="3873000" />
-      <workItem from="1537343483356" duration="11856000" />
+      <workItem from="1537343483356" duration="12749000" />
+      <workItem from="1537430290431" duration="15987000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="176553000" />
+    <option name="totallyTimeSpent" value="193433000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="953" y="0" width="974" height="1047" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49838188" visible="true" weight="0.285558" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49838188" visible="true" weight="0.09488273" />
       <window_info id="Structure" order="1" sideWeight="0.50161815" side_tool="true" weight="0.12953092" />
       <window_info id="Favorites" order="2" sideWeight="0.50161815" side_tool="true" weight="0.12953092" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3286334" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32858709" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -673,7 +733,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.2451193" />
+      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.2451193" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" weight="0.329718" />
       <window_info anchor="bottom" id="Thumbnails" order="12" weight="0.32968238" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -689,39 +749,11 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Migrations/Version20180911144706.php" />
-    <entry file="file://$PROJECT_DIR$/src/Migrations/Version20180911110828.php" />
-    <entry file="file://$PROJECT_DIR$/src/Migrations/Version20180911145023.php" />
-    <entry file="file://$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Platforms/MySqlPlatform.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="53" column="3" selection-start-line="53" selection-start-column="3" selection-end-line="53" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOConnection.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="85" column="7" selection-start-line="85" selection-start-column="7" selection-end-line="85" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Migrations/.gitignore">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/variables.css" />
     <entry file="file://$PROJECT_DIR$/public/css/typicons.css" />
     <entry file="file://$PROJECT_DIR$/public/css/style.css" />
     <entry file="file://$PROJECT_DIR$/public/assets/css/owl.carousel.css" />
     <entry file="file://$PROJECT_DIR$/public/index.php">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/AdminController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="10" column="4" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/assets/scss/_menu.scss">
       <provider selected="true" editor-type-id="text-editor" />
@@ -903,34 +935,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/User/CustomerContact.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="37" column="24" selection-start-line="37" selection-start-column="24" selection-end-line="37" selection-end-column="24" />
-          <folding>
-            <element signature="e#117#149#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/startpagina/show.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="435" column="68" lean-forward="true" selection-start-line="435" selection-start-column="68" selection-end-line="435" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="503">
-          <caret line="53" column="16" selection-start-line="53" selection-start-column="16" selection-end-line="53" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -941,42 +949,165 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/admin/CustomerController.php" />
+    <entry file="file://$PROJECT_DIR$/templates/base.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="901">
+          <caret line="53" column="16" selection-start-line="53" selection-start-column="16" selection-end-line="53" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/User/CustomerContact.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="37" column="24" selection-start-line="37" selection-start-column="24" selection-end-line="37" selection-end-column="24" />
+          <folding>
+            <element signature="e#117#149#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$USER_HOME$/Desktop/Ubold_v2.7/Admin/dark-vertical/form-elements.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2340">
+        <state relative-caret-position="16490">
           <caret line="970" selection-start-line="970" selection-end-line="970" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/Client.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/var/cache/dev/srcDevDebugProjectContainerUrlMatcher.php.meta">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="1280" selection-end-column="2821" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Entity/User/Customer.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="672" column="7" selection-start-line="672" selection-start-column="7" selection-end-line="672" selection-end-column="7" />
-          <folding>
-            <element signature="e#35#67#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="282">
+          <caret line="247" column="34" selection-start-line="247" selection-start-column="34" selection-end-line="247" selection-end-column="34" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/admin/CustomerController.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/admin/admin.html.twig">
+    <entry file="file://$PROJECT_DIR$/templates/customer/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="273" column="99" selection-start-line="273" selection-start-column="99" selection-end-line="273" selection-end-column="99" />
+        <state relative-caret-position="627">
+          <caret line="277" column="64" selection-start-line="277" selection-start-column="64" selection-end-line="277" selection-end-column="64" />
           <folding>
-            <element signature="e#8423#8446#0#HTML" expanded="true" />
-            <element signature="e#9304#9327#0#HTML" expanded="true" />
-            <element signature="e#22340#22535#0#HTML" expanded="true" />
-            <element signature="e#22608#22774#0#HTML" expanded="true" />
-            <element signature="e#21929#21948#0#HTML" expanded="true" />
+            <element signature="e#39#53#0#Twig" expanded="true" />
+            <element signature="e#7665#7738#0#HTML" expanded="true" />
+            <element signature="e#7798#7851#0#HTML" expanded="true" />
+            <element signature="e#8421#8444#0#HTML" expanded="true" />
+            <element signature="e#8995#9018#0#HTML" expanded="true" />
+            <element signature="e#9541#9564#0#HTML" expanded="true" />
+            <element signature="e#10087#10110#0#HTML" expanded="true" />
+            <element signature="e#10639#10662#0#HTML" expanded="true" />
+            <element signature="e#11067#11262#0#HTML" expanded="true" />
+            <element signature="e#11335#11501#0#HTML" expanded="true" />
+            <element signature="e#12084#12112#0#HTML" expanded="true" />
+            <element signature="e#12401#12423#0#HTML" expanded="true" />
+            <element signature="e#12477#12499#0#HTML" expanded="true" />
+            <element signature="e#12633#12655#0#HTML" expanded="true" />
+            <element signature="e#12705#12727#0#HTML" expanded="true" />
+            <element signature="e#12775#12797#0#HTML" expanded="true" />
+            <element signature="e#12846#12868#0#HTML" expanded="true" />
+            <element signature="e#12920#12942#0#HTML" expanded="true" />
+            <element signature="e#12994#13016#0#HTML" expanded="true" />
+            <element signature="e#13064#13086#0#HTML" expanded="true" />
+            <element signature="e#13132#13154#0#HTML" expanded="true" />
+            <element signature="e#13209#13231#0#HTML" expanded="true" />
+            <element signature="e#13280#13302#0#HTML" expanded="true" />
+            <element signature="e#13355#13377#0#HTML" expanded="true" />
+            <element signature="e#13426#13448#0#HTML" expanded="true" />
+            <element signature="e#13502#13524#0#HTML" expanded="true" />
+            <element signature="e#13574#13596#0#HTML" expanded="true" />
+            <element signature="e#13634#13676#0#HTML" expanded="true" />
+            <element signature="e#15095#15121#0#HTML" expanded="true" />
+            <element signature="e#15241#15269#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/CustomerController.php">
-      <provider selected="true" editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="372">
+          <caret line="48" column="18" selection-start-line="48" selection-start-column="18" selection-end-line="48" selection-end-column="18" />
+          <folding>
+            <element signature="e#117#146#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Form/CustomerForm.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="33" column="44" selection-start-line="33" selection-start-column="44" selection-end-line="33" selection-end-column="44" />
+          <folding>
+            <element signature="e#6#87#0#PHP" expanded="true" />
+            <element signature="e#111#140#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/packages/twig.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/developer/create.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="152" column="37" lean-forward="true" selection-start-line="152" selection-start-column="37" selection-end-line="152" selection-end-column="62" />
+          <folding>
+            <element signature="e#12#26#0#Twig" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/AdminController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="32" column="5" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/customer/create.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="29" column="53" selection-start-line="29" selection-start-column="53" selection-end-line="29" selection-end-column="53" />
+          <folding>
+            <element signature="e#12#26#0#Twig" expanded="true" />
+            <element signature="e#7656#7729#0#HTML" expanded="true" />
+            <element signature="e#7789#7842#0#HTML" expanded="true" />
+            <element signature="e#8412#8435#0#HTML" expanded="true" />
+            <element signature="e#8986#9009#0#HTML" expanded="true" />
+            <element signature="e#9532#9555#0#HTML" expanded="true" />
+            <element signature="e#10078#10101#0#HTML" expanded="true" />
+            <element signature="e#10630#10653#0#HTML" expanded="true" />
+            <element signature="e#11058#11253#0#HTML" expanded="true" />
+            <element signature="e#11326#11492#0#HTML" expanded="true" />
+            <element signature="e#12274#12302#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/admin/admin.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="30" lean-forward="true" selection-start-line="23" selection-start-column="30" selection-end-line="23" selection-end-column="30" />
+        </state>
+      </provider>
     </entry>
   </component>
   <component name="masterDetails">
