@@ -2,21 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="592cba6a-2e79-4f1d-a0ab-904970897a9b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Form/CustomerForm.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/twig.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/twig.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AdminController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/CustomerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CustomerController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Client.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Developer.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Project.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/User/Customer.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User/Customer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Migrations/Version20180914143954.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/admin.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/admin.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/klant/create.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/customer/create.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/klant/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/customer/edit.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/klant/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/customer/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/klant/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/customer/show.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -151,6 +137,7 @@
           <entry key="css" value="5" />
           <entry key="dummy" value="41" />
           <entry key="env" value="56" />
+          <entry key="gitignore" value="10" />
           <entry key="html" value="9" />
           <entry key="js" value="536" />
           <entry key="php" value="6333" />
@@ -166,7 +153,7 @@
           <entry key="HTML" value="9" />
           <entry key="JavaScript" value="539" />
           <entry key="PHP" value="6333" />
-          <entry key="PLAIN_TEXT" value="89" />
+          <entry key="PLAIN_TEXT" value="99" />
           <entry key="SCSS" value="132" />
           <entry key="Twig" value="6743" />
           <entry key="YAML" value="76" />
@@ -176,7 +163,7 @@
         <counts>
           <entry key="css" value="31" />
           <entry key="env" value="8" />
-          <entry key="gitignore" value="2" />
+          <entry key="gitignore" value="3" />
           <entry key="html" value="16" />
           <entry key="js" value="29" />
           <entry key="json" value="1" />
@@ -197,7 +184,7 @@
           <entry key="JSON" value="1" />
           <entry key="JavaScript" value="29" />
           <entry key="PHP" value="250" />
-          <entry key="PLAIN_TEXT" value="12" />
+          <entry key="PLAIN_TEXT" value="13" />
           <entry key="RNG Compact" value="1" />
           <entry key="SCSS" value="35" />
           <entry key="SourceMap" value="2" />
@@ -219,11 +206,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/admin/admin.html.twig">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="391">
               <caret line="23" column="30" lean-forward="true" selection-start-line="23" selection-start-column="30" selection-end-line="23" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="12" selection-start-line="12" selection-end-line="12" />
             </state>
           </provider>
         </entry>
@@ -366,7 +362,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>body.fixed-left .side-menu.left</find>
       <find>slimScrollDiv</find>
       <find>slimsc</find>
       <find>end</find>
@@ -396,6 +391,7 @@
       <find>twig.yaml</find>
       <find>name</find>
       <find>logo</find>
+      <find>work</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -412,7 +408,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Entity/Project/Accounts.php" />
         <option value="$PROJECT_DIR$/src/Entity/Project/ActualWork.php" />
         <option value="$PROJECT_DIR$/src/Entity/Project/Checklist.php" />
         <option value="$PROJECT_DIR$/src/Entity/Project/ChecklistItem.php" />
@@ -463,6 +458,7 @@
         <option value="$PROJECT_DIR$/config/packages/twig.yaml" />
         <option value="$PROJECT_DIR$/templates/admin/admin.html.twig" />
         <option value="$PROJECT_DIR$/templates/customer/create.html.twig" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -559,9 +555,9 @@
       <path value="$PROJECT_DIR$/vendor/components/jquery" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="290" />
-    <option name="y" value="-27" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="323" />
+    <option name="y" value="-8" />
     <option name="width" value="974" />
     <option name="height" value="1047" />
   </component>
@@ -594,29 +590,6 @@
             <path>
               <item name="agency_desk" type="b2602c69:ProjectViewProjectNode" />
               <item name="agency_desk" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="agency_desk" type="b2602c69:ProjectViewProjectNode" />
-              <item name="agency_desk" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="agency_desk" type="b2602c69:ProjectViewProjectNode" />
-              <item name="agency_desk" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="agency_desk" type="b2602c69:ProjectViewProjectNode" />
-              <item name="agency_desk" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Entity" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="agency_desk" type="b2602c69:ProjectViewProjectNode" />
-              <item name="agency_desk" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Form" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="agency_desk" type="b2602c69:ProjectViewProjectNode" />
@@ -709,16 +682,15 @@
       <workItem from="1536913779700" duration="10843000" />
       <workItem from="1537171799745" duration="3873000" />
       <workItem from="1537343483356" duration="12749000" />
-      <workItem from="1537430290431" duration="15987000" />
+      <workItem from="1537430290431" duration="16800000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="193433000" />
+    <option name="totallyTimeSpent" value="194246000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49838188" visible="true" weight="0.09488273" />
       <window_info id="Structure" order="1" sideWeight="0.50161815" side_tool="true" weight="0.12953092" />
@@ -749,7 +721,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/css/typicons.css" />
     <entry file="file://$PROJECT_DIR$/public/css/style.css" />
     <entry file="file://$PROJECT_DIR$/public/assets/css/owl.carousel.css" />
     <entry file="file://$PROJECT_DIR$/public/index.php">
@@ -1106,6 +1077,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="23" column="30" lean-forward="true" selection-start-line="23" selection-start-column="30" selection-end-line="23" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
         </state>
       </provider>
     </entry>
