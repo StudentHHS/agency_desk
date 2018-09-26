@@ -33,7 +33,7 @@ class User implements UserInterface{
     /**
      * @var string $gender
      *
-     * @ORM\Column(type="string", columnDefinition="ENUM('m', 'f')")
+     * @ORM\Column(type="string")
      */
     protected $gender;
 

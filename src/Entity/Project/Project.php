@@ -29,50 +29,50 @@ class Project
      * @var Customer $customer
      *
      * @ORM\ManyToOne(targetEntity="App\Entity\User\Customer", inversedBy="projects")
-     * @ORM\JoinColumn(name="customer_id", referencedColumnName="id", nullable=true)
+     * @ORM\JoinColumn(name="customerId", referencedColumnName="id", nullable=true)
      */
     protected $customer;
 
     /**
      * @var string $title
      *
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(name="title", type="string", length=255, nullable=true)
      */
     protected $title;
 
     /**
      * @var string $body
      *
-     * @ORM\Column(type="text", nullable=true)
+     * @ORM\Column(name="body", type="text", nullable=true)
      */
     protected $body;
 
     /**
-     * @var string $git_url
+     * @var string $gitUrl
      *
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(name="gitUrl", type="string", length=255, nullable=true)
      */
-    protected $git_url;
+    protected $gitUrl;
 
     /**
-     * @var string $production_url
+     * @var string $productionUrl
      *
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(name="productionUrl", type="string", length=255, nullable=true)
      */
-    protected $production_url;
+    protected $productionUrl;
 
     /**
-     * @var string $development_url
+     * @var string $developmentUrl
      *
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(name="developmentUrl", type="string", length=255, nullable=true)
      */
-    protected $development_url;
+    protected $developmentUrl;
 
     /**
      * @var User $user
      *
      * @ORM\ManyToOne(targetEntity="App\Entity\User\User", fetch="EAGER")
-     * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
+     * @ORM\JoinColumn(name="userId", referencedColumnName="id")
      */
     protected $user;
 
@@ -80,7 +80,7 @@ class Project
      * @var User $accounts
      *
      * @ORM\ManyToOne(targetEntity="App\Entity\Project\Accounts", fetch="EAGER")
-     * @ORM\JoinColumn(name="account_id", referencedColumnName="id")
+     * @ORM\JoinColumn(name="accountId", referencedColumnName="id")
      */
     protected $accounts;
 
@@ -189,7 +189,7 @@ class Project
      */
     public function setGitUrl($gitUrl)
     {
-        $this->git_url = $gitUrl;
+        $this->gitUrl = $gitUrl;
 
         return $this;
     }
@@ -201,7 +201,7 @@ class Project
      */
     public function getGitUrl()
     {
-        return $this->git_url;
+        return $this->gitUrl;
     }
 
     /**
@@ -213,7 +213,7 @@ class Project
      */
     public function setProductionUrl($productionUrl)
     {
-        $this->production_url = $productionUrl;
+        $this->productionUrl = $productionUrl;
 
         return $this;
     }
@@ -225,7 +225,7 @@ class Project
      */
     public function getProductionUrl()
     {
-        return $this->production_url;
+        return $this->productionUrl;
     }
 
     /**
@@ -237,7 +237,7 @@ class Project
      */
     public function setDevelopmentUrl($developmentUrl)
     {
-        $this->development_url = $developmentUrl;
+        $this->developmentUrl = $developmentUrl;
 
         return $this;
     }
@@ -249,7 +249,7 @@ class Project
      */
     public function getDevelopmentUrl()
     {
-        return $this->development_url;
+        return $this->developmentUrl;
     }
 
     /**

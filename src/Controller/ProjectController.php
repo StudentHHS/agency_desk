@@ -8,6 +8,9 @@
 
 namespace App\Controller;
 
+use App\Entity\Project\Project;
+use App\Entity\User\Customer;
+use App\Form\ProjectForm;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -20,7 +23,6 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
-use App\Entity\Project;
 
 class ProjectController extends AbstractController
 {
@@ -30,8 +32,13 @@ class ProjectController extends AbstractController
      */
     public function index()
     {
-        $projecten = $this->getDoctrine()->getRepository(Project::class)->findAll();
-        return ['projecten' => $projecten];
+        $em = $this->getDoctrine()->getManager();
+        $projects = $em->getRepository("App:Project\Project")->findAll();
+
+        return array(
+            'projects' => $projects,
+
+        );
     }
 
     /**
@@ -42,26 +49,22 @@ class ProjectController extends AbstractController
     public function create(Request $request)
     {
         $project = new Project();
-        $form = $this->createFormBuilder($project)
-            ->add('name', TextareaType::class,
-                array('required' => false, 'attr' => array('class' => 'forms-control')))
-            ->add('function', TextareaType::class,
-                array('required' => false, 'attr' => array('class' => 'forms-control')
-                ))
-            ->add('save', SubmitType::class, array(
-                'label' => 'Confirm',
-                'attr' => array('class' => 'btn btn-primary mt-3')
-            ))
-            ->getForm();
+        $form = $this->createForm(ProjectForm::class, $project);
+
         $form->handleRequest($request);
+
         if ($form->isSubmitted() && $form->isValid()) {
-            $project = $form->getData();
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($project);
-            $entityManager->flush();
+
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($project);
+            $em->flush();
             return $this->redirectToRoute('index_project');
         }
-        return ['forms' => $form->createView()];
+
+        return [
+            'form' => $form->createView(),
+            'projects' => array($project)
+        ];
     }
 
     /**
@@ -71,50 +74,71 @@ class ProjectController extends AbstractController
      */
     public function edit(Request $request, $id)
     {
-        $project = new Project();
-        $project = $this->getDoctrine()->getRepository(Project::class)->find($id);
-        $form = $this->createFormBuilder($project)
-            ->add('name', TextareaType::class,
-                array('required' => false, 'attr' => array('class' => 'forms-control')))
-            ->add('function', TextareaType::class,
-                array('required' => false, 'attr' => array('class' => 'forms-control')
-                ))
-            ->add('save', SubmitType::class, array(
-                'label' => 'Confirm',
-                'attr' => array('class' => 'btn btn-primary mt-3')
-            ))
-            ->getForm();
+        $em = $this->getDoctrine()->getManager();
+        $project = $em->getRepository("App:Project\Project")->find($id);
+
+        $form = $this->createForm(ProjectForm::class, $project);
+
         $form->handleRequest($request);
+
         if ($form->isSubmitted() && $form->isValid()) {
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->flush();
+
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($project);
+            $em->flush();
             return $this->redirectToRoute('index_project');
         }
-        return ['forms' => $form->createView()];
+
+        return [
+            'form' => $form->createView(),
+            'projects' => array($project)
+        ];
+
     }
 
-    /**
-     * @Route("/admin/project/{id}", name="show_project")
-     * @Template()
-     */
-    public function show($id)
-    {
-        $project = $this->getDoctrine()->getRepository(Project::class)->find($id);
-        return ['project' => $project];
-    }
 
     /**
-     * @Route("/admin/project/delete/{id}")
+     * @Route("/admin/project/delete/{id}", name="delete_project")
      * @Method({"DELETE"})
      * @Template()
      */
     public function delete(Request $request, $id)
     {
-        $project = $this->getDoctrine()->getRepository(Project::class)->find($id);
-        $entityManager = $this->getDoctrine()->getManager();
-        $entityManager->remove($project);
-        $entityManager->flush();
-        $response = new Response();
-        $response->send();
+//        $em = $this->getDoctrine()->getManager();
+//
+//
+//        /**
+//         * @var Customer $cust
+//         */
+//
+//        $cust = $em->getRepository("App:User\Customer")->find($id);
+//
+//        if(!$cust){
+//            throw $this->createNotFoundException('Unable to find Customer entity.');
+//        }
+//
+//        $projects = $em->getRepository('App:Project\Project')->findBy(array('customer'=>$cust->getId()));
+//
+//        /**
+//         * @var Project $proj
+//         */
+//        foreach ($projects as $proj) {
+//            $em->remove($proj);
+//        }
+//        $em->flush();
+//
+//        $em->remove($cust);
+//        $em->flush();
+//        return $this->redirectToRoute('index_project');
+
+         $em = $this->getDoctrine()->getManager();
+         $project = $em->getRepository("App:Project\Project")->find($id);
+
+         $em->remove($project);
+         $em->flush();
+
+
+
+         return $this->redirectToRoute('index_project');
     }
 }

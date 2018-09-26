@@ -11,12 +11,12 @@ namespace App\Controller;
 
 use App\Entity\User\Customer;
 use App\Form\CustomerForm;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 
 #<!-- wanneer je een normale controller extend -->
 #use Symfony\Bundle\FrameworkExtraBundle\Controller\Controller;
@@ -34,12 +34,20 @@ class CustomerController extends AbstractController
      */
     public function index()
     {
-        $customer = new Customer();
-        $form = $this->createForm(CustomerForm::class, $customer);
+//        $em = $this->getDoctrine()->getManager();
+//        $customers = $em->getRepository("App:User\Customer")->findAll();
+//
+//        return [
+//            'customers' => array($customers)];
 
-        return [
-            'form' => $form->createView(),
-            'customers' => array($customer)];
+        $em = $this->getDoctrine()->getManager();
+        $customers = $em->getRepository("App:User\Customer")->findAll();
+
+        return array(
+            'customers' => $customers,
+
+        );
+
     }
 
 
@@ -65,6 +73,20 @@ class CustomerController extends AbstractController
 //            return $this->redirectToRoute('admin_page');
 //        }
 
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid()){
+
+
+
+
+            $em = $this->getDoctrine()->getManager();
+
+            $em->persist($customer);
+
+            $em->flush();
+            return $this->redirectToRoute('index_customer');
+        }
 
         return [
             'form' => $form->createView(),

@@ -17,6 +17,14 @@ body {
   font-size: 14px;
 }
 
+.forms-control {
+  border: 1px solid #505f6d;
+  background-color: #414d59;
+  box-shadow: none;
+  color: #ffffff;
+  font-size: inherit;
+}
+
 html {
   position: relative;
   min-height: 100%;

@@ -66,18 +66,18 @@ class Customer {
     protected $fax;
 
     /**
-     * @var string $company_name
+     * @var string $companyName
      *
-     * @ORM\Column(name="company_name", type="string", length=255, nullable=true)
+     * @ORM\Column(name="companyName", type="string", length=255, nullable=true)
      */
-    protected $company_name;
+    protected $companyName;
 
     /**
-     * @var string $old_id
+     * @var string $oldId
      *
-     * @ORM\Column(name="old_id", type="string", length=255, nullable=true)
+     * @ORM\Column(name="oldId", type="string", length=255, nullable=true)
      */
-    protected $old_id;
+    protected $oldId;
 
     /**
      * @var AddressType $type
@@ -98,7 +98,7 @@ class Customer {
     /**
      * @var string $vatNumber
      *
-     * @ORM\Column(name="vat_number", type="string", length=255, nullable=true)
+     * @ORM\Column(name="vatNumber", type="string", length=255, nullable=true)
      */
     protected $vatNumber;
 
@@ -138,12 +138,12 @@ class Customer {
     /**
      * @var decimal $hourlyRate
      *
-     * @ORM\Column(name="hourly_rate", type="decimal", scale=2, precision=10, nullable=true)
+     * @ORM\Column(name="$hourlyRate", type="decimal", scale=2, precision=10, nullable=true)
      */
     protected $hourlyRate;
 
     /**
-     * @var datetime $created
+     * @var \DateTime $created
      *
      * @Gedmo\Timestampable(on="create")
      * @ORM\Column(type="datetime")
@@ -151,7 +151,7 @@ class Customer {
     protected $created;
 
     /**
-     * @var datetime $updated
+     * @var \DateTime $updated
      *
      * @ORM\Column(type="datetime")
      * @Gedmo\Timestampable(on="update")
@@ -166,11 +166,6 @@ class Customer {
         $this->projects = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
-    public function __toString()
-    {
-        return $this->getName();
-    }
-
     /**
      * Get id
      *
@@ -179,29 +174,6 @@ class Customer {
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * Set name
-     *
-     * @param string $name
-     * @return Customer
-     */
-    public function setName($name)
-    {
-        $this->name = $name;
-
-        return $this;
-    }
-
-    /**
-     * Get name
-     *
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->firstname. " " .$this->lastname;
     }
 
     /**
@@ -228,20 +200,20 @@ class Customer {
     }
 
     /**
-     * Set kvkNumber
+     * Set kvknumber
      *
-     * @param string $kvkNumber
+     * @param string $kvknumber
      * @return Customer
      */
-    public function setKvkNumber($kvkNumber)
+    public function setKvkNumber($kvknumber)
     {
-        $this->kvkNumber = $kvkNumber;
+        $this->kvknumber = $kvknumber;
 
         return $this;
     }
 
     /**
-     * Get kvkNumber
+     * Get kvknumber
      *
      * @return string
      */
@@ -274,19 +246,6 @@ class Customer {
     }
 
     /**
-     * Set created
-     *
-     * @param \DateTime $created
-     * @return Customer
-     */
-    public function setCreated($created)
-    {
-        $this->created = $created;
-
-        return $this;
-    }
-
-    /**
      * Get created
      *
      * @return \DateTime
@@ -294,19 +253,6 @@ class Customer {
     public function getCreated()
     {
         return $this->created;
-    }
-
-    /**
-     * Set updated
-     *
-     * @param \DateTime $updated
-     * @return Customer
-     */
-    public function setUpdated($updated)
-    {
-        $this->updated = $updated;
-
-        return $this;
     }
 
     /**
@@ -560,7 +506,7 @@ class Customer {
      */
     public function setCompanyName($companyName)
     {
-        $this->company_name = $companyName;
+        $this->companyName = $companyName;
 
         return $this;
     }
@@ -572,7 +518,7 @@ class Customer {
      */
     public function getCompanyName()
     {
-        return $this->company_name;
+        return $this->companyName;
     }
 
     /**
@@ -584,7 +530,7 @@ class Customer {
      */
     public function setOldId($oldId)
     {
-        $this->old_id = $oldId;
+        $this->oldId = $oldId;
 
         return $this;
     }
@@ -596,7 +542,7 @@ class Customer {
      */
     public function getOldId()
     {
-        return $this->old_id;
+        return $this->oldId;
     }
 
     /**
