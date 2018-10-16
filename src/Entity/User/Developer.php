@@ -33,32 +33,32 @@ class Developer implements UserInterface{
     protected $slug;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(name="firstName", type="string", length=255)
      */
     protected $firstname;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(name="prefix", type="string", length=255, nullable=true)
      */
     protected $prefix;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(name="lastName", type="string", length=255)
      */
     protected $lastname;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(name="email", type="string", length=255)
      */
     protected $email;
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(name="salt", type="text")
      */
     protected $salt;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(name="password", type="string", length=255)
      */
     protected $password;
 

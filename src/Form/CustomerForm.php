@@ -25,15 +25,15 @@ class CustomerForm extends AbstractType
             ->add('title', null, array('label' => 'Titel', 'required' => false))
             ->add('street',null, array('label' => 'Straat', 'required' => false))
             ->add('taxnumber',null, array('label' => 'Tax nummer', 'required' => false))
-            ->add('kvkNumber',null, array('label' => 'Kvk nummer', 'required' => false))
+            ->add('kvknumber',null, array('label' => 'Kvk nummer', 'required' => false))
             ->add('phone',null, array('label' => 'Telefoonnummer', 'required' => false))
             ->add('fax',null, array('label' => 'Fax nummer', 'required' => false))
             ->add('company_name',null, array('label' => 'Bedrijfsnaam', 'required' => false))
             ->add('old_id',null, array('label' => 'Oud id', 'required' => false))
             ->add('vatNumber',null, array('label' => 'Vat nummer', 'required' => false))
-            ->add('active',ChoiceType::class, array('label' => 'Actief', 'required' => true,
-                'choices' => array( 1 => 'Ja',
-                                    0 => 'Nee')))
+            ->add('active',ChoiceType::class , array('label' => 'Actief', 'required' => true,
+                'choices' => array( 'Yes' => 1,
+                                    'No' => 0)))
             ->add('hourly_rate',null, array('label' => 'Uurtarief', 'required' => false))
             ->add('save', SubmitType::class)
         ;

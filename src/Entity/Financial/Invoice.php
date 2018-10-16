@@ -27,7 +27,7 @@ class Invoice
     /**
      * @var integer
      *
-     * @ORM\Column(name="invoice_nr", type="integer")
+     * @ORM\Column(name="invoiceNr", type="integer")
      */
     private $invoiceNr;
 
@@ -35,7 +35,7 @@ class Invoice
      * @var InvoiceState $state
      *
      * @ORM\ManyToOne(targetEntity="App\Entity\Financial\InvoiceState")
-     * @ORM\JoinColumn(name="state_id", referencedColumnName="id", onDelete="cascade")
+     * @ORM\JoinColumn(name="stateId", referencedColumnName="id", onDelete="cascade")
      */
     protected $state;
 
@@ -43,7 +43,7 @@ class Invoice
      * @var Customer $customer
      *
      * @ORM\ManyToOne(targetEntity="App\Entity\User\Customer")
-     * @ORM\JoinColumn(name="customer_id", referencedColumnName="id", onDelete="cascade")
+     * @ORM\JoinColumn(name="customerId", referencedColumnName="id", onDelete="cascade")
      */
     protected $customer;
 
@@ -64,7 +64,7 @@ class Invoice
     /**
      * @var string $reasonFree
      *
-     * @ORM\Column(name="reason_free", type="string", length=255, nullable=true)
+     * @ORM\Column(name="reasonFree", type="string", length=255, nullable=true)
      */
     protected $reasonFree;
 
@@ -78,7 +78,7 @@ class Invoice
     /**
      * @var date $paymentDate
      *
-     * @ORM\Column(name="payment_date", type="date", nullable=true)
+     * @ORM\Column(name="paymentDate", type="date", nullable=true)
      */
     private $paymentDate;
 
