@@ -9,20 +9,14 @@
 namespace App\Controller;
 
 use App\Entity\Project\Project;
-use App\Entity\User\Customer;
 use App\Form\ProjectForm;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 
-#<!-- wanneer je een normale controller extend -->
-#use Symfony\Bundle\FrameworkExtraBundle\Controller\Controller;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
-use Symfony\Component\Form\Extension\Core\Type\TextareaType;
-use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 class ProjectController extends AbstractController
 {
@@ -131,14 +125,13 @@ class ProjectController extends AbstractController
 //        $em->flush();
 //        return $this->redirectToRoute('index_project');
 
-         $em = $this->getDoctrine()->getManager();
-         $project = $em->getRepository("App:Project\Project")->find($id);
+        $em = $this->getDoctrine()->getManager();
+        $project = $em->getRepository("App:Project\Project")->find($id);
 
-         $em->remove($project);
-         $em->flush();
+        $em->remove($project);
+        $em->flush();
 
 
-
-         return $this->redirectToRoute('index_project');
+        return $this->redirectToRoute('index_project');
     }
 }

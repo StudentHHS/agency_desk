@@ -34,11 +34,6 @@ class CustomerController extends AbstractController
      */
     public function index()
     {
-//        $em = $this->getDoctrine()->getManager();
-//        $customers = $em->getRepository("App:User\Customer")->findAll();
-//
-//        return [
-//            'customers' => array($customers)];
 
         $em = $this->getDoctrine()->getManager();
         $customers = $em->getRepository("App:User\Customer")->findAll();
@@ -58,39 +53,25 @@ class CustomerController extends AbstractController
      */
     public function create(Request $request)
     {
+
         $customer = new Customer();
         $form = $this->createForm(CustomerForm::class, $customer);
 
-//        $form->handleRequest($request);
-
-//        if ($form->isSubmitted() && $form->isValid()) {
-//            $customer = $form->getData();
-//
-//            $entityManager = $this->getDoctrine()->getManager();
-//            $entityManager->persist($customer);
-//            $entityManager->flush();
-//
-//            return $this->redirectToRoute('admin_page');
-//        }
-
         $form->handleRequest($request);
 
-        if($form->isSubmitted() && $form->isValid()){
-
-
-
+        if ($form->isSubmitted() && $form->isValid()) {
 
             $em = $this->getDoctrine()->getManager();
-
             $em->persist($customer);
-
             $em->flush();
             return $this->redirectToRoute('index_customer');
         }
 
         return [
             'form' => $form->createView(),
-            'customers' => array($customer)];
+            'customers' => array($customer)
+        ];
+
     }
 
 
@@ -101,60 +82,42 @@ class CustomerController extends AbstractController
      */
     public function edit(Request $request, $id)
     {
-        $klant = new Client();
-        $klant = $this->getDoctrine()->getRepository(Client::class)->find($id);
+        $em = $this->getDoctrine()->getManager();
+        $customer = $em->getRepository("App:User\Customer")->find($id);
 
-        $form = $this->createFormBuilder($klant)
-            ->add('name', TextareaType::class,
-                array('required' => false, 'attr' => array('class' => 'forms-control')))
-            ->add('function', TextareaType::class,
-                array('required' => false, 'attr' => array('class' => 'forms-control')
-                ))
-            ->add('save', SubmitType::class, array(
-                'label' => 'Confirm',
-                'attr' => array('class' => 'btn btn-primary mt-3')
-            ))
-            ->getForm();
+        $form = $this->createForm(CustomerForm::class, $customer);
 
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
 
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->flush();
-
-            return $this->redirectToRoute('index_klant');
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($customer);
+            $em->flush();
+            return $this->redirectToRoute('index_customer');
         }
 
-        return ['forms' => $form->createView()];
+        return [
+            'form' => $form->createView(),
+            'customers' => array($customer)
+        ];
     }
 
-    /**
-     * @Route("/admin/customer/{id}", name="show_customer")
-     * @Template()
-     */
-    public function show($id)
-    {
-        $klant = $this->getDoctrine()->getRepository(Client::class)->find($id);
-
-        return ['customer' => $klant];
-    }
 
     /**
-     * @Route("/admin/customer/delete/{id}")
+     * @Route("/admin/customer/delete/{id}", name="delete_customer")
      * @Method({"DELETE"})
      * @Template()
      */
     public function delete(Request $request, $id)
     {
-        $klant = $this->getDoctrine()->getRepository(Client::class)->find($id);
+        $em = $this->getDoctrine()->getManager();
+        $customer = $em->getRepository("App:User\Customer")->find($id);
 
-        $entityManager = $this->getDoctrine()->getManager();
-        $entityManager->remove($klant);
-        $entityManager->flush();
+        $em->remove($customer);
+        $em->flush();
 
-        $response = new Response();
-        $response->send();
+        return $this->redirectToRoute('index_customer');
     }
 
 

@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Index van developers{% endblock %}
+{% block title %}Invoice page{% endblock %}
 
 {% block stylesheets %}
 
@@ -11,6 +11,7 @@
 {% block body %}
 
     {% include 'includes/navigation.html.twig' %}
+
 
     <!-- ============================================================== -->
     <!-- Start right Content here -->
@@ -23,7 +24,7 @@
                 <h4 class="page-title">Route</h4>
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="{{ path('admin_page') }}">Admin</a></li>
-                    <li class="breadcrumb-item active">Overview developers</li>
+                    <li class="breadcrumb-item active">Overview invoices</li>
                 </ol>
 
                 <!--HTML WITHOUT THE DASHBOARD PART-->
@@ -35,19 +36,17 @@
                             <table id="datatable-buttons" class="table table-striped table-bordered" cellspacing="0"
                                    width="100%">
 
-                                {% if developers %}
+                                {% if invoices %}
                                     <thead>
                                     <tr>
-                                        <th style="font-size:15px">Developer id</th>
-                                        <th style="font-size:15px">Slug</th>
-                                        <th style="font-size:15px">First name</th>
-                                        <th style="font-size:15px">Prefix</th>
-                                        <th style="font-size:15px">Last name</th>
-                                        <th style="font-size:15px">Email</th>
-                                        <th style="font-size:15px">Salt</th>
-                                        <th style="font-size:15px">Password</th>
+                                        <th style="font-size:15px">Invoice id</th>
 
-                                        <th style="font-size:15px">active</th>
+                                        <th style="font-size:15px">Invoice nr</th>
+                                        <th style="font-size:15px">Credit</th>
+                                        <th style="font-size:15px">Paid</th>
+                                        <th style="font-size:15px">Reason free</th>
+                                        <th style="font-size:15px">Date</th>
+                                        <th style="font-size:15px">Payment data</th>
                                         <th style="font-size:15px">created</th>
                                         <th style="font-size:15px">updated</th>
 
@@ -57,41 +56,47 @@
                                     </thead>
 
                                     <tbody>
-                                    {% for developer in developers %}
+                                    {% for invoice in invoices %}
                                         <tr>
 
-                                            <td>{{ developer.id }}</td>
-                                            <td>{{ developer.slug }}</td>
-                                            <td>{{ developer.firstName }}</td>
-                                            <td>{{ developer.prefix }}</td>
-                                            <td>{{ developer.lastName }}</td>
-                                            <td>{{ developer.email }}</td>
-                                            <td>{{ developer.salt }}</td>
-                                            <td>{{ developer.password }}</td>
+                                            <td>{{ invoice.id }}</td>
 
-                                            {% if developer.active == 1 %}
+                                            <td>{{ invoice.invoiceNr }}</td>
+
+                                            {% if invoice.credit == 1 %}
                                                 <td style="color: green">V</td>
                                             {% else %}
                                                 <td style="color: red">X</td>
                                             {% endif %}
 
-                                            <td>{{ developer.created | date('d M Y') }}</td>
-                                            <td>{{ developer.updated | date('d M Y') }}</td>
+                                            {% if invoice.paid == 1 %}
+                                                <td style="color: green">V</td>
+                                            {% else %}
+                                                <td style="color: red">X</td>
+                                            {% endif %}
+
+                                            <td>{{ invoice.reasonFree }}</td>
+
+                                            <td>{{ invoice.date | date('d M Y') }}</td>
+                                            <td>{{ invoice.paymentDate | date('d M Y') }}</td>
+
+                                            <td>{{ invoice.created | date('d M Y') }}</td>
+                                            <td>{{ invoice.updated | date('d M Y') }}</td>
 
                                             <!-- The edit and delete buttons -->
                                             <td>
-                                                <a href="/admin/developer/edit/{{ developer.id }}" class="btn btn-dark md md-create"
+                                                <a href="/admin/invoice/edit/{{ invoice.id }}" class="btn btn-dark md md-create"
                                                    style="border-color:#5fbeaa"></a>
                                             </td>
                                             <td>
-                                                <a href="/admin/developer/delete/{{ developer.id }}" class="confirm btn btn-danger delete-developer" data-id="{{ developer.id }}">
+                                                <a href="/admin/invoice/delete/{{ invoice.id }}" class="confirm btn btn-danger delete-invoice" data-id="{{ invoice.id }}">
                                                     Delete</a>
                                             </td>
                                         </tr>
                                     {% endfor %}
                                     </tbody>
                                 {% else %}
-                                    <p>No developers made yet</p>
+                                    <p>No invoices made yet</p>
                                 {% endif %}
                             </table>
                         </div>
@@ -104,8 +109,9 @@
 
 {% endblock %}
 
-{% block javascripts %}
+    {% block javascripts %}
 
-   {% include 'includes/scripts.html.twig' %}
+        {% include 'includes/scripts.html.twig' %}
 
-{% endblock %}
+    {% endblock %}
+

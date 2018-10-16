@@ -124,21 +124,21 @@ class Customer {
 
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\Project\Project", mappedBy="customer", cascade={"persist", "remove"}, orphanRemoval=true)
-     * @ORM\OrderBy({"sequence" = "ASC"})
      */
+//@ORM\OrderBy({"sequence" = "ASC"})
     private $projects;
 
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\User\CustomerContact", mappedBy="customer", cascade={"persist", "remove"}, orphanRemoval=true)
-     * @ORM\OrderBy({"sequence" = "ASC"})
      */
+//@ORM\OrderBy({"sequence" = "ASC"})
     private $customerContact;
 
 
     /**
      * @var decimal $hourlyRate
      *
-     * @ORM\Column(name="$hourlyRate", type="decimal", scale=2, precision=10, nullable=true)
+     * @ORM\Column(name="hourlyRate", type="decimal", scale=2, precision=10, nullable=true)
      */
     protected $hourlyRate;
 

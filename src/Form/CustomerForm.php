@@ -32,8 +32,8 @@ class CustomerForm extends AbstractType
             ->add('old_id',null, array('label' => 'Oud id', 'required' => false))
             ->add('vatNumber',null, array('label' => 'Vat nummer', 'required' => false))
             ->add('active',ChoiceType::class , array('label' => 'Actief', 'required' => true,
-                'choices' => array( 1 => 'Ja',
-                                    0 => 'Nee')))
+                'choices' => array( 'Yes' => 1,
+                                    'No' => 0)))
             ->add('hourly_rate',null, array('label' => 'Uurtarief', 'required' => false))
             ->add('save', SubmitType::class)
         ;

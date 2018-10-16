@@ -152,7 +152,7 @@
                         <li class="text-muted menu-title">Navigation</li>
 
                         <li class="has_sub">
-                            <a href="javascript:void(0);" class="waves-effect subdrop"><i
+                            <a href="javascript:void(0);" class="waves-effect"><i
                                         class="ti-user"></i> <span> Klanten </span> <span
                                         class="menu-arrow"></span></a>
                             <ul class="list-unstyled" style="display: block;">
@@ -176,7 +176,8 @@
                                         class="ti-pencil"></i> <span> Developers </span> <span
                                         class="menu-arrow"></span></a>
                             <ul class="list-unstyled" style="display: block;">
-                                <li><a href="#">Developers toevoegen</a></li>
+                                <li><a href="{{ path('index_developer') }}">Developers bekijken</a></li>
+                                <li><a href="{{ path('create_developer') }}">Developers toevoegen</a></li>
                             </ul>
                         </li>
 
@@ -185,7 +186,8 @@
                                         class="ti-receipt"></i> <span> Facturen </span> <span
                                         class="menu-arrow"></span></a>
                             <ul class="list-unstyled" style="display: block;">
-                                <li><a href="#">Nieuwe facturen maken</a></li>
+                                <li><a href="{{ path('index_invoice') }}">Facturen bekijken</a></li>
+                                <li><a href="{{ path('create_invoice') }}">Nieuwe facturen maken</a></li>
                             </ul>
                         </li>
 

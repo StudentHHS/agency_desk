@@ -2,14 +2,13 @@
 /**
  * Created by PhpStorm.
  * User: Jeroen
- * Date: 25-9-2018
- * Time: 11:24
+ * Date: 28-9-2018
+ * Time: 09:45
  */
 
 namespace App\Form;
 
-
-use App\Entity\Project\Project;
+use App\Entity\User\Developer;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
@@ -17,29 +16,32 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 
-class ProjectForm extends AbstractType
+class DeveloperForm extends AbstractType
 {
 
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('title', null, array('label' => 'Titel', 'required' => false))
-            ->add('body', TextareaType::class, array('label' => 'Body', 'required' => false))
-            ->add('gitUrl',null, array('label' => 'Git URL', 'required' => false))
-            ->add('productionUrl',null, array('label' => 'Production URL', 'required' => false))
-            ->add('developmentUrl',null, array('label' => 'Development URL', 'required' => false))
+            ->add('slug', null, array('label' => 'Slug', 'required' => false))
+            ->add('firstName', null, array('label' => 'First name', 'required' => false))
+            ->add('prefix',null, array('label' => 'Prefix', 'required' => false))
+            ->add('lastName',null, array('label' => 'Last name', 'required' => false))
+            ->add('email',null, array('label' => 'E-mail', 'required' => false))
+            ->add('salt',null, array('label' => 'Salt', 'required' => false))
+            ->add('password',null, array('label' => 'Password', 'required' => false))
 
             ->add('active',ChoiceType::class , array('label' => 'Actief', 'required' => true,
                 'choices' => array( 'Yes' => 1,
-                                    'No' => 0)))
+                    'No' => 0)))
             ->add('save', SubmitType::class)
         ;
     }
 
+
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => Project::class,
+            'data_class' => Developer::class,
         ));
     }
 

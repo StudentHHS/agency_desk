@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Admin page{% endblock %}
+{% block title %}Pas factuur aan{% endblock %}
 
 {% block stylesheets %}
 
@@ -10,8 +10,7 @@
 
 {% block body %}
 
-   {% include 'includes/navigation.html.twig' %}
-
+    {% include 'includes/navigation.html.twig' %}
 
     <!-- ============================================================== -->
     <!-- Start right Content here -->
@@ -39,8 +38,8 @@
                         <h4 class="page-title">Route</h4>
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="{{ path('admin_page') }}">Admin</a></li>
-                            <li class="breadcrumb-item"><a href="{{ path('index_customer') }}">Customer</a></li>
-                            <li class="breadcrumb-item active">Create customer</li>
+                            <li class="breadcrumb-item"><a href="{{ path('index_invoice') }}">Invoice</a></li>
+                            <li class="breadcrumb-item active">Edit invoice</li>
                         </ol>
 
                     </div>
@@ -49,11 +48,11 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="card-box">
-                            <h4 class="m-t-0 header-title">Creating customer</h4>
+                            <h4 class="m-t-0 header-title">Editing invoice</h4>
                             </br>
                             </br>
 
-                            <!-- Form voor het maken van een customer -->
+                            <!-- Form voor het aanpassen van een factuur-->
                             <div class="wrapper">
                                 <div class="container-fluid">
 
@@ -63,8 +62,8 @@
                                     {{ form_end(form) }}
                                     <!-- End -->
                                     <br>
-                                    <a href="{{ path('admin_page') }}/customer"
-                                       class="btn btn-dark; md md-keyboard-return" style="border-color:#5fbeaa"></a>
+                                    <a href="{{ path('admin_page') }}/invoice"
+                                       class="btn btn-dark md md-keyboard-return" style="border-color:#5fbeaa"></a>
 
                                 </div>
                                 <!-- end container -->
@@ -81,7 +80,6 @@
     <!-- End right Content here -->
     <!-- ============================================================== -->
 
-
 {% endblock %}
 
 {% block javascripts %}
@@ -89,4 +87,3 @@
     {% include 'includes/scripts.html.twig' %}
 
 {% endblock %}
-
