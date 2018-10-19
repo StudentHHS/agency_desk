@@ -9,12 +9,12 @@ use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 class UserFixture extends BaseFixture
 {
-//    private $passwordEncoder;
-//
-//    public function __construct(UserPasswordEncoderInterface $passwordEncoder)
-//    {
-//        $this->passwordEncoder = $passwordEncoder;
-//    }
+    private $passwordEncoder;
+
+    public function __construct(UserPasswordEncoderInterface $passwordEncoder)
+    {
+        $this->passwordEncoder = $passwordEncoder;
+    }
 
     protected function loadData(ObjectManager $manager)
     {
@@ -26,7 +26,12 @@ class UserFixture extends BaseFixture
             $user->setFirstName($this->faker->firstName);
             $user->setLastname($this->faker->lastName);
             $user->getSalt();
-            $user->setPassword('admin123');
+
+            $user->setPassword($this->passwordEncoder->encodePassword(
+                $user,
+                'admin123'
+            ));
+
             $user->setNewsletter(true);
             $user->setActive(true);
             $user->getCreated();

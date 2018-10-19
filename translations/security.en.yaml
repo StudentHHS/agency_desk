@@ -1,1 +1,2 @@
-"Username could not be found.": "This email could not be found in the database."
+"Username could not be found.": "Email or password could not be found."
+"Invalid credentials.": "Email or password could not be found."

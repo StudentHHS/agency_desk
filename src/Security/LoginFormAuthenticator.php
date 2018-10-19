@@ -7,6 +7,7 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\RouterInterface;
 use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Symfony\Component\Security\Core\Exception\AuthenticationException;
 use Symfony\Component\Security\Core\Exception\InvalidCsrfTokenException;
 use Symfony\Component\Security\Core\Security;
@@ -30,13 +31,18 @@ class LoginFormAuthenticator extends AbstractFormLoginAuthenticator
      * @var CsrfTokenManagerInterface
      */
     private $csrfTokenManager;
+    /**
+     * @var UserPasswordEncoderInterface
+     */
+    private $userPasswordEncoder;
 
 
-    public function __construct(UserRepository $userRepository, RouterInterface $router, CsrfTokenManagerInterface $csrfTokenManager)
+    public function __construct(UserRepository $userRepository, RouterInterface $router, CsrfTokenManagerInterface $csrfTokenManager, UserPasswordEncoderInterface $userPasswordEncoder)
     {
         $this->userRepository = $userRepository;
         $this->router = $router;
         $this->csrfTokenManager = $csrfTokenManager;
+        $this->userPasswordEncoder = $userPasswordEncoder;
     }
 
     public function supports(Request $request)
@@ -52,8 +58,10 @@ class LoginFormAuthenticator extends AbstractFormLoginAuthenticator
         $credentials = [
             'email' => $formdata['_username'],
             'password' => $formdata['_password'],
-            'token' => $formdata['_token'],
+//            'token' => $formdata['_token'],
         ];
+
+//        dd($credentials);
 
         $request->getSession()->set(
           Security::LAST_USERNAME,
@@ -65,20 +73,20 @@ class LoginFormAuthenticator extends AbstractFormLoginAuthenticator
 
     public function getUser($credentials, UserProviderInterface $userProvider)
     {
-        $token = new CsrfToken('authenticate', $credentials['token']);
-
-        dd($token);
-
-        if(!$this->csrfTokenManager->isTokenValid($token)){
-            throw new InvalidCsrfTokenException();
-        }
+//        $token = new CsrfToken('authenticate', $credentials['token']);
+//
+////        dd($token);
+//
+//        if(!$this->csrfTokenManager->isTokenValid($token)){
+//            throw new InvalidCsrfTokenException();
+//        }
 
         return $this->userRepository->findOneBy(['email' => $credentials['email']]);
     }
 
     public function checkCredentials($credentials, UserInterface $user)
     {
-        return true;
+        return $this->userPasswordEncoder->isPasswordValid($user, $credentials['password']);
     }
 
     public function onAuthenticationSuccess(Request $request, TokenInterface $token, $providerKey)

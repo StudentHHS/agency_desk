@@ -23,7 +23,7 @@ class LoginForm extends AbstractType
         $builder
             ->add('_username')
             ->add('_password', PasswordType::class)
-            ->add('_token', HiddenType::class, array('csrf_token_id' => 'authenticate'))
+//            ->add('_token', HiddenType::class, array('csrf_token_id' => 'authenticate'))
             ;
     }
 
