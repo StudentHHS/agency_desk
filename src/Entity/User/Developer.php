@@ -123,7 +123,7 @@ class Developer implements UserInterface{
      */
     public function getRoles()
     {
-        return array('ROLE_DEVELOPER');
+        return array('ROLE_ADMIN');
     }
 
     /**

@@ -20,12 +20,38 @@ class UserFixture extends BaseFixture
     {
         // use ($manager) --> after function(..)
 
+        //CREATING USERS//
+        $this->createMany(1, 'users', function($i) {
+            $user = new User();
+            $user->setEmail(sprintf('user%d@dsj.nl', $i));
+            $user->setFirstName($this->faker->firstName);
+            $user->setLastname($this->faker->lastName);
+            $user->getSalt();
+
+            $user->setPassword($this->passwordEncoder->encodePassword(
+                $user,
+                'user123'
+            ));
+
+            $user->setNewsletter(true);
+            $user->setActive(true);
+            $user->getCreated();
+            $user->getUpdated();
+            $user->setGender('m');
+
+            return $user;
+        });
+
+        //CREATING ADMINS//
         $this->createMany(1, 'admins', function($i) {
             $user = new User();
             $user->setEmail(sprintf('admin%d@dsj.nl', $i));
             $user->setFirstName($this->faker->firstName);
             $user->setLastname($this->faker->lastName);
             $user->getSalt();
+
+            //CHANGE ROLE FOR ADMIN(S)//
+            $user->setRoles(['ROLE_ADMIN']);
 
             $user->setPassword($this->passwordEncoder->encodePassword(
                 $user,

@@ -58,6 +58,11 @@ class User implements UserInterface{
     protected $email;
 
     /**
+     * @ORM\Column(type="json")
+     */
+    protected $roles = [];
+
+    /**
      * @var string $telephone
      *
      * @ORM\Column(name="telephone", type="string", length=255, nullable=true)
@@ -145,7 +150,18 @@ class User implements UserInterface{
      */
     public function getRoles()
     {
-        return array('ROLE_USER');
+        $roles = $this->roles;
+        // guarantee every user at least has ROLE_USER
+        $roles[] = 'ROLE_USER';
+
+        return array_unique($roles);
+    }
+
+    public function setRoles(array $roles): self
+    {
+        $this->roles = $roles;
+
+        return $this;
     }
 
     /**
@@ -549,4 +565,5 @@ class User implements UserInterface{
     {
         return $this->updated;
     }
+
 }

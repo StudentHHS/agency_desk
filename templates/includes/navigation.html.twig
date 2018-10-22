@@ -84,14 +84,14 @@
                     <a class="nav-link dropdown-toggle waves-effect waves-light nav-user" data-toggle="dropdown"
                        href="#" role="button"
                        aria-haspopup="false" aria-expanded="false">
-                        <img src="{{ asset('assets/images/users/avatar-1.jpg') }}" alt="user"
+                        <img src="{{ asset('assets/images/dsj.jpg') }}" alt="user"
                              class="rounded-circle">
                     </a>
                     <div class="dropdown-menu dropdown-menu-right profile-dropdown " aria-labelledby="Preview">
                         <!-- item-->
                         <div class="dropdown-item noti-title">
                             <h5 class="text-overflow">
-                                <small>Welcome ! John</small>
+                                <small>Welcome!</small>
                             </h5>
                         </div>
 
@@ -111,7 +111,7 @@
                         </a>
 
                         <!-- item-->
-                        <a href="javascript:void(0);" class="dropdown-item notify-item">
+                        <a href="{{ path('logout_page') }}" class="dropdown-item notify-item">
                             <i class="md md-settings-power"></i> <span>Logout</span>
                         </a>
 
