@@ -41,7 +41,7 @@ class HomeController extends AbstractController
             'This is the last sentence',
         ];
 
-        return $this->render('startpagina//show.html.twig', [
+        return $this->render('startpagina/show.html.twig', [
                 'title' => ucwords(str_replace('-', ' ', $slug)),
                 'comments' => $comments,
         ]);
