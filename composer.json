@@ -19,6 +19,7 @@
         "symfony/orm-pack": "^1.0",
         "symfony/security": "*",
         "symfony/security-bundle": "*",
+        "symfony/stopwatch": "*",
         "symfony/twig-bundle": "*",
         "symfony/validator": "*",
         "symfony/web-server-bundle": "*",

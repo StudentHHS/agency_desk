@@ -13,7 +13,7 @@ use Doctrine\Common\Collections\ArrayCollection;
  * App\Entity\Project\Task
  *
  * @ORM\Table(name = "task")
- * @ORM\Entity(repositoryClass="Gedmo\Sortable\Entity\Repository\SortableRepository")
+ * @ORM\Entity()
  */
 class Task
 {

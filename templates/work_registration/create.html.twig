@@ -1,0 +1,181 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Maak uren{% endblock %}
+
+{% block stylesheets %}
+
+    {% include 'includes/stylesheets.html.twig' %}
+
+{% endblock %}
+
+{% block body %}
+
+    {% include 'includes/navigation.html.twig' %}
+
+    <!-- ============================================================== -->
+    <!-- Start right Content here -->
+    <!-- ============================================================== -->
+    <div class="content-page">
+        <!-- Start content -->
+        <div class="content">
+            <div class="container-fluid">
+
+                <!-- Page-Title -->
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="btn-group pull-right m-t-15">
+                            <button type="button" class="btn btn-default dropdown-toggle waves-effect waves-light"
+                                    data-toggle="dropdown" aria-expanded="false">Settings
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="btnGroupDrop1">
+                                <a class="dropdown-item" href="#">Dropdown One</a>
+                                <a class="dropdown-item" href="#">Dropdown Two</a>
+                                <a class="dropdown-item" href="#">Dropdown Three</a>
+                                <a class="dropdown-item" href="#">Dropdown Four</a>
+                            </div>
+                        </div>
+
+                        <h4 class="page-title">Route</h4>
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="{{ path('admin_page') }}">Admin</a></li>
+                            <li class="breadcrumb-item"><a
+                                        href="{{ path('index_workregistration') }}">Urenregistratie</a></li>
+                            <li class="breadcrumb-item active">Maak urenregistratie</li>
+                        </ol>
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card-box">
+                            <h4 class="m-t-0 header-title">Creating workregistration</h4>
+                            <br/>
+                            <br/>
+
+                            <!-- Form voor het registreren van uren -->
+                            <div class="wrapper">
+                                <div class="container-fluid">
+
+                                    {{ form_start(form) }}
+                                    {{ form_errors(form) }}
+                                    {{ form_widget(form) }}
+                                    {{ form_end(form) }}
+                                    <!-- End -->
+                                    <br>
+                                    <a href="{{ path('admin_page') }}/workregistration"
+                                       class="btn btn-dark md md-keyboard-return" style="border-color:#5fbeaa"></a>
+
+                                    <br/>
+                                    <br/>
+
+                                    <!-- Stopwatch -->
+                                    <div class="col-md-3"
+                                         style="margin: auto; border:2px solid #5fbeaa; border-radius: 6px; background-color: #31363c; text-align: center; justify-content: right">
+
+                                        <!-- Scripts voor de timer -->
+                                        <script src="{{ asset('js/stopwatch.js') }}"></script>
+
+                                        <h1>Timer</h1>
+                                        <h1 style="border:2px solid #5fbeaa; border-radius: 6px; background-color: #000000" id="display">00:00:00</h1>
+                                        <button class="start-pause btn btn-primary btn-rounded waves-effect waves-light" id="startStop" onclick="startStop()">Start</button>
+                                        <button class="stop btn btn-danger btn-rounded waves-effect waves-light" id="reset" onclick="reset()">Stop</button>
+                                        <br/>
+                                        <br/>
+                                        <button class="button-insert btn btn-success btn-rounded waves-effect waves-light">
+                                            Insert
+                                        </button>
+                                        <br/>
+                                        <br/>
+                                    </div>
+                                    <!-- End stopwatch -->
+
+                                </div>
+                                <!-- end container -->
+                            </div>
+                            <!-- end wrapper -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================== -->
+    <!-- End right Content here -->
+    <!-- ============================================================== -->
+
+{% endblock %}
+
+{% block javascripts %}
+
+    {% include 'includes/scripts.html.twig' %}
+
+    {#<script>#} 
+    {#var str = parseInt($('#timer').text().substr(0,4));#}
+    {#var splitTijden = str.split(" : ");#}
+    {#var uren = Integer.parseInt(splitTijden[0]) / 100 * 60;#}
+    {#var minuten = Integer.parseInt(splitTijden[1]);#}
+    {#var seconden = Integer.parseInt(splitTijden[2]);#}
+
+
+    {#$('.button-insert').on('click', function () {#}
+    {#$('#actual_work_form_timePast').val(uren + minuten);#}
+    {#})#}
+    {#</script>#}
+
+    <script>
+        // Alert for resetting the timer. Prevents the user from resetting the timer by accident.
+        // $('#reset').click(function () {
+        //    alert('Are you sure?')
+        // });
+        // End of the alert function
+
+        //Function for creating parts of the current time
+        $.fn.setNow = function (onlyBlank) {
+            var now = new Date($.now());
+
+            var year = now.getFullYear();
+
+            var month = (now.getMonth() + 1).toString().length === 1 ? '0' + (now.getMonth() + 1).toString() : now.getMonth() + 1;
+            var date = now.getDate().toString().length === 1 ? '0'         + (now.getDate()).toString()      : now.getDate();
+            var hours = now.getHours().toString().length === 1 ? '0'       + now.getHours().toString()       : now.getHours();
+            var minutes = now.getMinutes().toString().length === 1 ? '0'   + now.getMinutes().toString()     : now.getMinutes();
+            var seconds = now.getSeconds().toString().length === 1 ? '0'   + now.getSeconds().toString()     : now.getSeconds();
+
+            var formattedDateTime = year + '-' + month + '-' + date + 'T' + hours + ':' + minutes;
+
+            if ( onlyBlank === true && $(this).val() ) {
+                return this;
+            }
+
+            $(this).val(formattedDateTime);
+
+            return this;
+        };
+        // End of the function
+
+        // Function for filling in the current start time of the workregistration
+        $('.start-pause').click(function () {
+            $('#actual_work_form_begin').setNow();
+        });
+        // End of the function
+
+        // Function for filling in the current stop time of the workregistration
+        $('.stop').click(function () {
+            $('#actual_work_form_end').setNow();
+        });
+        // End of the function
+
+        // Function for filling the stopwatch time into form row
+        $('.button-insert').on('click', function () {
+            var tijd = $('#display').text();
+            var uren = tijd.replace(':', '').substr(0, 2);
+            var minuten = tijd.replace(':', '').substr(2, 4);
+
+            $('#actual_work_form_timePast').val((parseInt(uren) * 60) + parseInt(minuten));
+        })
+        // End of the function
+    </script>
+
+{% endblock %}

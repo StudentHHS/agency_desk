@@ -38,14 +38,14 @@
                                 {% if developers %}
                                     <thead>
                                     <tr>
-                                        <th style="font-size:15px">Developer id</th>
-                                        <th style="font-size:15px">Slug</th>
+                                        {#<th style="font-size:15px">Developer id</th>#}
+                                        {#<th style="font-size:15px">Slug</th>#}
                                         <th style="font-size:15px">First name</th>
                                         <th style="font-size:15px">Prefix</th>
                                         <th style="font-size:15px">Last name</th>
                                         <th style="font-size:15px">Email</th>
-                                        <th style="font-size:15px">Salt</th>
-                                        <th style="font-size:15px">Password</th>
+                                        {#<th style="font-size:15px">Salt</th>#}
+                                        {#<th style="font-size:15px">Password</th>#}
 
                                         <th style="font-size:15px">active</th>
                                         <th style="font-size:15px">created</th>
@@ -60,14 +60,14 @@
                                     {% for developer in developers %}
                                         <tr>
 
-                                            <td>{{ developer.id }}</td>
-                                            <td>{{ developer.slug }}</td>
+                                            {#<td>{{ developer.id }}</td>#}
+                                            {#<td>{{ developer.slug }}</td>#}
                                             <td>{{ developer.firstName }}</td>
                                             <td>{{ developer.prefix }}</td>
                                             <td>{{ developer.lastName }}</td>
                                             <td>{{ developer.email }}</td>
-                                            <td>{{ developer.salt }}</td>
-                                            <td>{{ developer.password }}</td>
+                                            {#<td>{{ developer.salt }}</td>#}
+                                            {#<td>{{ developer.password }}</td>#}
 
                                             {% if developer.active == 1 %}
                                                 <td style="color: green">V</td>
