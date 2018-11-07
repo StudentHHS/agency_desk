@@ -82,10 +82,9 @@
                                         <button class="stop btn btn-danger btn-rounded waves-effect waves-light" id="reset" onclick="reset()">Stop</button>
                                         <br/>
                                         <br/>
-                                        <button class="button-insert btn btn-success btn-rounded waves-effect waves-light">
-                                            Insert
-                                        </button>
-                                        <br/>
+                                        {#<button class="button-insert btn btn-success btn-rounded waves-effect waves-light">#}
+                                            {#Insert#}
+                                        {#</button>#}
                                         <br/>
                                     </div>
                                     <!-- End stopwatch -->
@@ -111,19 +110,6 @@
 
     {% include 'includes/scripts.html.twig' %}
 
-    {#<script>#} 
-    {#var str = parseInt($('#timer').text().substr(0,4));#}
-    {#var splitTijden = str.split(" : ");#}
-    {#var uren = Integer.parseInt(splitTijden[0]) / 100 * 60;#}
-    {#var minuten = Integer.parseInt(splitTijden[1]);#}
-    {#var seconden = Integer.parseInt(splitTijden[2]);#}
-
-
-    {#$('.button-insert').on('click', function () {#}
-    {#$('#actual_work_form_timePast').val(uren + minuten);#}
-    {#})#}
-    {#</script>#}
-
     <script>
         // Alert for resetting the timer. Prevents the user from resetting the timer by accident.
         // $('#reset').click(function () {
@@ -143,13 +129,14 @@
             var minutes = now.getMinutes().toString().length === 1 ? '0'   + now.getMinutes().toString()     : now.getMinutes();
             var seconds = now.getSeconds().toString().length === 1 ? '0'   + now.getSeconds().toString()     : now.getSeconds();
 
-            var formattedDateTime = year + '-' + month + '-' + date + 'T' + hours + ':' + minutes;
+            var formattedDate = year + '-' + month + '-' + date;
+            var formattedTime = 'T' + hours + ':' + minutes;
 
             if ( onlyBlank === true && $(this).val() ) {
                 return this;
             }
 
-            $(this).val(formattedDateTime);
+            $(this).val(formattedDate + formattedTime);
 
             return this;
         };
@@ -158,24 +145,39 @@
         // Function for filling in the current start time of the workregistration
         $('.start-pause').click(function () {
             $('#actual_work_form_begin').setNow();
+            $('.start-pause').attr("disabled", true);
         });
         // End of the function
 
         // Function for filling in the current stop time of the workregistration
         $('.stop').click(function () {
             $('#actual_work_form_end').setNow();
+
+            // Calculating startime //
+            var startDate = $('#actual_work_form_begin').val();
+            var formatStartHours = startDate.replace(/[-:T]/g, '').substr(8,2);
+            var formatStartMinutes = startDate.replace(/[-:T]/g, '').substr(10,2);
+
+            var startHours = (parseInt(formatStartHours) * 60);
+            var startMinutes = parseInt(formatStartMinutes);
+            // End starttime //
+
+            // Calculating endtime //
+            var endDate = $('#actual_work_form_end').val();
+            var formatEndHours = endDate.replace(/[-:T]/g, '').substr(8,2);
+            var formatEndMins = endDate.replace(/[-:T]/g, '').substr(10,2);
+
+            var endHours = (parseInt(formatEndHours) * 60);
+            var endMinutes = parseInt(formatEndMins);
+            // End endtime //
+
+            var timeDifference = (endHours - startHours) + (endMinutes - startMinutes);
+
+            $('#actual_work_form_timePast').val(timeDifference);
+
         });
         // End of the function
 
-        // Function for filling the stopwatch time into form row
-        $('.button-insert').on('click', function () {
-            var tijd = $('#display').text();
-            var uren = tijd.replace(':', '').substr(0, 2);
-            var minuten = tijd.replace(':', '').substr(2, 4);
-
-            $('#actual_work_form_timePast').val((parseInt(uren) * 60) + parseInt(minuten));
-        })
-        // End of the function
     </script>
 
 {% endblock %}

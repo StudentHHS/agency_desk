@@ -2,29 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="592cba6a-2e79-4f1d-a0ab-904970897a9b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/assets/css/sweet-alert.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/js/sweet-alert.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/WorkRegistrationController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/ActualWorkForm.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/work_registration/create.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/agency_desk.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/agency_desk.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/services.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Project/ActualWork.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Project/ActualWork.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Project/Task.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Project/Task.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Migrations/Version20181022143343.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/developer/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/developer/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/includes/navigation.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/includes/navigation.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/includes/scripts.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/includes/scripts.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/workregistration/create.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/stopwatch.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/workregistration/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/work_registration/edit.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/workregistration/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/work_registration/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Command/Financial/GenerateInvoiceCommand.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Command/ImportCommand.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/work_registration/create.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/work_registration/create.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -102,8 +83,8 @@
             <file pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/templates/work_registration/create.html.twig">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="-473">
-                    <caret line="80" column="120" selection-start-line="80" selection-start-column="120" selection-end-line="80" selection-end-column="120" />
+                  <state relative-caret-position="581">
+                    <caret line="87" column="45" selection-start-line="87" selection-start-column="45" selection-end-line="87" selection-end-column="45" />
                     <folding>
                       <element signature="e#12#26#0#Twig" expanded="true" />
                       <element signature="e#120#150#0#Twig" expanded="true" />
@@ -122,19 +103,6 @@
                 <provider selected="true" editor-type-id="text-editor">
                   <state relative-caret-position="323">
                     <caret line="41" column="25" selection-start-line="41" selection-start-column="25" selection-end-line="41" selection-end-column="25" />
-                  </state>
-                </provider>
-              </entry>
-            </file>
-            <file pinned="false" current-in-tab="false">
-              <entry file="file://$PROJECT_DIR$/src/Command/ImportCommand.php">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="218">
-                    <caret line="45" column="23" selection-start-line="45" selection-start-column="23" selection-end-line="45" selection-end-column="23" />
-                    <folding>
-                      <element signature="e#51#80#0#PHP" expanded="true" />
-                      <element signature="e#1955#1974#1#PHP" expanded="true" />
-                    </folding>
                   </state>
                 </provider>
               </entry>
@@ -228,7 +196,7 @@
           <entry key="js" value="731" />
           <entry key="php" value="14140" />
           <entry key="scss" value="134" />
-          <entry key="twig" value="17056" />
+          <entry key="twig" value="17900" />
           <entry key="yaml" value="806" />
         </counts>
       </usages-collector>
@@ -241,7 +209,7 @@
           <entry key="PHP" value="14140" />
           <entry key="PLAIN_TEXT" value="132" />
           <entry key="SCSS" value="134" />
-          <entry key="Twig" value="17053" />
+          <entry key="Twig" value="17897" />
           <entry key="YAML" value="806" />
         </counts>
       </usages-collector>
@@ -804,7 +772,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="409326000" />
+    <option name="totallyTimeSpent" value="417454000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="2873" y="0" width="974" height="1047" extended-state="0" />
@@ -1187,29 +1155,12 @@
     <entry file="file://$PROJECT_DIR$/public/index.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/includes/scripts.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="41" column="25" selection-start-line="41" selection-start-column="25" selection-end-line="41" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Form/DeveloperForm.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="561">
           <caret line="38" selection-start-line="38" selection-end-line="38" />
           <folding>
             <element signature="e#110#140#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/work_registration/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="40" column="74" selection-start-line="40" selection-start-column="74" selection-end-line="40" selection-end-column="74" />
-          <folding>
-            <element signature="e#12#26#0#Twig" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1251,10 +1202,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/includes/scripts.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="41" column="25" selection-start-line="41" selection-start-column="25" selection-end-line="41" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/work_registration/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="40" column="74" selection-start-line="40" selection-start-column="74" selection-end-line="40" selection-end-column="74" />
+          <folding>
+            <element signature="e#12#26#0#Twig" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/templates/work_registration/create.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-473">
-          <caret line="80" column="120" selection-start-line="80" selection-start-column="120" selection-end-line="80" selection-end-column="120" />
+        <state relative-caret-position="581">
+          <caret line="87" column="45" selection-start-line="87" selection-start-column="45" selection-end-line="87" selection-end-column="45" />
           <folding>
             <element signature="e#12#26#0#Twig" expanded="true" />
             <element signature="e#120#150#0#Twig" expanded="true" />
