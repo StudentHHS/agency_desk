@@ -63,9 +63,17 @@
                                     {{ form_end(form) }}
                                     <!-- End -->
                                     <br>
-                                    <a href="{{ path('admin_page') }}/workregistration"
-                                       class="btn btn-dark md md-keyboard-return" style="border-color:#5fbeaa"></a>
-
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <a href="{{ path('admin_page') }}/workregistration"
+                                               class="btn btn-dark md md-keyboard-return"
+                                               style="border-color:#5fbeaa"></a>
+                                        </div>
+                                        <div class="col-md-10">
+                                            <button class="btn btn-dark md md-keyboard-arrow-up" id="time-calculating-button"
+                                                    style="border-color:#5fbeaa; width: 56.55px;"></button>
+                                        </div>
+                                    </div>
                                     <br/>
                                     <br/>
 
@@ -77,13 +85,18 @@
                                         <script src="{{ asset('js/stopwatch.js') }}"></script>
 
                                         <h1>Timer</h1>
-                                        <h1 style="border:2px solid #5fbeaa; border-radius: 6px; background-color: #000000" id="display">00:00:00</h1>
-                                        <button class="start-pause btn btn-primary btn-rounded waves-effect waves-light" id="startStop" onclick="startStop()">Start</button>
-                                        <button class="stop btn btn-danger btn-rounded waves-effect waves-light" id="reset" onclick="reset()">Stop</button>
+                                        <h1 style="border:2px solid #5fbeaa; border-radius: 6px; background-color: #000000"
+                                            id="display">00:00:00</h1>
+                                        <button class="start-pause btn btn-primary btn-rounded waves-effect waves-light"
+                                                id="startStop" onclick="startStop()">Start
+                                        </button>
+                                        <button class="stop btn btn-danger btn-rounded waves-effect waves-light"
+                                                id="reset" onclick="reset()">Stop
+                                        </button>
                                         <br/>
                                         <br/>
                                         {#<button class="button-insert btn btn-success btn-rounded waves-effect waves-light">#}
-                                            {#Insert#}
+                                        {#Insert#}
                                         {#</button>#}
                                         <br/>
                                     </div>
@@ -111,72 +124,53 @@
     {% include 'includes/scripts.html.twig' %}
 
     <script>
-        // Alert for resetting the timer. Prevents the user from resetting the timer by accident.
-        // $('#reset').click(function () {
-        //    alert('Are you sure?')
-        // });
-        // End of the alert function
-
-        //Function for creating parts of the current time
-        $.fn.setNow = function (onlyBlank) {
-            var now = new Date($.now());
-
-            var year = now.getFullYear();
-
-            var month = (now.getMonth() + 1).toString().length === 1 ? '0' + (now.getMonth() + 1).toString() : now.getMonth() + 1;
-            var date = now.getDate().toString().length === 1 ? '0'         + (now.getDate()).toString()      : now.getDate();
-            var hours = now.getHours().toString().length === 1 ? '0'       + now.getHours().toString()       : now.getHours();
-            var minutes = now.getMinutes().toString().length === 1 ? '0'   + now.getMinutes().toString()     : now.getMinutes();
-            var seconds = now.getSeconds().toString().length === 1 ? '0'   + now.getSeconds().toString()     : now.getSeconds();
-
-            var formattedDate = year + '-' + month + '-' + date;
-            var formattedTime = 'T' + hours + ':' + minutes;
-
-            if ( onlyBlank === true && $(this).val() ) {
-                return this;
-            }
-
-            $(this).val(formattedDate + formattedTime);
-
-            return this;
-        };
-        // End of the function
 
         // Function for filling in the current start time of the workregistration
         $('.start-pause').click(function () {
-            $('#actual_work_form_begin').setNow();
+            var formattedStartDate = moment().format('YYYY-MM-DDTHH:mm');
+            $('#actual_work_form_begin').val(formattedStartDate);
             $('.start-pause').attr("disabled", true);
         });
         // End of the function
 
         // Function for filling in the current stop time of the workregistration
         $('.stop').click(function () {
-            $('#actual_work_form_end').setNow();
+            var formattedEndDate = moment().format('YYYY-MM-DDTHH:mm');
+            var endTime = moment(formattedEndDate, 'YYYYMMDD HH:mm');
+            $('#actual_work_form_end').val(formattedEndDate);
 
-            // Calculating startime //
-            var startDate = $('#actual_work_form_begin').val();
-            var formatStartHours = startDate.replace(/[-:T]/g, '').substr(8,2);
-            var formatStartMinutes = startDate.replace(/[-:T]/g, '').substr(10,2);
+            var formattedStartDate = $('#actual_work_form_begin').val();
+            var startTime = moment(formattedStartDate, 'YYYYMMDD HH:mm');
 
-            var startHours = (parseInt(formatStartHours) * 60);
-            var startMinutes = parseInt(formatStartMinutes);
-            // End starttime //
+            var difference = moment.duration(endTime.diff(startTime));
+            var minutes = difference.asMinutes();
 
-            // Calculating endtime //
-            var endDate = $('#actual_work_form_end').val();
-            var formatEndHours = endDate.replace(/[-:T]/g, '').substr(8,2);
-            var formatEndMins = endDate.replace(/[-:T]/g, '').substr(10,2);
+            $('#actual_work_form_timePast').val(minutes);
 
-            var endHours = (parseInt(formatEndHours) * 60);
-            var endMinutes = parseInt(formatEndMins);
-            // End endtime //
-
-            var timeDifference = (endHours - startHours) + (endMinutes - startMinutes);
-
-            $('#actual_work_form_timePast').val(timeDifference);
-
+            $('.start-pause').attr("disabled", false);
         });
         // End of the function
+
+        $('#time-calculating-button').click(function () {
+
+            // End time of the task //
+            var formattedEndTime = moment().format('YYYY-MM-DDTHH:mm');
+            var endTime = moment();
+            $('#actual_work_form_end').val(formattedEndTime);
+
+            // Duration of a task, filled in by the user //
+            var duration = $('#actual_work_form_timePast').val();
+
+            // Calculates the difference between the end time and the starttime of the task depending on the value that's filled in by the user //
+            var startTime = endTime.subtract(duration, 'minutes').format('YYYY-MM-DDTHH:mm');
+
+            // Puts the difference in the starttime formfield //
+            $('#actual_work_form_begin').val(startTime);
+
+
+        });
+
+
 
     </script>
 
