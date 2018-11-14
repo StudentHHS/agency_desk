@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Maak uren{% endblock %}
+{% block title %}Maak werkregistratie{% endblock %}
 
 {% block stylesheets %}
 
@@ -124,7 +124,6 @@
     {% include 'includes/scripts.html.twig' %}
 
     <script>
-
         // Function for filling in the current start time of the workregistration
         $('.start-pause').click(function () {
             var formattedStartDate = moment().format('YYYY-MM-DDTHH:mm');
@@ -152,7 +151,6 @@
         // End of the function
 
         $('#time-calculating-button').click(function () {
-
             // End time of the task //
             var formattedEndTime = moment().format('YYYY-MM-DDTHH:mm');
             var endTime = moment();
@@ -166,12 +164,7 @@
 
             // Puts the difference in the starttime formfield //
             $('#actual_work_form_begin').val(startTime);
-
-
         });
-
-
-
     </script>
 
 {% endblock %}

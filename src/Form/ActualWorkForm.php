@@ -30,7 +30,6 @@ class ActualWorkForm extends AbstractType
         $builder
             ->add('developer', EntityType::class, array('label' => 'Developer', 'class' => Developer::class, 'required' => true))
             ->add('creditCard', EntityType::class, array('label' => 'Credit card', 'class' => CreditCard::class, 'required' => true))
-            ->add('invoice', EntityType::class, array('label' => 'Factuur', 'class' => Invoice::class, 'required' => true))
             ->add('task', EntityType::class, array('label' => 'Taak', 'class' => Task::class,  'required' => true))
             ->add('begin', DateTimeType::class, array('label' => 'Begin', 'widget' => 'single_text', 'required' => true, 'attr' => ['class' => 'js-datepicker']))
             ->add('end', DateTimeType::class, array('label' => 'Eind', 'widget' => 'single_text', 'required' => true, 'attr' => ['class' => 'js-datepicker']))

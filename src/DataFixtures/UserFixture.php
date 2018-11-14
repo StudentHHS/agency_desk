@@ -28,6 +28,9 @@ class UserFixture extends BaseFixture
             $user->setLastname($this->faker->lastName);
             $user->getSalt();
 
+            //CHANGE ROLE FOR USER(S)//
+            $user->setRoles(['ROLE_USER']);
+
             $user->setPassword($this->passwordEncoder->encodePassword(
                 $user,
                 'user123'
@@ -44,27 +47,24 @@ class UserFixture extends BaseFixture
 
         //CREATING ADMINS//
         $this->createMany(1, 'admins', function($i) {
-            $user = new User();
-            $user->setEmail(sprintf('admin%d@dsj.nl', $i));
-            $user->setFirstName($this->faker->firstName);
-            $user->setLastname($this->faker->lastName);
-            $user->getSalt();
-
+            $user1 = new User();
+            $user1->setEmail(sprintf('admin%d@dsj.nl', $i));
+            $user1->setFirstName($this->faker->firstName);
+            $user1->setLastname($this->faker->lastName);
+            $user1->getSalt();
             //CHANGE ROLE FOR ADMIN(S)//
-            $user->setRoles(['ROLE_ADMIN']);
-
-            $user->setPassword($this->passwordEncoder->encodePassword(
-                $user,
+            $user1->setRoles(['ROLE_ADMIN']);
+            $user1->setPassword($this->passwordEncoder->encodePassword(
+                $user1,
                 'admin123'
             ));
+            $user1->setNewsletter(true);
+            $user1->setActive(true);
+            $user1->getCreated();
+            $user1->getUpdated();
+            $user1->setGender('m');
 
-            $user->setNewsletter(true);
-            $user->setActive(true);
-            $user->getCreated();
-            $user->getUpdated();
-            $user->setGender('m');
-
-            return $user;
+            return $user1;
         });
 
         $manager->flush();

@@ -78,7 +78,7 @@
                                             <td>{{ invoice.reasonFree }}</td>
 
                                             <td>{{ invoice.date | date('d M Y') }}</td>
-                                            <td>{{ invoice.paymentDate | date('d M Y') }}</td>
+                                            <td>{% if invoice.paymentDate is not null %} {{ invoice.paymentDate | date('d M Y') }} {% endif %}</td>
 
                                             <td>{{ invoice.created | date('d M Y') }}</td>
                                             <td>{{ invoice.updated | date('d M Y') }}</td>

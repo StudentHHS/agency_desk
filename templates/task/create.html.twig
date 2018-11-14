@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Maak factuur{% endblock %}
+{% block title %}Maak taak{% endblock %}
 
 {% block stylesheets %}
 
@@ -38,8 +38,9 @@
                         <h4 class="page-title">Route</h4>
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="{{ path('admin_page') }}">Admin</a></li>
-                            <li class="breadcrumb-item"><a href="{{ path('index_invoice') }}">Invoice</a></li>
-                            <li class="breadcrumb-item active">Create invoice</li>
+                            <li class="breadcrumb-item"><a
+                                        href="{{ path('index_task') }}">Taak</a></li>
+                            <li class="breadcrumb-item active">Maak taak</li>
                         </ol>
 
                     </div>
@@ -48,38 +49,33 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="card-box">
-                            <h4 class="m-t-0 header-title">Creating invoice</h4>
-                            </br>
-                            </br>
+                            <h4 class="m-t-0 header-title">Creating task</h4>
+                            <br/>
+                            <br/>
 
-                            <!-- Form voor het maken van een factuur -->
+                            <!-- Form voor het registreren van taken -->
                             <div class="wrapper">
                                 <div class="container-fluid">
 
-                                    <div id="live_form">
                                     {{ form_start(form) }}
-                                        {{ form_errors(form) }}
-
-                                        {{ form_row(form.invoiceNr) }}
-
-                                        {{ form_row(form.credit) }}
-
-                                        {{ form_row(form.paid) }}
-
-                                        {{ form_row(form.paymentDate) }}
-
-                                        {{ form_row(form.reasonFree) }}
-
-                                        {{ form_row(form.date) }}
-
-                                        {{ form_row(form.save) }}
-
+                                    {{ form_errors(form) }}
+                                    {{ form_widget(form) }}
                                     {{ form_end(form) }}
-
                                     <!-- End -->
                                     <br>
-                                    <a href="{{ path('admin_page') }}/invoice"
-                                       class="btn btn-dark md md-keyboard-return" style="border-color:#5fbeaa"></a>
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <a href="{{ path('admin_page') }}/task"
+                                               class="btn btn-dark md md-keyboard-return"
+                                               style="border-color:#5fbeaa"></a>
+                                        </div>
+                                        <div class="col-md-10">
+                                            <button class="btn btn-dark md md-keyboard-arrow-up" id="time-calculating-button"
+                                                    style="border-color:#5fbeaa; width: 56.55px;"></button>
+                                        </div>
+                                    </div>
+                                    <br/>
+                                    <br/>
 
                                 </div>
                                 <!-- end container -->
@@ -101,32 +97,5 @@
 {% block javascripts %}
 
     {% include 'includes/scripts.html.twig' %}
-
-    <script>
-
-        $(document).ready(function() {
-
-            var formattedDate = moment().format('DD-MM-YYYY');
-            $('#invoice_form_date').val(formattedDate);
-
-            checkPaid();
-
-            $('#invoice_form_paid').on('change', function() {
-                checkPaid();
-            });
-
-            function checkPaid() {
-
-                var paid = $('#invoice_form_paid').val();
-
-                if(paid === '0'){
-                $('#invoice_form_paymentDate').closest('.row').hide();
-                } else if (paid === '1'){
-                $('#invoice_form_paymentDate').closest('.row').show();
-                }
-            }
-        });
-
-    </script>
 
 {% endblock %}

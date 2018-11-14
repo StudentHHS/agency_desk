@@ -23,11 +23,11 @@ class ProjectForm extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('title', null, array('label' => 'Titel', 'required' => false))
-            ->add('body', TextareaType::class, array('label' => 'Body', 'required' => false))
-            ->add('gitUrl',null, array('label' => 'Git URL', 'required' => false))
-            ->add('productionUrl',null, array('label' => 'Production URL', 'required' => false))
-            ->add('developmentUrl',null, array('label' => 'Development URL', 'required' => false))
+            ->add('title', null, array('label' => 'Titel', 'required' => true))
+            ->add('body', TextareaType::class, array('label' => 'Body', 'required' => true))
+            ->add('gitUrl',null, array('label' => 'Git URL', 'required' => true))
+            ->add('productionUrl',null, array('label' => 'Production URL', 'required' => true))
+            ->add('developmentUrl',null, array('label' => 'Development URL', 'required' => true))
 
             ->add('active',ChoiceType::class , array('label' => 'Actief', 'required' => true,
                 'choices' => array( 'Yes' => 1,

@@ -40,7 +40,6 @@ class CustomerController extends AbstractController
 
         return array(
             'customers' => $customers,
-
         );
 
     }
@@ -64,6 +63,9 @@ class CustomerController extends AbstractController
             $em = $this->getDoctrine()->getManager();
             $em->persist($customer);
             $em->flush();
+
+            $this->addFlash('success', 'Customer successfully created.');
+
             return $this->redirectToRoute('index_customer');
         }
 
@@ -94,6 +96,9 @@ class CustomerController extends AbstractController
             $em = $this->getDoctrine()->getManager();
             $em->persist($customer);
             $em->flush();
+
+            $this->addFlash('success', 'Customer successfully edited.');
+
             return $this->redirectToRoute('index_customer');
         }
 
@@ -116,6 +121,8 @@ class CustomerController extends AbstractController
 
         $em->remove($customer);
         $em->flush();
+
+        $this->addFlash('success', 'Customer successfully removed.');
 
         return $this->redirectToRoute('index_customer');
     }

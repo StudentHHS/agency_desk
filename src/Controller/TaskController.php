@@ -2,14 +2,14 @@
 /**
  * Created by PhpStorm.
  * User: Jeroen
- * Date: 29-8-2018
- * Time: 16:14
+ * Date: 14-11-2018
+ * Time: 14:57
  */
 
 namespace App\Controller;
 
-use App\Entity\Project\Project;
-use App\Form\ProjectForm;
+use App\Entity\Project\Task;
+use App\Form\TaskForm;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
@@ -17,81 +17,80 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
-
-class ProjectController extends AbstractController
+class TaskController extends AbstractController
 {
+
     /**
-     * @Route("/admin/project", name="index_project")
+     * @Route("/admin/task", name="index_task")
      * @Template
      */
     public function index()
     {
         $em = $this->getDoctrine()->getManager();
-        $projects = $em->getRepository("App:Project\Project")->findAll();
+        $tasks = $em->getRepository("App:Project\Task")->findAll();
 
         return array(
-            'projects' => $projects,
-
+            'tasks' => $tasks,
         );
     }
 
     /**
-     * @Route("/admin/project/create", name="create_project")
+     * @Route("/admin/task/create", name="create_task")
      * @Method({"GET", "POST"})
      * @Template()
      */
     public function create(Request $request)
     {
-        $project = new Project();
-        $form = $this->createForm(ProjectForm::class, $project);
+        $task = new Task();
+        $form = $this->createForm(TaskForm::class, $task);
 
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
 
             $em = $this->getDoctrine()->getManager();
-            $em->persist($project);
+            $em->persist($task);
             $em->flush();
 
-            $this->addFlash('success', 'Project successfully created.');
+            $this->addFlash('success', 'Task successfully created.');
 
-            return $this->redirectToRoute('index_project');
+            return $this->redirectToRoute('index_task');
         }
 
         return [
             'form' => $form->createView(),
-            'projects' => array($project)
+            'tasks' => array($task)
         ];
     }
 
     /**
-     * @Route("/admin/project/edit/{id}", name="edit_project")
+     * @Route("/admin/task/edit/{id}", name="edit_task")
      * @Method({"GET", "POST"})
      * @Template()
      */
     public function edit(Request $request, $id)
     {
         $em = $this->getDoctrine()->getManager();
-        $project = $em->getRepository("App:Project\Project")->find($id);
+        $task = $em->getRepository("App:Project\Task")->find($id);
 
-        $form = $this->createForm(ProjectForm::class, $project);
+        $form = $this->createForm(TaskForm::class, $task);
 
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
 
             $em = $this->getDoctrine()->getManager();
-            $em->persist($project);
+            $em->persist($task);
             $em->flush();
 
-            $this->addFlash('success', 'Project successfully edited.');
+            $this->addFlash('success', 'Task successfully edited.');
 
-            return $this->redirectToRoute('index_project');
+            return $this->redirectToRoute('index_task');
         }
 
         return [
             'form' => $form->createView(),
-            'projects' => array($project)
+            'tasks' => array($task)
         ];
 
     }
@@ -106,13 +105,14 @@ class ProjectController extends AbstractController
     {
 
         $em = $this->getDoctrine()->getManager();
-        $project = $em->getRepository("App:Project\Project")->find($id);
+        $task = $em->getRepository("App:Project\Task")->find($id);
 
-        $em->remove($project);
+        $em->remove($task);
         $em->flush();
 
-        $this->addFlash('success', 'Project successfully removed.');
+        $this->addFlash('success', 'Task successfully removed.');
 
-        return $this->redirectToRoute('index_project');
+        return $this->redirectToRoute('index_task');
     }
+
 }

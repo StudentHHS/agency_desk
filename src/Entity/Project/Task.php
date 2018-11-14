@@ -88,14 +88,6 @@ class Task
     protected $tag;
 
     /**
-     * @var integer $position
-     *
-     * @Gedmo\SortablePosition
-     * @ORM\Column(name="position", type="integer", nullable=false)
-     */
-    protected $position;
-
-    /**
      * @var integer $vivifyId
      *
      * @ORM\Column(name="vivify_id", type="integer", nullable=true)
@@ -448,30 +440,6 @@ class Task
     public function getApproved()
     {
         return $this->approved;
-    }
-
-    /**
-     * Set position
-     *
-     * @param integer $position
-     *
-     * @return Task
-     */
-    public function setPosition($position)
-    {
-        $this->position = $position;
-
-        return $this;
-    }
-
-    /**
-     * Get position
-     *
-     * @return integer
-     */
-    public function getPosition()
-    {
-        return $this->position;
     }
 
     /**
