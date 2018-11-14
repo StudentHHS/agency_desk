@@ -13,7 +13,7 @@ use \DateTime;
  * App\Entity\Project\ActualWork
  *
  * @ORM\Table(name = "actual_work")
- * @ORM\Entity(repositoryClass="App\Repository\Project\ActualWorkRepository")
+ * @ORM\Entity()
  */
 class ActualWork {
     /**
@@ -74,6 +74,12 @@ class ActualWork {
     protected $end;
 
     /**
+     * @ORM\Column(name="time_past", type="integer")
+     */
+    protected $timePast;
+
+
+    /**
      * Get id
      *
      * @return integer
@@ -127,6 +133,22 @@ class ActualWork {
     public function getEnd()
     {
         return $this->end;
+    }
+
+    /**
+     * @return integer
+     */
+    public function getTimePast()
+    {
+        return $this->timePast;
+    }
+
+    /**
+     * @param int $timePast
+     */
+    public function setTimePast(int $timePast): void
+    {
+        $this->timePast = $timePast;
     }
 
     /**

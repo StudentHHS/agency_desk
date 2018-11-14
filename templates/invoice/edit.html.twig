@@ -56,11 +56,26 @@
                             <div class="wrapper">
                                 <div class="container-fluid">
 
+                                    <div id="live_form">
                                     {{ form_start(form) }}
-                                    {{ form_errors(form) }}
-                                    {{ form_widget(form) }}
+                                        {{ form_errors(form) }}
+
+                                        {{ form_row(form.invoiceNr) }}
+
+                                        {{ form_row(form.credit) }}
+
+                                        {{ form_row(form.paid) }}
+
+                                        {{ form_row(form.paymentDate) }}
+
+                                        {{ form_row(form.reasonFree) }}
+
+                                        {{ form_row(form.date) }}
+
+                                        {{ form_row(form.save) }}
+
                                     {{ form_end(form) }}
-                                    <!-- End -->
+
                                     <br>
                                     <a href="{{ path('admin_page') }}/invoice"
                                        class="btn btn-dark md md-keyboard-return" style="border-color:#5fbeaa"></a>
@@ -85,5 +100,29 @@
 {% block javascripts %}
 
     {% include 'includes/scripts.html.twig' %}
+
+    <script>
+
+        $(document).ready(function() {
+
+            checkPaid();
+
+            $('#invoice_form_paid').on('change', function() {
+                checkPaid();
+            });
+
+            function checkPaid() {
+
+                var paid = $('#invoice_form_paid').val();
+
+                if(paid === '0'){
+                    $('#invoice_form_paymentDate').closest('.row').hide();
+                } else if (paid === '1'){
+                    $('#invoice_form_paymentDate').closest('.row').show();
+                }
+            }
+        });
+
+    </script>
 
 {% endblock %}

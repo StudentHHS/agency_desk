@@ -66,12 +66,7 @@
 
                                         {{ form_row(form.paid) }}
 
-                                        {% if form.paid == true %}
-                                            {{ form_row(form.paymentDate) }}
-
-                                        {% else %}
-                                            {{ form_row(form.paymentDate, {'attr': {'class': 'hidden-row'} }) }}
-                                        {% endif %}
+                                        {{ form_row(form.paymentDate) }}
 
                                         {{ form_row(form.reasonFree) }}
 
@@ -106,5 +101,32 @@
 {% block javascripts %}
 
     {% include 'includes/scripts.html.twig' %}
+
+    <script>
+
+        $(document).ready(function() {
+
+            var formattedDate = moment().format('DD-MM-YYYY');
+            $('#invoice_form_date').val(formattedDate);
+
+            checkPaid();
+
+            $('#invoice_form_paid').on('change', function() {
+                checkPaid();
+            });
+
+            function checkPaid() {
+
+                var paid = $('#invoice_form_paid').val();
+
+                if(paid === '0'){
+                $('#invoice_form_paymentDate').closest('.row').hide();
+                } else if (paid === '1'){
+                $('#invoice_form_paymentDate').closest('.row').show();
+                }
+            }
+        });
+
+    </script>
 
 {% endblock %}

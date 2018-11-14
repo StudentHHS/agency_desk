@@ -13,7 +13,7 @@ use Doctrine\Common\Collections\ArrayCollection;
  * App\Entity\Project\Task
  *
  * @ORM\Table(name = "task")
- * @ORM\Entity(repositoryClass="Gedmo\Sortable\Entity\Repository\SortableRepository")
+ * @ORM\Entity()
  */
 class Task
 {
@@ -86,14 +86,6 @@ class Task
      * @ORM\JoinColumn(name="tag_id", referencedColumnName="id", nullable=true)
      */
     protected $tag;
-
-    /**
-     * @var integer $position
-     *
-     * @Gedmo\SortablePosition
-     * @ORM\Column(name="position", type="integer", nullable=false)
-     */
-    protected $position;
 
     /**
      * @var integer $vivifyId
@@ -448,30 +440,6 @@ class Task
     public function getApproved()
     {
         return $this->approved;
-    }
-
-    /**
-     * Set position
-     *
-     * @param integer $position
-     *
-     * @return Task
-     */
-    public function setPosition($position)
-    {
-        $this->position = $position;
-
-        return $this;
-    }
-
-    /**
-     * Get position
-     *
-     * @return integer
-     */
-    public function getPosition()
-    {
-        return $this->position;
     }
 
     /**

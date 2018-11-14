@@ -52,6 +52,9 @@ class InvoiceController extends AbstractController
             $em = $this->getDoctrine()->getManager();
             $em->persist($invoice);
             $em->flush();
+
+            $this->addFlash('success', 'Invoice successfully created.');
+
             return $this->redirectToRoute('index_invoice');
         }
 
@@ -73,6 +76,7 @@ class InvoiceController extends AbstractController
 
         $form = $this->createForm(InvoiceForm::class, $invoice);
 
+        $form['paymentDate']->setData(new \DateTime());
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -80,6 +84,9 @@ class InvoiceController extends AbstractController
             $em = $this->getDoctrine()->getManager();
             $em->persist($invoice);
             $em->flush();
+
+            $this->addFlash('success', 'Invoice successfully edited.');
+
             return $this->redirectToRoute('index_invoice');
         }
 
@@ -99,13 +106,13 @@ class InvoiceController extends AbstractController
     public function delete(Request $request, $id)
     {
 
-
         $em = $this->getDoctrine()->getManager();
         $invoice = $em->getRepository("App:Financial\Invoice")->find($id);
 
         $em->remove($invoice);
         $em->flush();
 
+        $this->addFlash('success', 'Invoice successfully removed.');
 
         return $this->redirectToRoute('index_invoice');
     }

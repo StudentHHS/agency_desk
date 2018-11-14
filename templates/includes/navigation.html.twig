@@ -149,7 +149,39 @@
                 <div id="sidebar-menu">
                     <ul>
 
-                        <li class="text-muted menu-title">Navigation</li>
+                        <li class="text-muted menu-title">Gebruiker</li>
+
+                        <li class="has_sub">
+                            <a href="javascript:void(0);" class="waves-effect"><i
+                                        class="ti-pencil"></i> <span> Developers </span> <span
+                                        class="menu-arrow"></span></a>
+                            <ul class="list-unstyled" style="display: block;">
+                                <li><a href="{{ path('index_developer') }}">Developers bekijken</a></li>
+                                <li><a href="{{ path('create_developer') }}">Developers toevoegen</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="has_sub">
+                            <a href="javascript:void(0);" class="waves-effect"><i
+                                        class="ti-receipt"></i> <span> Taken </span> <span
+                                        class="menu-arrow"></span></a>
+                            <ul class="list-unstyled" style="display: block;">
+                                <li><a href="{{ path('index_task') }}">Taken bekijken</a></li>
+                                <li><a href="{{ path('create_task') }}">Nieuwe taak maken</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="has_sub">
+                            <a href="javascript:void(0);" class="waves-effect"><i
+                                        class="ti-timer"></i> <span> Werkregistratie </span> <span
+                                        class="menu-arrow"></span></a>
+                            <ul class="list-unstyled" style="display: block;">
+                                <li><a href="{{ path('index_workregistration') }}">Urenregistratie bekijken</a></li>
+                                <li><a href="{{ path('create_workregistration') }}">Nieuwe uren registreren</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="text-muted menu-title">Klant</li>
 
                         <li class="has_sub">
                             <a href="javascript:void(0);" class="waves-effect"><i
@@ -173,11 +205,11 @@
 
                         <li class="has_sub">
                             <a href="javascript:void(0);" class="waves-effect"><i
-                                        class="ti-pencil"></i> <span> Developers </span> <span
+                                        class="ti-receipt"></i> <span> Urenkaart </span> <span
                                         class="menu-arrow"></span></a>
                             <ul class="list-unstyled" style="display: block;">
-                                <li><a href="{{ path('index_developer') }}">Developers bekijken</a></li>
-                                <li><a href="{{ path('create_developer') }}">Developers toevoegen</a></li>
+                                <li><a href="#">Urenkaart bekijken</a></li>
+                                <li><a href="#">Nieuwe urenkaart maken</a></li>
                             </ul>
                         </li>
 
@@ -191,14 +223,9 @@
                             </ul>
                         </li>
 
-                        <li class="has_sub">
-                            <a href="javascript:void(0);" class="waves-effect"><i
-                                        class="ti-timer"></i> <span> Werkregistratie </span> <span
-                                        class="menu-arrow"></span></a>
-                            <ul class="list-unstyled" style="display: block;">
-                                <li><a href="#">Nieuwe uren registreren</a></li>
-                            </ul>
-                        </li>
+
+
+
                     </ul>
                     <div class="clearfix"></div>
                 </div>

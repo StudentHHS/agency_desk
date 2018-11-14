@@ -52,6 +52,9 @@ class ProjectController extends AbstractController
             $em = $this->getDoctrine()->getManager();
             $em->persist($project);
             $em->flush();
+
+            $this->addFlash('success', 'Project successfully created.');
+
             return $this->redirectToRoute('index_project');
         }
 
@@ -80,6 +83,9 @@ class ProjectController extends AbstractController
             $em = $this->getDoctrine()->getManager();
             $em->persist($project);
             $em->flush();
+
+            $this->addFlash('success', 'Project successfully edited.');
+
             return $this->redirectToRoute('index_project');
         }
 
@@ -98,32 +104,6 @@ class ProjectController extends AbstractController
      */
     public function delete(Request $request, $id)
     {
-//        $em = $this->getDoctrine()->getManager();
-//
-//
-//        /**
-//         * @var Customer $cust
-//         */
-//
-//        $cust = $em->getRepository("App:User\Customer")->find($id);
-//
-//        if(!$cust){
-//            throw $this->createNotFoundException('Unable to find Customer entity.');
-//        }
-//
-//        $projects = $em->getRepository('App:Project\Project')->findBy(array('customer'=>$cust->getId()));
-//
-//        /**
-//         * @var Project $proj
-//         */
-//        foreach ($projects as $proj) {
-//            $em->remove($proj);
-//        }
-//        $em->flush();
-//
-//        $em->remove($cust);
-//        $em->flush();
-//        return $this->redirectToRoute('index_project');
 
         $em = $this->getDoctrine()->getManager();
         $project = $em->getRepository("App:Project\Project")->find($id);
@@ -131,6 +111,7 @@ class ProjectController extends AbstractController
         $em->remove($project);
         $em->flush();
 
+        $this->addFlash('success', 'Project successfully removed.');
 
         return $this->redirectToRoute('index_project');
     }

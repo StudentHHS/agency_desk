@@ -57,6 +57,9 @@ class DeveloperController extends AbstractController
             $em = $this->getDoctrine()->getManager();
             $em->persist($developer);
             $em->flush();
+
+            $this->addFlash('success', 'Developer successfully created.');
+
             return $this->redirectToRoute('index_developer');
         }
 
@@ -85,6 +88,9 @@ class DeveloperController extends AbstractController
             $em = $this->getDoctrine()->getManager();
             $em->persist($developer);
             $em->flush();
+
+            $this->addFlash('success', 'Developer successfully edited.');
+
             return $this->redirectToRoute('index_developer');
         }
 
@@ -107,6 +113,7 @@ class DeveloperController extends AbstractController
         $em->remove($developer);
         $em->flush();
 
+        $this->addFlash('success', 'Developer successfully removed.');
 
         return $this->redirectToRoute('index_developer');
     }
